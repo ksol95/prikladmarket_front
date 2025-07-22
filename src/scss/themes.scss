@@ -1,0 +1,21 @@
+/*
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+*/
+
+:root.theme-dark {
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+/* Светлая тема */
+:root.theme-light {
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+  }
+}
