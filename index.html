@@ -195,7 +195,7 @@
 
               <!-- тип -->
               <div class="order-form__attr">
-                <h3 class="attr__title">Тип</h3>
+                <h4 class="attr__title">Тип</h4>
                 <div class="attr__list">
                   <a href="#" class="attr-button"> Ортопедический </a>
                   <a href="#" class="attr-button not-found"> СВД </a>
@@ -204,7 +204,7 @@
               </div>
               <!-- материал -->
               <div class="order-form__attr">
-                <h3 class="attr__title">Материал</h3>
+                <h4 class="attr__title">Материал</h4>
                 <div class="attr__list">
                   <a href="#" class="attr-button"> Бук </a>
                   <button class="attr-button active">Фанера</button>
@@ -212,7 +212,7 @@
               </div>
               <!-- цвет -->
               <div class="order-form__attr">
-                <h3 class="attr__title">Цвет</h3>
+                <h4 class="attr__title">Цвет</h4>
                 <div class="attr__list">
                   <label title="Тёмный">
                     <a href="#" class="attr-button">
@@ -250,7 +250,7 @@
               </div>
               <!-- Важные опции -->
               <div class="order-form__attr">
-                <h3 class="attr__title">Модель ружья</h3>
+                <h4 class="attr__title">Модель ружья</h4>
 
                 <div class="attr__list">
                   <label class="attr-button">
@@ -311,7 +311,7 @@
               </div>
               <!-- Дополнительные опции -->
               <div class="order-form__attr">
-                <h3 class="attr__title">Выбор руки:</h3>
+                <h4 class="attr__title">Выбор руки:</h4>
                 <div class="attr__list">
                   <label
                     class="attr-button"
@@ -343,82 +343,48 @@
 
               <!-- Дополнительные опции -->
               <div class="order-form__attr">
-                <h3 class="attr__title">Дополнительные опции:</h3>
+                <h4 class="attr__title">Дополнительные опции</h4>
+                <div class="attr__list">
+                  <label class="attr-button" title="">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[222]"
+                      name="option[313]"
+                      value="222"
+                    />
+                    <span class="attr-radio__name">Антабка</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
 
-                <div class="dropdown" data-attr-group="280">
-                  <div class="dropdown__title">
-                    <span class="tips-title">Выберите</span>
-                  </div>
-                  <ul class="dropdown__list">
-                    <li class="dropdown__list-item">
-                      <label class="attr-button">
-                        <input
-                          type="checkbox"
-                          class="attr-button__control visually-hidden"
-                          name="option[280][]"
-                          value="159"
-                        />
-                        <span class="attr-button__name">Для левши</span>
-                        <span class="attr-button__cash pls">300</span>
-                      </label>
-                    </li>
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Нагель</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
 
-                    <li class="dropdown__list-item">
-                      <label class="attr-button">
-                        <span class="attr-button__controls">
-                          <input
-                            type="checkbox"
-                            class="attr-button__control visually-hidden"
-                            name="option[280][]"
-                            value="147"
-                          />
-                          <span class="attr-button__name">Нагель</span>
-                          <span class="attr-button__cash pls">600</span>
-                        </span>
-                      </label>
-                    </li>
-
-                    <li class="dropdown__list-item">
-                      <label class="attr-button">
-                        <span class="attr-button__controls">
-                          <input
-                            type="checkbox"
-                            class="attr-button__control visually-hidden"
-                            name="option[280][]"
-                            value="146"
-                          />
-                          <span class="attr-button__name">Антабка</span>
-                          <span class="attr-button__cash pls">500</span>
-                        </span>
-                      </label>
-                    </li>
-
-                    <li class="dropdown__list-item">
-                      <label
-                        class="attr-button"
-                        title=" Затыльная часть приклада оснащается механизмом с помощью которого можно регулировать длину выдвижения приклада "
-                      >
-                        <span class="attr-button__controls">
-                          <input
-                            type="checkbox"
-                            class="attr-button__control visually-hidden"
-                            name="option[280][]"
-                            value="142"
-                          />
-                          <span class="attr-button__name">
-                            Выдвижной гребень
-                          </span>
-                          <span class="attr-button__cash pls">2 500</span>
-                          <a href="#" class="question">?</a>
-                        </span>
-                      </label>
-                    </li>
-                  </ul>
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
                 </div>
               </div>
 
               <div class="order-form__attr row">
-                <div class="input-group">
+                <!-- <div class="input-group">
                   <span>Кол-во:</span>
                   <div class="input-number-control">
                     <button class="up">+</button>
@@ -432,16 +398,17 @@
                     <span class="form-control input">1</span>
                     <button class="down">-</button>
                   </div>
+                </div> -->
+                <div class="button-cart-panel">
+                  <button
+                    type="button"
+                    id="button-cart"
+                    data-loading-text="Загрузка..."
+                    class="button"
+                  >
+                    <span class="button__cash">4 900</span> Купить
+                  </button>
                 </div>
-
-                <button
-                  type="button"
-                  id="button-cart"
-                  data-loading-text="Загрузка..."
-                  class="button success"
-                >
-                  Добавить в корзину
-                </button>
                 <!-- 
                 <button
                   type="button"
@@ -458,22 +425,22 @@
         <!-- Описание продукта -->
         <section class="product-grid__info">
           <!-- HTML-модуль с информацией о доставке-->
-          <div class="product-grid__block" id="column-left">
+          <div class="product-grid__added" id="column-left">
             <ul class="delivery-list">
               <li class="delivery-list__item">
-                <h4 class="delivery-list__title">Доставка по всей России</h4>
+                <h3 class="delivery-list__title">Доставка по всей России</h3>
                 <p class="delivery-list__text">
                   Стоимость доставки рассчитывается индивидуально
                 </p>
               </li>
               <li class="delivery-list__item">
-                <h4 class="delivery-list__title">Почта России или СДЭК</h4>
+                <h3 class="delivery-list__title">Почта России или СДЭК</h3>
                 <p class="delivery-list__text">
                   Можем отправить посылку выгодным для вас способом
                 </p>
               </li>
               <li class="delivery-list__item">
-                <h4 class="delivery-list__title">Оплата при получении</h4>
+                <h3 class="delivery-list__title">Оплата при получении</h3>
                 <p class="delivery-list__text">
                   Возможность оплатить посылку при получении (взимается комиссия
                   за денежный перевод)
@@ -482,46 +449,50 @@
             </ul>
           </div>
 
-          <div class="info__column">
-            <ul class="specifications content bg-main radius-sm">
-              <li class="spetification__title">Характеристики</li>
-              <li class="specifications__item">
-                <span class="specifications__property"> Материал </span>
-                <span class="specifications__value"
-                  >Влагостойкая березовая фанера (ФСФ)</span
-                >
-              </li>
-              <li class="specifications__item">
-                <span class="specifications__property"> Покрытие </span>
-                <span class="specifications__value">Масло олифы, лак</span>
-              </li>
-              <li class="specifications__item">
-                <span class="specifications__property"> Размер </span>
-                <span class="specifications__value">~ 80 см</span>
-              </li>
-              <li class="specifications__item">
-                <span class="specifications__property">
-                  Длина приклада
-                  <span class="specifications__hint">
-                    Длина от тыльной части до спускового крючка
+          <div class="specifications">
+            <h2>Характеристики</h2>
+            <ul class="specifications__list">
+              <li class="specifications__group">
+                <div class="specifications__item">
+                  <span class="specifications__property"> Материал </span>
+                  <span class="specifications__value"
+                    >Влагостойкая березовая фанера (ФСФ)</span
+                  >
+                </div>
+
+                <div class="specifications__item">
+                  <span class="specifications__property"> Покрытие </span>
+                  <span class="specifications__value">Масло олифы, лак</span>
+                </div>
+
+                <div class="specifications__item">
+                  <span class="specifications__property">
+                    Длина приклада
+                    <span class="specifications__hint">
+                      Длина от тыльной части до спускового крючка
+                    </span>
                   </span>
-                </span>
-                <span class="specifications__value">35см </span>
+                  <span class="specifications__value">35см </span>
+                </div>
               </li>
-              <li class="specifications__item">
-                <span class="specifications__property"> Вес </span>
-                <span class="specifications__value">~ 1.2 кг</span>
-              </li>
-              <li class="specifications__item">
-                <span class="specifications__property"> Проверено на </span>
-                <span class="specifications__value"
-                  >91-30 (MP-143), 91-30М (ВПО-220), КО-44</span
-                >
-              </li>
-              <li class="spetification__title">Материал</li>
-              <li class="specifications__item">
-                <span class="specifications__property"> Материал изделия </span>
-                <span class="specifications__value">лллл</span>
+
+              <li class="specifications__group">
+                <div class="specifications__item">
+                  <span class="specifications__property"> Проверено на </span>
+                  <span class="specifications__value"
+                    >91-30 (MP-143), 91-30М (ВПО-220), КО-44</span
+                  >
+                </div>
+
+                <div class="specifications__item">
+                  <span class="specifications__property"> Размер </span>
+                  <span class="specifications__value">~ 80 см</span>
+                </div>
+
+                <div class="specifications__item">
+                  <span class="specifications__property"> Вес </span>
+                  <span class="specifications__value">~ 1.2 кг</span>
+                </div>
               </li>
             </ul>
           </div>

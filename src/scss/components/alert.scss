@@ -15,6 +15,7 @@
     flex-direction: row;
     align-items: flex-start;
     gap: var(--g-1);
+
     &::before {
       content: "";
       flex: 0 0 16px;
@@ -22,8 +23,11 @@
       background-image: url(../images/info.svg);
       background-repeat: no-repeat;
     }
-    & a {
-      display: inline-block;
+
+    & p {
+      display: flex;
+      flex-direction: column;
+      gap: var(--g-1);
     }
   }
 }

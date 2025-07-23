@@ -1,54 +1,61 @@
 :root {
-  --panel-gap: var(--g-1);
-  --panel-padding: var(--g-4);
-  --delivery-info-color: var(--info);
-  --delivery-info-color-2: #cef5f0;
+	--panel-gap: var(--g-1);
+	--panel-padding: var(--g-4);
+	--panel-direction: column;
+	--delivery-info-color: var(--info);
+	--delivery-info-color-2: #cef5f0;
+	--delivery-list-margin: var(--g-1) 0 0;
 }
 
 .delivery-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--g-2);
+	display: flex;
+	flex-direction: var(--panel-direction);
+	gap: var(--panel-gap);
+	margin: var(--delivery-list-margin);
 
-  .delivery-list__item {
-    display: flex;
-    flex-direction: column;
-    gap: var(--panel-gap);
-    color: var(--main-text-color);
-    border-radius: var(--panel-radius);
-    padding: var(--panel-padding);
-    flex: 1 0 0;
+	.delivery-list__item {
+		display: flex;
+		flex-direction: column;
+		gap: var(--panel-gap);
+		color: var(--main-text-color);
+		border-radius: var(--panel-radius);
+		padding: var(--panel-padding);
+		flex: 1 0 0;
 
-    &:nth-child(even) {
-      background-color: var(--delivery-info-color-2);
-    }
+		&:nth-child(even) {
+			background-color: var(--delivery-info-color-2);
+		}
 
-    &:nth-child(odd) {
-      background-color: var(--delivery-info-color);
-    }
+		&:nth-child(odd) {
+			background-color: var(--delivery-info-color);
+		}
 
-    .delivery-list__title {
-      font-weight: var(--title-weight);
-      font-size: var(--font-size);
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+		.delivery-list__title {
+			font-weight: var(--title-weight);
+			font-size: var(--h3-size);
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
 
-    .delivery-list__text {
-      font-weight: var(--Light);
-    }
-  }
+		.delivery-list__text {
+			font-weight: var(--Light);
+		}
+	}
 }
 
-@media (width >= 768px) {
-  :root {
-    --panel-gap: var(--g-2);
-    --panel-padding: var(--g-6);
-  }
+@media (width >=768px) {
+	:root {
+		--panel-gap: var(--g-2);
+		--panel-padding: var(--g-6);
+		--panel-direction: row;
+		--delivery-list-margin: var(--g-4) 0 0 0;
 
-  .delivery-list {
-    flex-direction: row;
-    gap: var(--g-4);
-  }
+	}
+}
+
+@media (width >=1024px) {
+	:root {
+		--delivery-list-margin: var(--g-4) 0;
+	}
 }
