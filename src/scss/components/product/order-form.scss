@@ -1,0 +1,258 @@
+/* Форма */
+:root {
+	--top-page-offset: calc(var(--g-4) + calc(var(--font-size) + 1px));
+	--sticky-top: calc(var(--g-4) + var(--top-page-offset));
+	--sticky-top: var(--g-4);
+
+	--order-form-top-offset: -24px;
+	--order-form-padding: var(--g-6) var(--g-4);
+
+	--attr-bg: #fff;
+	--attr-color: #2c2c2c;
+	--attr-bg-active: #ead7ca;
+	--attr-color-active: #2c2c2c;
+	--attr-border-radius: var(--br-3);
+	--attr-padding: var(--g-1) var(--g-3);
+
+	--attr-img-active-bg: #b5937b;
+	--attr-img-size: 70px;
+	--attr-img-border-radius: var(--br-4);
+	--attr-hover-shadow: 0px 0px 4px 1px var(--attr-bg-active) --button-cart-color: #fff;
+
+	--button-cart-bg: #eb9b3d;
+	--button-cart-color: #fff;
+	--button-cart-padding: var(--g-3);
+	--button-cart-radius: var(--br-4);
+	--button-cart-fs: 1.2857em;
+	--button-cart-cash-w: 600;
+
+	--cart-panel-position: fixed;
+	--cart-panel-padding: var(--g-4);
+	--cart-panel-bg: #FFFCF6;
+	--cart-panel-shadow: 0 0 4px 0 rgba(183, 156, 137, 0.5);
+}
+
+.order-form {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: var(--g-4);
+	border-radius: var(--block-border-radius);
+	background-color: var(--block-accent-bg);
+	padding: var(--order-form-padding);
+	margin-block-start: var(--order-form-top-offset);
+
+	&__form {
+		display: flex;
+		flex: auto;
+		flex-direction: column;
+		gap: var(--g-4);
+	}
+
+	&__cash {
+		font-weight: var(--title-weight);
+		font-size: var(--h1-size);
+		line-height: 1.2;
+	}
+
+	&__attr {
+		inline-size: 100%;
+		display: flex;
+		align-items: stretch;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: var(--g-1);
+		padding: 0;
+		margin: 0;
+		border: none;
+		user-select: none;
+
+		&.row {
+			flex-direction: row;
+			align-items: flex-end;
+		}
+
+		.attr__title {
+			font-weight: var(--Light);
+			color: var(--secondary-text-color);
+			line-height: 1.43;
+		}
+
+		.attr__list {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: var(--g-2);
+
+			.attr-button {
+				&__cash {
+					font-weight: var(--Regular);
+
+					// Стоимость аттрибута
+					&.pls::before {
+						content: "+";
+					}
+
+					&.mns::before {
+						content: "-";
+					}
+
+					&::after {
+						content: var(--currence-char);
+						margin-inline-start: calc(1ch / 2);
+					}
+				}
+
+				/* аттрибут без картинки */
+				&:not(:has(.attr-button__img)) {
+					background-color: var(--attr-bg);
+					border-radius: var(--attr-border-radius);
+					padding: var(--attr-padding);
+					color: var(--attr-color);
+					border: 0;
+					text-decoration: none;
+					font-weight: var(--SemiBold);
+					line-height: 1.7;
+				}
+
+				&:not(:has(.attr-button__img)).active,
+				&:has(.attr-radio__control:checked) {
+					background-color: var(--attr-bg-active);
+					color: var(--attr-color-active);
+				}
+
+				/* END аттрибут без картинки */
+
+				/* аттрибут только картинка */
+				&__img {
+					inline-size: 100%;
+					aspect-ratio: 1 / 1;
+				}
+
+				&:has(.attr-button__img) {
+					display: block;
+					border-radius: var(--attr-img-border-radius);
+					inline-size: var(--attr-img-size);
+					aspect-ratio: 1 / 1;
+					background-color: transparent;
+					border: 0;
+					outline-offset: calc(var(--g-1) * -1);
+					outline: solid var(--g-1) transparent;
+					padding: 0;
+					overflow: hidden;
+
+					&.active {
+						outline-color: var(--attr-img-active-bg);
+					}
+				}
+
+				/* END аттрибут только картинка */
+
+				// Атриуты которые готовы к активности
+				&:has(.attr-radio__control[type="checkbox"]:checked) {
+					cursor: pointer;
+
+					&:hover {
+						box-shadow: var(--attr-hover-shadow);
+					}
+				}
+
+				&:has(.attr-radio__control[type="checkbox"]:not(:checked)),
+				&:has(.attr-radio__control[type="radio"]:not(:checked)),
+				&:not(.active):has(.attr-button__img),
+				&:not(:has(.attr-button__img)):not(.active):not( :has(.attr-radio__control)) {
+					cursor: pointer;
+					opacity: 0.85;
+					transition: box-shadow 0.3s ease-in-out, opacity 0.2s ease-in-out;
+
+					&:hover {
+						opacity: 1;
+						box-shadow: var(--attr-hover-shadow);
+					}
+				}
+			}
+		}
+
+		.button-cart-panel {
+			flex: 0 0 100%;
+			inline-size: 100%;
+			display: flex;
+
+			position: var(--cart-panel-position);
+			z-index: 1;
+			bottom: 0;
+			left: 0;
+			padding: var(--cart-panel-padding);
+
+			box-shadow: var(--cart-panel-shadow);
+			background-color: var(--cart-panel-bg);
+
+			.button {
+				flex: 0 0 100%;
+				background-color: var(--button-cart-bg);
+				color: var(--button-cart-color);
+				border-radius: var(--button-cart-radius);
+				padding: var(--button-cart-padding);
+				font-size: var(--button-cart-fs);
+
+				&__cash {
+					font-weight: var(--button-cart-cash-w);
+
+					&::after {
+						content: var(--currence-char);
+						margin-inline-start: calc(1ch / 2);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (width >=768px) {
+	:root {
+		--cart-panel-position: static;
+		--cart-panel-padding: 0;
+		--cart-panel-padding: 0;
+		--cart-panel-bg: transperent;
+		--cart-panel-shadow: none;
+	}
+
+	.order-form__attr input,
+	.order-form__attr select,
+	.order-form__attr .attr-radio,
+	.order-form__attr .dropdown {
+		max-inline-size: 200px;
+		min-inline-size: 100px;
+	}
+}
+
+@media (width >=1024px) {
+	:root {
+		// Поднимаем форму выше на заголовок
+		--order-form-top-offset: -108px;
+		--order-form-padding: var(--g-8) var(--g-6);
+
+		--button-cart-color: #21201f;
+		--button-cart-bg: #fce000;
+		--button-cart-padding: var(--g-5) var(--g-6);
+		--button-cart-radius: var(--br-4);
+		--button-cart-fs: 1.2857em;
+		--button-cart-cash-w: 400;
+	}
+
+	.order-form {
+		// Делаем форму липкой
+		position: sticky;
+		margin-inline-end: var(--g-4);
+		// Позиция откуда форма липнет
+		// top: var(--sticky-top);
+		// -10% Скроет стоимость
+		top: -10%;
+
+		// Фиксируем максимальную высоту формы
+		// max-height: calc(100vh - var(--g-8));
+		// overflow: hidden;
+	}
+}
+
+/* END Форма */

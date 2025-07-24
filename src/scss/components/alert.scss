@@ -1,41 +1,60 @@
 :root {
-  --alert-info-bg: var(--info);
-  --alert-radius: var(--br-2);
-  --alert-padding: var(--g-3) calc(var(--g-7) / 2);
+	--alert-info-bg: var(--info);
+	--alert-info-text-color: inherit;
+
+	--alert-warning-bg: var(--warning);
+	--alert-warning-text-color: var(--warning-text);
+
+	--alert-radius: var(--br-2);
+	--alert-padding: var(--g-3) calc(var(--g-7) / 2);
 }
 
 .alert {
-  padding: var(--alert-padding);
-  position: relative;
-  &.alert-info {
-    background-color: var(--alert-info-bg);
-    border-radius: var(--alert-radius);
-    padding-inline-start: var(--g-2);
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: var(--g-1);
+	padding: var(--alert-padding);
+	position: relative;
 
-    &::before {
-      content: "";
-      flex: 0 0 16px;
-      aspect-ratio: 1 / 1;
-      background-image: url(../images/info.svg);
-      background-repeat: no-repeat;
-    }
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--g-1);
+	}
 
-    & p {
-      display: flex;
-      flex-direction: column;
-      gap: var(--g-1);
-    }
-  }
+	&.alert-info {
+		background-color: var(--alert-info-bg);
+		color: var(--alert-info-text-color);
+		border-radius: var(--alert-radius);
+		padding-inline-start: var(--g-2);
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: var(--g-1);
+
+
+		&::before {
+			content: "";
+			flex: 0 0 16px;
+			aspect-ratio: 1 / 1;
+			background-image: url(../images/info.svg);
+			background-repeat: no-repeat;
+		}
+	}
+
+	&.alert-warning {
+		background-color: var(--alert-warning-bg);
+		color: var(--alert-warning-text-color);
+		border-radius: var(--alert-radius);
+		padding-inline-start: var(--g-2);
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: var(--g-1);
+
+		&::before {
+			content: "";
+			flex: 0 0 16px;
+			aspect-ratio: 1 / 1;
+			background-image: url(../images/warning.svg);
+			background-repeat: no-repeat;
+		}
+	}
 }
-
-// .order-form__attr:has(.alert) {
-//   gap: var(--g-2);
-// }
-
-// .order-form__attr:has(.alert) .alert {
-//   margin-block-start: var(--g-2);
-// }

@@ -125,6 +125,7 @@ a {
 	background-color: var(--page-bg);
 
 	min-inline-size: var(--min-size-grid);
+	// max-inline-size: var(--max-size-grid);
 	min-block-size: 100dvh;
 	display: flex;
 	flex-direction: column;

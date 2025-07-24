@@ -1,5 +1,5 @@
 :root {
-	--max-size-grid: 1376px;
+	--max-size-grid: 1440px;
 	--min-size-grid: 320px;
 	--recomendate-size-grid: calc(100% - var(--g-4));
 	--container-size: clamp(var(--min-size-grid),
@@ -75,16 +75,19 @@
 	--g-10: calc(var(--g-1) * 10);
 
 	/* ////////ЦВЕТ///////// */
-	--main-text-color: #333940;
-	--page-bg: #fff;
-	--block-bg: #fff;
-	--block-accent-bg: #f5f3f1;
-	--header-text-color: var(--main-text-color);
-
 	--success: #eb9b3d;
+
+	--warning: #fff3cd;
+	--warning-text: #664d03;
+
 	--primary: #333940;
 	--default: #797979;
 	--info: #cee4f5;
+
+	--main-text-color: var(--primary);
+	--page-bg: #fff;
+	--block-accent-bg: #f5f3f1;
+	--header-text-color: var(--main-text-color);
 
 	--text-color: var(--primary);
 	--secondary-text-color: var(--default);
