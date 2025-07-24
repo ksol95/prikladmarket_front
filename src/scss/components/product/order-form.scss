@@ -13,6 +13,7 @@
 	--attr-color-active: #2c2c2c;
 	--attr-border-radius: var(--br-3);
 	--attr-padding: var(--g-1) var(--g-3);
+	--attr-list-gap: var(--g-1);
 
 	--attr-img-active-bg: #b5937b;
 	--attr-img-size: 70px;
@@ -81,10 +82,18 @@
 		.attr__list {
 			display: flex;
 			flex-direction: row;
-			flex-wrap: wrap;
-			gap: var(--g-2);
+			gap: var(--attr-list-gap);
+
+			inline-size: 100%;
+			overflow-x: scroll;
+			flex-wrap: nowrap;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
 
 			.attr-button {
+				// Для скролла
+				white-space: nowrap;
+
 				&__cash {
 					font-weight: var(--Regular);
 
@@ -238,6 +247,8 @@
 		--button-cart-radius: var(--br-4);
 		--button-cart-fs: 1.2857em;
 		--button-cart-cash-w: 400;
+
+		--attr-list-gap: var(--g-2);
 	}
 
 	.order-form {

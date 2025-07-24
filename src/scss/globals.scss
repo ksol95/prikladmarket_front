@@ -77,8 +77,8 @@ a {
 	flex-wrap: nowrap;
 	overflow-x: scroll;
 	flex-direction: row;
-	-ms-overflow-style: none;
 	/* Скрываем скроллбар для IE/Edge */
+	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
 
