@@ -1,482 +1,471 @@
 .rating {
-	cursor: default;
-	font-size: var(--font-size);
+  cursor: default;
+  font-size: var(--font-size);
 }
 
 .rating .fa-stack {
-	font-size: 8px;
+  font-size: 8px;
 }
 
 .rating .fa-star-o {
-	color: #999;
-	font-size: 15px;
+  color: #999;
+  font-size: 15px;
 }
 
 .rating .fa-star {
-	color: #fc0;
-	font-size: 15px;
+  color: #fc0;
+  font-size: 15px;
 }
 
-.rating .fa-star+.fa-star-o {
-	color: #e69500;
+.rating .fa-star + .fa-star-o {
+  color: #e69500;
 }
-
-/* .rating__score {
-}
-.rating__response {
-} */
-
-.bold-text {
-	color: currentColor;
-	font-weight: var(--title-weight);
-}
-
 
 .header {
-	color: var(--header-text-color);
-	border-block-end: var(--border-params);
-	border-color: var(--accent-bg-color);
-	background-color: var(--accent-bg-color);
+  color: var(--header-text-color);
+  border-block-end: var(--border-params);
+  border-color: var(--accent-bg-color);
+  background-color: var(--accent-bg-color);
 }
 
 .header-nav {
-	position: relative;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: center;
-	padding: var(--g-4) 0;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: var(--g-4) 0;
 }
 
 .header-nav .container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 var(--g-4);
-	flex-wrap: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--g-4);
+  flex-wrap: nowrap;
 }
 
 .header-nav__search {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .header-nav__cart {
-	justify-self: end;
+  justify-self: end;
 }
 
 .list__product:has(button) {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: flex-start;
-	gap: var(--g-4);
-	border-bottom: var(--border-params);
-	border-color: var(--accent-bg-color);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: var(--g-4);
+  border-bottom: var(--border-params);
+  border-color: var(--accent-bg-color);
 }
 
 .list__product-name {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-nav {
-	position: sticky;
-	top: -1px;
-	z-index: 10;
-	background-color: var(--bg-main-color);
-	border-block-end: var(--border-params);
-	border-color: var(--secondary-color);
+  position: sticky;
+  top: -1px;
+  z-index: 10;
+  background-color: var(--bg-main-color);
+  border-block-end: var(--border-params);
+  border-color: var(--secondary-color);
 }
 
 .page-nav .container {
-	padding: var(--g-4) var(--g-4);
+  padding: var(--g-4) var(--g-4);
 }
 
 .page-nav__list {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: var(--g-4);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--g-4);
 }
 
 .page-nav__link {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 @media (width >=768px) {
-	.page-nav {
-		margin-block-end: var(--g-4);
-	}
+  .page-nav {
+    margin-block-end: var(--g-4);
+  }
 }
 
 .form-control {
-	border-style: solid;
-	border-width: var(--form-select-border-width);
-	border-color: var(--form-select-border-color);
-	border-radius: var(--border-radius-controls);
+  border-style: solid;
+  border-width: var(--form-select-border-width);
+  border-color: var(--form-select-border-color);
+  border-radius: var(--border-radius-controls);
 
-	background-color: var(--btn-bg);
-	color: var(--btn-color);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
 
-	font-family: inherit;
-	font-size: var(--font-size);
-	font-weight: bold;
+  font-family: inherit;
+  font-size: var(--font-size);
+  font-weight: bold;
 }
 
 .form-control.input {
-	max-inline-size: 70px;
-	min-inline-size: 50px;
-	appearance: none;
-	border-radius: 0;
-	text-align: center;
-	padding-inline: 0;
-	border-inline: none;
+  max-inline-size: 70px;
+  min-inline-size: 50px;
+  appearance: none;
+  border-radius: 0;
+  text-align: center;
+  padding-inline: 0;
+  border-inline: none;
 }
 
 .form-control.select {
-	/* Убрать стрелочку */
-	appearance: none;
+  /* Убрать стрелочку */
+  appearance: none;
 
-	/* Кастомная стрелочка */
-	background-image: url(./../image/up-down.svg);
-	background-repeat: no-repeat;
-	background-position: center right 0.1em;
-	background-size: 1em;
-	padding: var(--g-4) calc(var(--g-4) / 1);
+  /* Кастомная стрелочка */
+  background-image: url(./../image/up-down.svg);
+  background-repeat: no-repeat;
+  background-position: center right 0.1em;
+  background-size: 1em;
+  padding: var(--g-4) calc(var(--g-4) / 1);
 }
 
 .input-group {
-	display: flex;
-	gap: calc(var(--g-4) / 4);
+  display: flex;
+  gap: calc(var(--g-4) / 4);
 
-	flex-direction: column;
+  flex-direction: column;
 }
 
 .input-number-control {
-	display: flex;
-	flex-direction: row;
-	align-items: stretch;
-	justify-content: flex-start;
-	flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
 }
 
-.input-number-control:has(.input[type='number']) .up,
-.input-number-control:has(.input[type='number']) .down {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-inline-size: 20px;
-	max-inline-size: 20px;
-	padding: 0.3em;
-	border: 0;
-	background-color: var(--btn-default-bg);
-	color: var(--btn-default-color);
-	font-size: inherit;
-	line-height: 0;
-	cursor: pointer;
+.input-number-control:has(.input[type="number"]) .up,
+.input-number-control:has(.input[type="number"]) .down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 20px;
+  max-inline-size: 20px;
+  padding: 0.3em;
+  border: 0;
+  background-color: var(--btn-default-bg);
+  color: var(--btn-default-color);
+  font-size: inherit;
+  line-height: 0;
+  cursor: pointer;
 }
 
-.input-number-control:has(.input[type='number']) .down {
-	border-end-end-radius: var(--border-radius);
-	border-start-end-radius: var(--border-radius);
+.input-number-control:has(.input[type="number"]) .down {
+  border-end-end-radius: var(--border-radius);
+  border-start-end-radius: var(--border-radius);
 }
 
-.input-number-control:has(.input[type='number']) .up {
-	border-end-start-radius: var(--border-radius);
-	border-start-start-radius: var(--border-radius);
+.input-number-control:has(.input[type="number"]) .up {
+  border-end-start-radius: var(--border-radius);
+  border-start-start-radius: var(--border-radius);
 }
 
-.input-number-control input[type='number']::-webkit-inner-spin-button,
-.input-number-control input[type='number']::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
+.input-number-control input[type="number"]::-webkit-inner-spin-button,
+.input-number-control input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .input-number-control .form-control.input:focus-visible {
-	outline: none;
+  outline: none;
 }
 
 .input-number-control:has(.form-control.input:focus-visible) {
-	outline-offset: -1px;
-	outline-style: solid;
-	outline-color: currentColor;
-	outline-width: 1px;
-	border-radius: 3px;
+  outline-offset: -1px;
+  outline-style: solid;
+  outline-color: currentColor;
+  outline-width: 1px;
+  border-radius: 3px;
 }
 
 .button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 1ch;
-	color: var(--btn-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1ch;
+  color: var(--btn-color);
 
-	border-width: var(--btn-border-width);
-	border-style: var(--btn-border-style);
-	border-color: var(--btn-border-color);
+  border-width: var(--btn-border-width);
+  border-style: var(--btn-border-style);
+  border-color: var(--btn-border-color);
 
-	background-color: var(--btn-bg);
+  background-color: var(--btn-bg);
 
-	border-radius: var(--border-radius);
+  border-radius: var(--border-radius);
 
-	padding-inline: var(--control-padding-inline);
-	padding-block: var(--control-padding-block);
-	line-height: var(--btn-line-height);
+  padding-inline: var(--control-padding-inline);
+  padding-block: var(--control-padding-block);
+  line-height: var(--btn-line-height);
 
-	text-decoration: none;
+  text-decoration: none;
 
-	appearance: none;
+  appearance: none;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .button:has(.button__img) {
-	padding: calc(var(--g-4) / 3);
-	padding-inline-end: var(--g-4);
-	line-height: 1;
+  padding: calc(var(--g-4) / 3);
+  padding-inline-end: var(--g-4);
+  line-height: 1;
 }
 
 .button.outline {
-	outline-color: transparent;
-	outline-style: solid;
-	outline-width: 1px;
-	transition: outline-color 0.3s ease-in-out;
+  outline-color: transparent;
+  outline-style: solid;
+  outline-width: 1px;
+  transition: outline-color 0.3s ease-in-out;
 }
 
 .button.outline.active,
 .button.outline:active {
-	cursor: default;
-	outline-color: var(--btn-border-color);
-	/* color: var(--btn-color); */
-	/* background-color: var(--btn-bg); */
+  cursor: default;
+  outline-color: var(--btn-border-color);
+  /* color: var(--btn-color); */
+  /* background-color: var(--btn-bg); */
 }
 
-.button:has(input[type='checkbox']) {
-	padding-inline-end: var(--g-4);
+.button:has(input[type="checkbox"]) {
+  padding-inline-end: var(--g-4);
 }
 
 .button.sm:not(.outline) {
-	padding: 0;
-	color: var(--text-color);
-	background-color: transparent;
-	border: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: transparent;
+  border: 0;
 }
 
 .button.outline:focus-visible {
-	outline-offset: 0;
-	outline-color: currentColor;
+  outline-offset: 0;
+  outline-color: currentColor;
 }
 
-.button:has(input[type='checkbox']:checked) {
-	background-color: var(--btn-active-bg);
-	color: var(--btn-active-color);
-	border-color: var(--btn-border-color);
+.button:has(input[type="checkbox"]:checked) {
+  background-color: var(--btn-active-bg);
+  color: var(--btn-active-color);
+  border-color: var(--btn-border-color);
 }
 
-.button:has(input[type='checkbox'].visually-hidden)::after {
-	content: '';
-	inline-size: 1em;
-	block-size: 1em;
-	background-color: transparent;
-	border: var(--border) var(--secondary-color);
-	border-radius: var(--border-radius);
+.button:has(input[type="checkbox"].visually-hidden)::after {
+  content: "";
+  inline-size: 1em;
+  block-size: 1em;
+  background-color: transparent;
+  border: var(--border) var(--secondary-color);
+  border-radius: var(--border-radius);
 }
 
-.button:has(input[type='checkbox'].visually-hidden:checked)::after {
-	background-color: var(--btn-success-bg);
-	box-shadow: inset 0 0 3px 0 var(--btn-bg);
+.button:has(input[type="checkbox"].visually-hidden:checked)::after {
+  background-color: var(--btn-success-bg);
+  box-shadow: inset 0 0 3px 0 var(--btn-bg);
 }
 
 .button:not(.sm):not(.outline):focus-visible {
-	color: var(--btn-hover-color);
-	background-color: var(--btn-hover-bg);
-	border-color: var(--btn-hover-border-color);
-	outline: 0;
-	box-shadow: var(--btn-focus-box-shadow);
+  color: var(--btn-hover-color);
+  background-color: var(--btn-hover-bg);
+  border-color: var(--btn-hover-border-color);
+  outline: 0;
+  box-shadow: var(--btn-focus-box-shadow);
 }
 
-.button:has(input[type='checkbox'].visually-hidden:checked) {
-	border-color: var(--btn-success-bg);
-	box-shadow: inset 0 0 10px 1px var(--btn-bg);
+.button:has(input[type="checkbox"].visually-hidden:checked) {
+  border-color: var(--btn-success-bg);
+  box-shadow: inset 0 0 10px 1px var(--btn-bg);
 }
 
-.button:has(input[type='checkbox']):not(.visually-hidden) input {
-	order: 3;
+.button:has(input[type="checkbox"]):not(.visually-hidden) input {
+  order: 3;
 }
 
 .button.sm:not(.outline).active {
-	background-color: transparent;
-	color: var(--text-color);
-	text-underline-offset: 0.3ch;
-	text-decoration: underline;
+  background-color: transparent;
+  color: var(--text-color);
+  text-underline-offset: 0.3ch;
+  text-decoration: underline;
 }
 
 @media (any-hover: hover) {
-	.button:not(.outline):hover {
-		background-color: var(--btn-hover-bg);
-		color: var(--btn-hover-color);
-		border-color: var(--btn-hover-border-color);
-		transition: background-color 0.3s ease;
-	}
+  .button:not(.outline):hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-color);
+    border-color: var(--btn-hover-border-color);
+    transition: background-color 0.3s ease;
+  }
 
-	.button.outline:not(.active):hover {
-		outline-color: currentColor;
-	}
+  .button.outline:not(.active):hover {
+    outline-color: currentColor;
+  }
 
-	.button.sm:hover {
-		text-underline-offset: 0.3ch;
-		text-decoration: underline;
-	}
+  .button.sm:hover {
+    text-underline-offset: 0.3ch;
+    text-decoration: underline;
+  }
 }
 
 /* Модуль о доставке */
 .delivery-list {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: var(--g-4);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--g-4);
 }
 
 .delivery-list__item {
-	display: flex;
-	flex: 1 0 0;
-	flex-direction: column;
-	gap: var(--g-4);
-	background-color: var(--bg-main-color);
-	padding: var(--g-4);
-	border-radius: var(--border-radius-layout);
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--g-4);
+  background-color: var(--bg-main-color);
+  padding: var(--g-4);
+  border-radius: var(--border-radius-layout);
 }
 
 .delivery-list__title {
-	color: var(--accent-text);
-	font-weight: var(--title-weight);
+  color: var(--accent-text);
+  font-weight: var(--title-weight);
 }
 
 @media (width >=768px) {
-	.delivery-module {
-		padding: 0;
-	}
+  .delivery-module {
+    padding: 0;
+  }
 }
 
 /* END модуль о доставке */
 
 /* Отобраение карточек */
 .card-list {
-	display: flex;
-	/* flex-direction: column; */
-	flex-wrap: wrap;
-	gap: var(--g-4);
-	align-items: stretch;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  gap: var(--g-4);
+  align-items: stretch;
 }
 
 .card-list.scroll-row {
-	flex-direction: row;
-	flex-wrap: nowrap;
-	overflow-x: scroll;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
 
-	padding-block-end: var(--g-4);
-	margin-inline-end: calc(var(--text-row-gap) * -1);
-	margin-inline-start: calc(var(--text-row-gap) * -1);
+  padding-block-end: var(--g-4);
+  margin-inline-end: calc(var(--text-row-gap) * -1);
+  margin-inline-start: calc(var(--text-row-gap) * -1);
 }
 
 .card-list__card {
-	display: flex;
-	flex-direction: column;
-	gap: var(--g-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--g-4);
 
-	border: var(--border-params);
-	border-color: var(--card-border-color);
-	border-radius: var(--border-radius);
-	background-color: var(--card-bg-color);
-	padding: var(--g-4);
+  border: var(--border-params);
+  border-color: var(--card-border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--card-bg-color);
+  padding: var(--g-4);
 
-	flex: 1 1 200px;
+  flex: 1 1 200px;
 }
 
 .card-list.scroll-row .card-list__card {
-	flex: 0 0 240px;
+  flex: 0 0 240px;
 }
 
 .card-list.scroll-row .card-list__card:last-child {
-	margin-inline-end: calc(var(--g-4) * -1);
+  margin-inline-end: calc(var(--g-4) * -1);
 }
 
 .card-list.scroll-row .card-list__card:first-child {
-	margin-inline-start: calc(var(--g-4) * -1);
+  margin-inline-start: calc(var(--g-4) * -1);
 }
 
 .card-list.scroll-row:after {
-	content: '';
-	position: sticky;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	background-image: linear-gradient(to right,
-			transparent,
-			var(--bg-main-color));
-	flex: 0 0 var(--text-row-gap);
+  content: "";
+  position: sticky;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--bg-main-color)
+  );
+  flex: 0 0 var(--text-row-gap);
 }
 
 .card-list.scroll-row:before {
-	content: '';
-	position: sticky;
-	left: 0;
-	bottom: 0;
-	top: 0;
-	background-image: linear-gradient(to left, transparent, var(--bg-main-color));
-	flex: 0 0 var(--text-row-gap);
+  content: "";
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  background-image: linear-gradient(to left, transparent, var(--bg-main-color));
+  flex: 0 0 var(--text-row-gap);
 }
 
 /* Полоса прокрутки */
 .scroll-row::-webkit-scrollbar {
-	width: var(--scroll-bar-size);
-	height: var(--scroll-bar-size);
-	background-color: var(--scroll-bar-color);
-	cursor: pointer;
+  width: var(--scroll-bar-size);
+  height: var(--scroll-bar-size);
+  background-color: var(--scroll-bar-color);
+  cursor: pointer;
 }
 
 .scroll-row::-webkit-scrollbar-thumb {
-	border-radius: var(--scroll-bar-thumb-radius);
-	background-color: var(--scroll-bar-thumb-color);
-	cursor: pointer;
+  border-radius: var(--scroll-bar-thumb-radius);
+  background-color: var(--scroll-bar-thumb-color);
+  cursor: pointer;
 }
 
 .scroll-row::-webkit-scrollbar-thumb:hover {
-	background: var(--scroll-bar-thumb-hover-color);
+  background: var(--scroll-bar-thumb-hover-color);
 }
 
 .card__img-layout {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__img {
-	max-width: 100%;
-	height: auto;
-	flex: 1 1 auto;
-	object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  flex: 1 1 auto;
+  object-fit: cover;
 }
 
 /* END Отобраение карточек */
 
 /* Информационная плашка */
 
-
-
 /* END Информационная плашка */
 .footer {
-	background-color: var(--accent-bg-color);
-	color: var(--accent-bg-text-color);
+  background-color: var(--accent-bg-color);
+  color: var(--accent-bg-text-color);
 }
 
 @media (width >=768px) {
-	.footer {
-		margin-block-start: var(--g-4);
-	}
+  .footer {
+    margin-block-start: var(--g-4);
+  }
 }

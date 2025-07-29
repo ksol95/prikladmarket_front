@@ -1,76 +1,75 @@
 // Фотографии продукта с описанием
 :root {
-	--product-images-padding: var(--g-8) var(--g-4);
-	--product-images-item-gap: var(--g-1);
+  --product-images-padding: var(--g-8) var(--g-4);
+  --product-images-item-gap: var(--g-1);
 }
 
 .product-images {
-	background-color: var(--block-accent-bg);
-	border-radius: var(--br-4);
-	padding: var(--product-images-padding);
+  background-color: var(--accent-bg);
+  border-radius: var(--br-4);
+  padding: var(--product-images-padding);
 
-	&__list {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		gap: var(--g-6);
-	}
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--g-6);
+  }
 
-	&__item {
-		display: flex;
-		flex-direction: column;
-		gap: var(--product-images-item-gap);
-	}
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--product-images-item-gap);
+  }
 
-	&__description {
-		display: flex;
-		flex-direction: column;
-		gap: var(--g-3);
-	}
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--g-3);
+  }
 
-	&__image-block {
-		flex: 1 0 auto;
-		border-radius: var(--br-4);
-		display: flex;
-		justify-content: center;
-	}
+  &__image-block {
+    flex: 1 0 auto;
+    border-radius: var(--br-4);
+    display: flex;
+    justify-content: center;
+  }
 
-	&__image {
-		inline-size: 100%;
-	}
+  &__image {
+    inline-size: 100%;
+    object-fit: cover;
+  }
 }
 
 @media (width >=768px) {
-	:root {
-		--product-images-padding: var(--g-4);
-		--product-images-item-gap: var(--g-10);
-	}
+  :root {
+    --product-images-padding: var(--g-4);
+    --product-images-item-gap: var(--g-10);
+  }
 
-	.product-images {
-		&__item {
-			flex-direction: row;
-			align-items: center;
+  .product-images {
+    &__item {
+      flex-direction: row;
+      align-items: center;
 
-			&:nth-child(odd) {
-				flex-direction: row-reverse;
-			}
-		}
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+    }
 
-		&__image-block {
-			flex: 1;
-			justify-content: start;
+    &__image-block {
+      flex: 1;
+      justify-content: start;
+    }
 
-		}
+    &__description {
+      flex: 1;
 
-		&__description {
-			flex: 1;
-
-			p {
-				font-size: 1.1428em;
-			}
-		}
-	}
-
+      p {
+        font-size: 1.1428em;
+      }
+    }
+  }
 }
 
 // @media (width >=1024px) {

@@ -1,65 +1,68 @@
 /* Спецификация товара */
 :root {
-	--specifications-padding: var(--g-8) var(--g-4);
-	--specifications-direction: column;
-	--specifications-gap-items: var(--g-2);
-	--specifications-gap-groups: var(--g-2);
-
+  --specifications-padding: var(--g-8) var(--g-4);
+  --specifications-direction: column;
+  --specifications-gap-items: var(--g-2);
+  --specifications-gap-groups: var(--g-2);
 }
 
 .specifications {
-	display: flex;
-	flex-direction: var(--specifications-direction);
-	padding: var(--specifications-padding);
-	gap: var(--specifications-gap-groups);
+  display: flex;
+  flex-direction: var(--specifications-direction);
+  padding: var(--specifications-padding);
+  gap: var(--specifications-gap-groups);
 
-	&__list {
-		list-style: none;
-		user-select: none;
-		display: flex;
-		flex-direction: var(--specifications-direction);
-		gap: var(--specifications-gap-groups);
+  &__list {
+    list-style: none;
+    user-select: none;
+    display: flex;
+    flex-direction: var(--specifications-direction);
+    gap: var(--specifications-gap-groups);
+  }
 
-	}
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--specifications-gap-items);
+  }
 
-	&__group {
-		display: flex;
-		flex-direction: column;
-		gap: var(--specifications-gap-items);
-	}
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 
-	&__item {
-		display: flex;
-		flex-direction: column;
-		gap: 0;
-	}
+  &__property {
+    font-size: var(--h4-size);
+    font-weight: var(--Light);
+    color: var(--secondary-text-color);
+    line-height: 1.67;
+  }
 
-	&__property {
-		font-size: var(--h4-size);
-		font-weight: var(--Light);
-		color: var(--secondary-text-color);
-		line-height: 1.67;
-	}
+  &__value {
+    font-size: var(--h3-size);
+    font-weight: var(--SemiBold);
+    line-height: 1.43;
+  }
 
-	&__value {
-		font-size: var(--h3-size);
-		font-weight: var(--SemiBold);
-		line-height: 1.43;
-	}
-
-	&__hint {
-		display: none;
-	}
+  &__hint {
+    display: none;
+  }
 }
 
-@media (width >=1024px) {
-	:root {
-		--specifications-padding: var(--g-6) 0;
-		--specifications-direction: row;
-		--specifications-gap-groups: calc(var(--g-10)*2);
-		--specifications-gap-items: var(--g-8);
-	}
+@media (width >=768px) {
+  :root {
+    --specifications-padding: var(--g-6) var(--g-4);
+    --specifications-direction: row;
+    --specifications-gap-groups: calc(var(--g-10) * 2);
+    --specifications-gap-items: var(--g-8);
+  }
 }
 
+@media (width >=1366px) {
+  :root {
+    --specifications-padding: var(--g-6) 0;
+  }
+}
 
 /* /Спецификация товара */

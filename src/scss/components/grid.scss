@@ -1,0 +1,116 @@
+:root {
+  --count-column: 24;
+  --order-columns: 7;
+
+  --main-columns: calc(var(--count-column) - var(--order-columns));
+
+  --big-column-start: calc((var(--count-column) - var(--order-columns)) + 1);
+
+  --big-column-size: var(--big-column-start) / span var(--order-columns);
+
+  --full-row: 1 / span var(--count-column);
+  --grid-content: 1 / span var(--main-columns);
+}
+
+/* Сетка */
+.main-grid {
+  inline-size: 100%;
+  max-inline-size: var(--max-size-grid);
+  min-inline-size: var(--min-size-grid);
+  margin: 0 auto;
+  // Фикс для фиксированной панели снизу на маленьких экранах
+  padding-block-end: 76.8px;
+
+  display: grid;
+  grid-template-columns: 100%;
+
+  .main-grid__header {
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--g-4);
+    padding: 0 var(--g-4);
+
+    .header__content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--g-4);
+
+      .header__title {
+        font-size: var(--h1-size);
+        font-weight: var(--title-weight);
+      }
+
+      .header__panel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: var(--text-small);
+        font-weight: var(--Light);
+        color: var(--secondary-text-color);
+      }
+    }
+
+    .thumb-img {
+      border-radius: var(--thumb-border-radius);
+      inline-size: calc(100% + var(--g-8));
+      margin-inline-start: calc(var(--g-4) * -1);
+    }
+  }
+
+  .main-grid__big-column {
+    order: 1;
+  }
+
+  .main-grid__content {
+    order: 2;
+  }
+}
+
+@media (width >=768px) {
+  .main-grid {
+    // Фикс для фиксированной панели снизу на маленьких экранах
+    padding-block-end: 0;
+  }
+}
+
+@media (width >=1366px) {
+  .main-grid {
+    padding: 0 var(--g-8);
+    grid-template-columns: repeat(var(--count-column), 1fr);
+
+    .main-grid__header {
+      grid-column: var(--full-row);
+      padding: 0;
+
+      .header__content {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .header__panel {
+          flex-direction: column;
+          align-items: flex-end;
+          gap: var(--g-1);
+        }
+      }
+
+      .thumb-img {
+        inline-size: 100%;
+        margin: 0;
+        object-fit: cover;
+      }
+    }
+
+    .main-grid__big-column {
+      grid-column: var(--big-column-size);
+      grid-row: 2 / 4;
+    }
+
+    .main-grid__content {
+      grid-column: var(--grid-content);
+      padding-inline-end: var(--g-4);
+    }
+  }
+}
+
+/* END Сетка */

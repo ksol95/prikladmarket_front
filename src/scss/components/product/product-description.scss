@@ -1,0 +1,27 @@
+:root {
+  --product-description-padding: var(--g-8) var(--g-4);
+  --product-description-gap: var(--g-2);
+}
+
+/* Блок подробного описания продукта */
+.product-description {
+  display: flex;
+  flex-direction: column;
+  gap: var(--product-description-gap);
+  padding: var(--product-description-padding);
+}
+
+@media (width >=768px) {
+  :root {
+    --product-description-padding: var(--g-4) var(--g-4);
+    --product-description-gap: var(--g-4);
+  }
+}
+@media (width >= 1366px) {
+  :root {
+    --product-description-padding: var(--g-4) 0;
+    --product-description-gap: var(--g-4);
+  }
+}
+
+/* END Блок подробного описания продукта */

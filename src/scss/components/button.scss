@@ -1,13 +1,48 @@
-.btn {
+:root {
+  --btn-primary-bg: var(--primary);
+  --btn-primary-text: #fff;
+
+  --btn-default-bg: var(--default);
+  --btn-default-text: var(--primary);
+
+  --btn-link-bg: transperent;
+  --btn-link-text: var(--secondary-text-color);
+}
+.button {
+  appearance: none;
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  padding: var(--g-2) var(--g-4);
+
+  background-color: transparent;
+  color: var(--text-color);
+
+  border-radius: var(--br-8);
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 
+  font-weight: 500;
+  font-size: 0.8573em;
+
   &:hover {
-    background-color: #0056b3;
+    background-color: transparent;
+  }
+
+  &.button-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+  }
+  &.button-default {
+    background-color: var(--btn-default-bg);
+    color: var(--btn-default-text);
+  }
+  &.button-link {
+    background-color: var(--btn-link-bg);
+    color: var(--btn-link-text);
+    padding: 0;
+    border-radius: 0;
+    line-height: inherit;
+    &.more::before {
+      content: "...";
+    }
   }
 }
