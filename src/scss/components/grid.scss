@@ -1,15 +1,15 @@
 :root {
-  --count-column: 24;
-  --order-columns: 7;
+  --grid-columns: 24;
+  --bar-column: 7;
 
-  --main-columns: calc(var(--count-column) - var(--order-columns));
+  --main-column: calc(var(--grid-columns) - var(--bar-column));
 
-  --big-column-start: calc((var(--count-column) - var(--order-columns)) + 1);
+  --bar-column-start: calc((var(--grid-columns) - var(--bar-column)) + 1);
 
-  --big-column-size: var(--big-column-start) / span var(--order-columns);
+  --bar-column-size: var(--bar-column-start) / span var(--bar-column);
 
-  --full-row: 1 / span var(--count-column);
-  --grid-content: 1 / span var(--main-columns);
+  --full-row: 1 / span var(--grid-columns);
+  --grid-content: 1 / span var(--main-column);
 }
 
 /* Сетка */
@@ -77,7 +77,7 @@
 @media (width >=1366px) {
   .main-grid {
     padding: 0 var(--g-8);
-    grid-template-columns: repeat(var(--count-column), 1fr);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
 
     .main-grid__header {
       grid-column: var(--full-row);
@@ -102,7 +102,7 @@
     }
 
     .main-grid__big-column {
-      grid-column: var(--big-column-size);
+      grid-column: var(--bar-column-size);
       grid-row: 2 / 4;
     }
 
