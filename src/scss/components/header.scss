@@ -150,7 +150,8 @@
       block-size: 2px;
       background-color: currentColor;
       border-radius: 2px;
-      transition: transform 0.4s ease-in-out;
+      transition: opacity 0.2s linear 0.25s, transform 0.3s ease-in-out;
+
       // transform-origin: center;
     }
   }
@@ -189,6 +190,7 @@
     input[type="checkbox"]:checked
     + &__menu-burger
     span:nth-child(1) {
+    transition: transform 0.3s ease-in-out 0.25s, opacity 0.2s linear;
     transform: rotate(40deg) translateY(3px) translateX(4px);
     // rotate: 40deg;
     // translate: 0px 5px;
@@ -198,6 +200,7 @@
     input[type="checkbox"]:checked
     + &__menu-burger
     span:nth-child(2) {
+    transition: transform 0.3s ease-in-out 0.25s, opacity 0.2s linear;
     opacity: 0;
   }
 
@@ -205,6 +208,7 @@
     input[type="checkbox"]:checked
     + &__menu-burger
     span:nth-child(3) {
+    transition: transform 0.3s ease-in-out 0.25s, opacity 0.2s linear;
     transform: rotate(-40deg) translateY(-5px) translateX(5px);
     // rotate: -40deg;
     // translate: 0px -7px;
