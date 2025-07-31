@@ -10,7 +10,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="light dark" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
       Ложа на винтовку Мосина, КО-44, 91-30 «Монте Карло» — фанера светлая
@@ -22,8 +22,8 @@
 
     <meta property="og:site_name" content="Приклад маркет" />
 
-    <!-- <script src="./src/js/jq.js" type="text/javascript"></script>
-    <script src="./src/js/set-theme.js" type="text/javascript"></script> -->
+    <!-- <script src="./src/js/jq.js" type="text/javascript"></script> -->
+    <script src="./src/js/set-theme.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="./src/scss/index.scss" />
     <link rel="stylesheet" href="./src/scss/pages/product.scss" />
@@ -32,20 +32,21 @@
 
   <body class="page">
     <header class="header">
-      <div class="header__logo">Приклад маркет</div>
-      <div class="header__nav">
-        <nav class="header__nav-menu">
-          <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a href="" class="header__nav-link">Блог</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="" class="header__nav-link">Каталог</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="" class="header__nav-link">Контакты</a>
-            </li>
-            <li class="header__nav-hidden-menu">
+      <div class="container">
+        <div class="header__logo">Приклад маркет</div>
+        <div class="header__nav">
+          <nav class="header__nav-menu">
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a href="" class="header__nav-link">Блог</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="" class="header__nav-link">Каталог</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="" class="header__nav-link">Контакты</a>
+              </li>
+              <!-- <li class="header__nav-hidden-menu">
               <ul class="header__nav-list">
                 <li class="header__nav-item">
                   <a href="" class="header__nav-link">Блог</a>
@@ -57,392 +58,421 @@
                   <a href="" class="header__nav-link">Контакты</a>
                 </li>
               </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header__panel">
-        <button class="button button-primary">Корзина</button>
-        <label class="header__menu-button" aria-label="Открыть меню">
-          <input type="checkbox" class="visually-hidden" />
-          <span class="header__menu-burger">
-            <span></span><span></span><span></span>
-          </span>
-        </label>
-      </div>
-    </header>
-
-    <main
-      id="product"
-      itemscope
-      itemtype="http://schema.org/Product"
-      class="main-grid"
-    >
-      <!-- Заголовок -->
-      <header class="main-grid__header">
-        <div class="header__breadcrumbs">
-          <nav class="scroll-row">
-            <ul class="breadcrumb">
-              <li class="breadcrumb__item">
-                <a href="#" class="breadcrumb__item-link"
-                  ><i class="fa fa-home"></i
-                ></a>
-              </li>
-              <li class="breadcrumb__item">
-                <a href="#" class="breadcrumb__item-link">Каталог</a>
-              </li>
-              <li class="breadcrumb__item">
-                <a href="#" class="breadcrumb__item-link">Ложи и приклады</a>
-              </li>
-              <li class="breadcrumb__item">
-                <a href="#" class="breadcrumb__item-link"
-                  >Винтовка Мосина (91-30, 91-30м, КО-44)</a
-                >
-              </li>
-              <li class="breadcrumb__item">
-                <a href="#" class="breadcrumb__item-link">«Монте-Карло»</a>
-              </li>
+            </li> -->
             </ul>
           </nav>
         </div>
-        <div class="header__content">
-          <h1 class="header__title">Ложа на винтовку Мосина «Монте Карло»</h1>
-          <div class="header__panel">
-            <p class="header__manufacturer">ООО «Бикильман»</p>
-            <p class="header__manufacturer">
-              Код товара: <span>9305990000</span>
-            </p>
-          </div>
+        <div class="header__panel">
+          <button class="button button-primary">Корзина</button>
+          <ul class="theme-menu__list">
+            <li class="theme-menu__item">
+              <button
+                type="button"
+                data-theme="dark"
+                class="theme-menu__button"
+              >
+                Темно
+              </button>
+            </li>
+            <li class="theme-menu__item">
+              <button
+                type="button"
+                data-theme="auto"
+                disabled
+                class="theme-menu__button"
+              >
+                Авто
+              </button>
+            </li>
+            <li class="theme-menu__item">
+              <button
+                type="button"
+                data-theme="light"
+                class="theme-menu__button"
+              >
+                Светло
+              </button>
+            </li>
+          </ul>
+          <label class="header__menu-button" aria-label="Открыть меню">
+            <input type="checkbox" class="visually-hidden" />
+            <span class="header__menu-burger">
+              <span></span><span></span><span></span>
+            </span>
+          </label>
         </div>
-        <img class="thumb-img" src="./src/images/Mos_3.2.png" alt="" />
-      </header>
-
-      <!-- Форма -->
-      <section class="main-grid__big-column">
-        <div
-          class="order-form"
-          itemprop="offers"
-          itemscope
-          itemtype="https://schema.org/Offer"
-        >
-          <form id="product-options" name="order" class="order-form__form">
-            <input type="hidden" name="product_id" value="53" />
-            <!-- Стоимость -->
-            <div class="order-form__attr">
-              <meta content="RUB" itemprop="priceCurrency" />
-              <meta itemprop="price" content="4 900" />
-              <p class="order-form__cash">
-                <span class="rub" itemprop="price">4 900</span>
-                <span>₽</span>
+      </div>
+    </header>
+    <div class="container">
+      <main
+        id="product"
+        itemscope
+        itemtype="http://schema.org/Product"
+        class="main-grid"
+      >
+        <!-- Заголовок -->
+        <header class="main-grid__header">
+          <div class="header__breadcrumbs">
+            <nav class="scroll-row">
+              <ul class="breadcrumb">
+                <li class="breadcrumb__item">
+                  <a href="#" class="breadcrumb__item-link"
+                    ><i class="fa fa-home"></i
+                  ></a>
+                </li>
+                <li class="breadcrumb__item">
+                  <a href="#" class="breadcrumb__item-link">Каталог</a>
+                </li>
+                <li class="breadcrumb__item">
+                  <a href="#" class="breadcrumb__item-link">Ложи и приклады</a>
+                </li>
+                <li class="breadcrumb__item">
+                  <a href="#" class="breadcrumb__item-link"
+                    >Винтовка Мосина (91-30, 91-30м, КО-44)</a
+                  >
+                </li>
+                <li class="breadcrumb__item">
+                  <a href="#" class="breadcrumb__item-link">«Монте-Карло»</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__content">
+            <h1 class="header__title">Ложа на винтовку Мосина «Монте Карло»</h1>
+            <div class="header__panel">
+              <p class="header__manufacturer">ООО «Бикильман»</p>
+              <p class="header__manufacturer">
+                Код товара: <span>9305990000</span>
               </p>
-              <p class="secondary-text">
-                Без учёта доставки. Стоимость доставки зависит от вашего города
-              </p>
             </div>
-            <!-- Опции -->
+          </div>
+          <img class="thumb-img" src="./src/images/Mos_3.2.png" alt="" />
+        </header>
 
-            <!-- тип -->
-            <div class="order-form__attr">
-              <h4 class="attr__title">Тип</h4>
-              <div class="attr__list">
-                <a href="#" class="attr-button"> Ортопедический </a>
-                <a href="#" class="attr-button not-found"> СВД </a>
-                <button class="attr-button active">Монте-Карло</button>
+        <!-- Форма -->
+        <section class="main-grid__big-column">
+          <div
+            class="order-form"
+            itemprop="offers"
+            itemscope
+            itemtype="https://schema.org/Offer"
+          >
+            <form id="product-options" name="order" class="order-form__form">
+              <input type="hidden" name="product_id" value="53" />
+              <!-- Стоимость -->
+              <div class="order-form__attr">
+                <meta content="RUB" itemprop="priceCurrency" />
+                <meta itemprop="price" content="4 900" />
+                <p class="order-form__cash">
+                  <span class="rub" itemprop="price">4 900</span>
+                  <span>₽</span>
+                </p>
+                <p class="secondary-text">Без учёта стоимости доставки</p>
               </div>
-            </div>
-            <!-- материал -->
-            <div class="order-form__attr">
-              <h4 class="attr__title">Материал</h4>
-              <div class="attr__list">
-                <a href="#" class="attr-button"> Бук </a>
-                <button class="attr-button active">Фанера</button>
+              <!-- Опции -->
+
+              <!-- тип -->
+              <div class="order-form__attr">
+                <h4 class="attr__title">Тип</h4>
+                <div class="attr__list">
+                  <a href="#" class="attr-button"> Ортопедический </a>
+                  <a href="#" class="attr-button not-found"> СВД </a>
+                  <button class="attr-button active">Монте-Карло</button>
+                </div>
               </div>
-            </div>
-            <!-- цвет -->
-            <div class="order-form__attr">
-              <h4 class="attr__title">Цвет</h4>
-              <div class="attr__list">
-                <label title="Тёмный">
-                  <a href="#" class="attr-button">
-                    <img
-                      src="./src/images/color/-color-fanera_t-100x100.jpg"
-                      alt="Тёмный"
-                      class="attr-button__img"
-                      aria-hidden="true"
+              <!-- материал -->
+              <div class="order-form__attr">
+                <h4 class="attr__title">Материал</h4>
+                <div class="attr__list">
+                  <a href="#" class="attr-button"> Бук </a>
+                  <button class="attr-button active">Фанера</button>
+                </div>
+              </div>
+              <!-- цвет -->
+              <div class="order-form__attr">
+                <h4 class="attr__title">Цвет</h4>
+                <div class="attr__list">
+                  <label title="Тёмный">
+                    <a href="#" class="attr-button">
+                      <img
+                        src="./src/images/color/-color-fanera_t-100x100.jpg"
+                        alt="Тёмный"
+                        class="attr-button__img"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </label>
+
+                  <label title="Светлый">
+                    <button class="attr-button active">
+                      <img
+                        src="./src/images/color/-color-fanera_s-100x100.jpg"
+                        alt="Светлый"
+                        class="attr-button__img"
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </label>
+
+                  <label title="Без покрытия">
+                    <a href="#" class="attr-button">
+                      <img
+                        src="./src/images/color/-color-fanera_b-100x100.jpg"
+                        alt="Без покрытия"
+                        class="attr-button__img"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </label>
+                </div>
+              </div>
+              <!-- Важные опции -->
+              <div class="order-form__attr">
+                <h4 class="attr__title">Модель ружья</h4>
+
+                <div class="attr__list">
+                  <label class="attr-button">
+                    <input
+                      type="radio"
+                      class="attr-radio__control visually-hidden"
+                      id="option[135]"
+                      name="option[278]"
+                      optionname="Модификация"
+                      optionprice="0"
+                      optionval="91-30"
+                      value="135"
+                      autocomplete="off"
+                      checked=""
                     />
-                  </a>
-                </label>
 
-                <label title="Светлый">
-                  <button class="attr-button active">
-                    <img
-                      src="./src/images/color/-color-fanera_s-100x100.jpg"
-                      alt="Светлый"
-                      class="attr-button__img"
-                      aria-hidden="true"
+                    <span>91-30</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="radio"
+                      class="attr-radio__control visually-hidden"
+                      id="option[136]"
+                      name="option[278]"
+                      optionname="Модификация"
+                      optionprice="0"
+                      optionval="91-30М"
+                      value="136"
+                      autocomplete="off"
                     />
-                  </button>
-                </label>
 
-                <label title="Без покрытия">
-                  <a href="#" class="attr-button">
-                    <img
-                      src="./src/images/color/-color-fanera_b-100x100.jpg"
-                      alt="Без покрытия"
-                      class="attr-button__img"
-                      aria-hidden="true"
+                    <span>91-30М</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="radio"
+                      class="attr-radio__control visually-hidden"
+                      id="option[137]"
+                      name="option[278]"
+                      optionname="Модификация"
+                      optionprice="0"
+                      optionval="КО-44"
+                      value="137"
+                      autocomplete="off"
                     />
-                  </a>
-                </label>
+
+                    <span>КО-44</span>
+                  </label>
+                </div>
               </div>
-            </div>
-            <!-- Важные опции -->
-            <div class="order-form__attr">
-              <h4 class="attr__title">Модель ружья</h4>
-
-              <div class="attr__list">
-                <label class="attr-button">
-                  <input
-                    type="radio"
-                    class="attr-radio__control visually-hidden"
-                    id="option[135]"
-                    name="option[278]"
-                    optionname="Модификация"
-                    optionprice="0"
-                    optionval="91-30"
-                    value="135"
-                    autocomplete="off"
-                    checked=""
-                  />
-
-                  <span>91-30</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="radio"
-                    class="attr-radio__control visually-hidden"
-                    id="option[136]"
-                    name="option[278]"
-                    optionname="Модификация"
-                    optionprice="0"
-                    optionval="91-30М"
-                    value="136"
-                    autocomplete="off"
-                  />
-
-                  <span>91-30М</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="radio"
-                    class="attr-radio__control visually-hidden"
-                    id="option[137]"
-                    name="option[278]"
-                    optionname="Модификация"
-                    optionprice="0"
-                    optionval="КО-44"
-                    value="137"
-                    autocomplete="off"
-                  />
-
-                  <span>КО-44</span>
-                </label>
+              <!-- Пояснение к выбору модели -->
+              <div class="alert alert-info alert-icon">
+                <div class="alert__content">
+                  <p>Если не уверены в выборе модели прочтите</p>
+                  <a class="agree" href="#">как выбрать модель?</a>
+                </div>
               </div>
-            </div>
-            <!-- Пояснение к выбору модели -->
-            <div class="alert alert-info alert-icon">
-              <div class="alert__content">
-                <p>Если не уверены в выборе модели прочтите</p>
-                <a class="agree" href="#">как выбрать модель?</a>
+
+              <!-- Дополнительные опции -->
+              <div class="order-form__attr">
+                <h4 class="attr__title">Выбор руки:</h4>
+                <div class="attr__list">
+                  <label
+                    class="attr-button"
+                    title="Разработан специально для использования левой рукой"
+                  >
+                    <input
+                      type="radio"
+                      class="attr-radio__control visually-hidden"
+                      id="option[222]"
+                      name="option[313]"
+                      value="222"
+                    />
+                    <span class="attr-radio__name">Для левши</span>
+                    <span class="attr-button__cash pls">300</span>
+                  </label>
+                  <label class="attr-button">
+                    <input
+                      type="radio"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                      checked=""
+                    />
+                    <span class="attr-radio__name">Для правши</span>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <!-- Дополнительные опции -->
-            <div class="order-form__attr">
-              <h4 class="attr__title">Выбор руки:</h4>
-              <div class="attr__list">
-                <label
-                  class="attr-button"
-                  title="Разработан специально для использования левой рукой"
-                >
-                  <input
-                    type="radio"
-                    class="attr-radio__control visually-hidden"
-                    id="option[222]"
-                    name="option[313]"
-                    value="222"
-                  />
-                  <span class="attr-radio__name">Для левши</span>
-                  <span class="attr-button__cash pls">300</span>
-                </label>
-                <label class="attr-button">
-                  <input
-                    type="radio"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                    checked=""
-                  />
-                  <span class="attr-radio__name">Для правши</span>
-                </label>
+              <!-- Дополнительные опции -->
+              <div class="order-form__attr">
+                <h4 class="attr__title">Дополнительные опции</h4>
+                <div class="attr__list">
+                  <label class="attr-button" title="">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[222]"
+                      name="option[313]"
+                      value="222"
+                    />
+                    <span class="attr-radio__name">Антабка</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Нагель</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+
+                  <label class="attr-button">
+                    <input
+                      type="checkbox"
+                      class="attr-radio__control visually-hidden"
+                      id="option[221]"
+                      name="option[313]"
+                      value="221"
+                    />
+                    <span class="attr-radio__name">Выдвижной грубень</span>
+                    <span class="attr-button__cash pls">600</span>
+                  </label>
+                </div>
               </div>
-            </div>
 
-            <!-- Дополнительные опции -->
-            <div class="order-form__attr">
-              <h4 class="attr__title">Дополнительные опции</h4>
-              <div class="attr__list">
-                <label class="attr-button" title="">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[222]"
-                    name="option[313]"
-                    value="222"
-                  />
-                  <span class="attr-radio__name">Антабка</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Нагель</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-
-                <label class="attr-button">
-                  <input
-                    type="checkbox"
-                    class="attr-radio__control visually-hidden"
-                    id="option[221]"
-                    name="option[313]"
-                    value="221"
-                  />
-                  <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="order-form__attr row">
-              <!-- <div class="input-group">
+              <div class="order-form__attr row">
+                <!-- <div class="input-group">
                   <span>Кол-во:</span>
                   <div class="input-number-control">
                     <button class="up">+</button>
@@ -457,17 +487,17 @@
                     <button class="down">-</button>
                   </div>
                 </div> -->
-              <div class="button-cart-panel">
-                <button
-                  type="button"
-                  id="button-cart"
-                  data-loading-text="Загрузка..."
-                  class="button"
-                >
-                  <span class="button__cash">4 900</span> Купить
-                </button>
-              </div>
-              <!-- 
+                <div class="button-cart-panel">
+                  <button
+                    type="button"
+                    id="button-cart"
+                    data-loading-text="Загрузка..."
+                    class="button"
+                  >
+                    <span class="button__cash">4 900</span> Купить
+                  </button>
+                </div>
+                <!-- 
                 <button
                   type="button"
                   id="orderForm-open"
@@ -475,459 +505,459 @@
                 >
                   Оформить заказ
                 </button> -->
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <!-- Описание продукта -->
-      <section class="main-grid__content">
-        <!-- HTML-модуль с информацией о доставке-->
-        <div class="main-grid__added" id="column-left">
-          <ul class="delivery-list">
-            <li class="delivery-list__item">
-              <h3 class="delivery-list__title">Доставка по всей России</h3>
-              <p class="delivery-list__text">
-                Стоимость доставки рассчитывается индивидуально
-              </p>
-            </li>
-            <li class="delivery-list__item">
-              <h3 class="delivery-list__title">Почта России или СДЭК</h3>
-              <p class="delivery-list__text">
-                Можем отправить посылку выгодным для вас способом
-              </p>
-            </li>
-            <li class="delivery-list__item">
-              <h3 class="delivery-list__title">Оплата при получении</h3>
-              <p class="delivery-list__text">
-                Возможность оплатить посылку при получении (взимается комиссия
-                за денежный перевод)
-              </p>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Характеристики -->
-        <div class="specifications">
-          <h2>Характеристики</h2>
-          <ul class="specifications__list">
-            <!-- все нечётные -->
-            <li class="specifications__group">
-              <div class="specifications__item">
-                <span class="specifications__property"> Материал </span>
-                <span class="specifications__value"
-                  >Влагостойкая березовая фанера (ФСФ)</span
-                >
               </div>
+            </form>
+          </div>
+        </section>
 
-              <div class="specifications__item">
-                <span class="specifications__property"> Покрытие </span>
-                <span class="specifications__value">Масло олифы, лак</span>
-              </div>
+        <!-- Описание продукта -->
+        <section class="main-grid__content">
+          <!-- HTML-модуль с информацией о доставке-->
+          <div class="main-grid__added" id="column-left">
+            <ul class="delivery-list">
+              <li class="delivery-list__item">
+                <h3 class="delivery-list__title">Доставка по всей России</h3>
+                <p class="delivery-list__text">
+                  Стоимость доставки рассчитывается индивидуально
+                </p>
+              </li>
+              <li class="delivery-list__item">
+                <h3 class="delivery-list__title">Почта России или СДЭК</h3>
+                <p class="delivery-list__text">
+                  Можем отправить посылку выгодным для вас способом
+                </p>
+              </li>
+              <li class="delivery-list__item">
+                <h3 class="delivery-list__title">Оплата при получении</h3>
+                <p class="delivery-list__text">
+                  Возможность оплатить посылку при получении (взимается комиссия
+                  за денежный перевод)
+                </p>
+              </li>
+            </ul>
+          </div>
 
-              <div class="specifications__item">
-                <span class="specifications__property">
-                  Длина приклада
-                  <span class="specifications__hint">
-                    Длина от тыльной части до спускового крючка
+          <!-- Характеристики -->
+          <div class="specifications">
+            <h2>Характеристики</h2>
+            <ul class="specifications__list">
+              <!-- все нечётные -->
+              <li class="specifications__group">
+                <div class="specifications__item">
+                  <span class="specifications__property"> Материал </span>
+                  <span class="specifications__value"
+                    >Влагостойкая березовая фанера (ФСФ)</span
+                  >
+                </div>
+
+                <div class="specifications__item">
+                  <span class="specifications__property"> Покрытие </span>
+                  <span class="specifications__value">Масло олифы, лак</span>
+                </div>
+
+                <div class="specifications__item">
+                  <span class="specifications__property">
+                    Длина приклада
+                    <span class="specifications__hint">
+                      Длина от тыльной части до спускового крючка
+                    </span>
                   </span>
-                </span>
-                <span class="specifications__value">35см </span>
-              </div>
-            </li>
-            <!-- все чётные -->
-            <li class="specifications__group">
-              <div class="specifications__item">
-                <span class="specifications__property"> Проверено на </span>
-                <span class="specifications__value"
-                  >91-30 (MP-143), 91-30М (ВПО-220), КО-44</span
-                >
-              </div>
+                  <span class="specifications__value">35см </span>
+                </div>
+              </li>
+              <!-- все чётные -->
+              <li class="specifications__group">
+                <div class="specifications__item">
+                  <span class="specifications__property"> Проверено на </span>
+                  <span class="specifications__value"
+                    >91-30 (MP-143), 91-30М (ВПО-220), КО-44</span
+                  >
+                </div>
 
-              <div class="specifications__item">
-                <span class="specifications__property"> Размер </span>
-                <span class="specifications__value">~ 80 см</span>
-              </div>
+                <div class="specifications__item">
+                  <span class="specifications__property"> Размер </span>
+                  <span class="specifications__value">~ 80 см</span>
+                </div>
 
-              <div class="specifications__item">
-                <span class="specifications__property"> Вес </span>
-                <span class="specifications__value">~ 1.2 кг</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Галерея с описанием -->
-        <section class="product-images">
-          <ul class="product-images__list">
-            <li class="product-images__item">
-              <div class="product-images__description">
-                <h2>Оставляем больше дерева для точной подсадки</h2>
-                <p>
-                  Используем высококачественную березовую фанеру с высоким
-                  классом влагостойкости (ФСФ). Ложа получается крепкой и
-                  защищённой от неблагоприятной внешней среды
-                </p>
-              </div>
-              <div class="product-images__image-block">
-                <img
-                  class="product-images__image"
-                  src="./src/images/product-images__image.png"
-                  alt="img"
-                />
-              </div>
-            </li>
-            <li class="product-images__item">
-              <div class="product-images__description">
-                <h2>Закажите в цвете или без покрытия</h2>
-                <p>
-                  Ложа покрывается маслом олифы или пропиткой цвета «Палисандр».
-                  Финальное покрытие производится лаком, дополнительно
-                  защищающим ложу
-                </p>
-              </div>
-              <div class="product-images__image-block">
-                <img
-                  class="product-images__image"
-                  src="./src/images/product-images__image.png"
-                  alt="img"
-                />
-              </div>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Текстовое описание -->
-        <section class="product-description">
-          <h2>Описание</h2>
-
-          <p>
-            Ложа на винтовку Мосина, КО-44, 91-30, 91-30М в исполнении
-            «Монте-Карло» имеет классический внешний вид, в области приклада
-            находится выступ под щеку стрелка. Приклад оснащен прорезиненным
-            затыльником-амортизатором с пластиковой прокладкой защищающей ложу.
-            Расстояние от тыльной части приклада до спускового крючка подобрано
-            таким образом, что бы обеспечить максимальный комфорт.
-          </p>
-          <p>
-            Для изготовления ложи «Монте-Карло» используется высококачественная
-            березовая фанера с высоким классом влагостойкости (ФСФ). Таким
-            образом ложа получается крепкой и защищённой от неблагоприятной
-            внешней среды.
-          </p>
-          <p>
-            Далее ложа покрывается маслом олифы или пропиткой цвета «Палисандр»,
-            в зависимости от выбранного варианта. Финальное покрытие
-            производится лаком, дополнительно защищающим ложу.
-          </p>
-
-          <p>
-            При производстве ложа специально оставляется немного больше дерева
-            для того, что бы избежать люфта железа в дальнейшем.
-          </p>
-
-          <div class="alert alert-warning alert-icon">
-            <div class="alert__content">
-              <p>
-                <span class="bold-text">Внимание!</span>
-                Любая ложа требует индивидуальной осадки. При производстве
-                специально оставляются допуски для возможности подгонки ложи.
-              </p>
-              <a class="agree" href="/osadka-lozha_prikladmarket">
-                Подробнее об осадке ложи
-              </a>
-            </div>
+                <div class="specifications__item">
+                  <span class="specifications__property"> Вес </span>
+                  <span class="specifications__value">~ 1.2 кг</span>
+                </div>
+              </li>
+            </ul>
           </div>
-        </section>
 
-        <!-- Отзывы -->
-        <section class="product-reviews">
-          <h2>Отзывы покупателей</h2>
-          <div class="product-reviews__list">
-            <div class="product-reviews__item">
-              <div class="product-reviews__head">
-                <div class="product-reviews__title">
-                  <h3>Сергей</h3>
-                  <time datetime="2021-10-12">17.06.2018</time>
+          <!-- Галерея с описанием -->
+          <section class="product-images">
+            <ul class="product-images__list">
+              <li class="product-images__item">
+                <div class="product-images__description">
+                  <h2>Оставляем больше дерева для точной подсадки</h2>
+                  <p>
+                    Используем высококачественную березовую фанеру с высоким
+                    классом влагостойкости (ФСФ). Ложа получается крепкой и
+                    защищённой от неблагоприятной внешней среды
+                  </p>
                 </div>
-                <div
-                  class="rating"
-                  itemprop="aggregateRating"
-                  itemscope=""
-                  itemtype="http://schema.org/AggregateRating"
-                >
-                  1 2 3 4 5
+                <div class="product-images__image-block">
+                  <img
+                    class="product-images__image"
+                    src="./src/images/product-images__image.png"
+                    alt="img"
+                  />
                 </div>
-              </div>
-              <div class="product-reviews__body">
+              </li>
+              <li class="product-images__item">
+                <div class="product-images__description">
+                  <h2>Закажите в цвете или без покрытия</h2>
+                  <p>
+                    Ложа покрывается маслом олифы или пропиткой цвета
+                    «Палисандр». Финальное покрытие производится лаком,
+                    дополнительно защищающим ложу
+                  </p>
+                </div>
+                <div class="product-images__image-block">
+                  <img
+                    class="product-images__image"
+                    src="./src/images/product-images__image.png"
+                    alt="img"
+                  />
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Текстовое описание -->
+          <section class="product-description">
+            <h2>Описание</h2>
+
+            <p>
+              Ложа на винтовку Мосина, КО-44, 91-30, 91-30М в исполнении
+              «Монте-Карло» имеет классический внешний вид, в области приклада
+              находится выступ под щеку стрелка. Приклад оснащен прорезиненным
+              затыльником-амортизатором с пластиковой прокладкой защищающей
+              ложу. Расстояние от тыльной части приклада до спускового крючка
+              подобрано таким образом, что бы обеспечить максимальный комфорт.
+            </p>
+            <p>
+              Для изготовления ложи «Монте-Карло» используется
+              высококачественная березовая фанера с высоким классом
+              влагостойкости (ФСФ). Таким образом ложа получается крепкой и
+              защищённой от неблагоприятной внешней среды.
+            </p>
+            <p>
+              Далее ложа покрывается маслом олифы или пропиткой цвета
+              «Палисандр», в зависимости от выбранного варианта. Финальное
+              покрытие производится лаком, дополнительно защищающим ложу.
+            </p>
+
+            <p>
+              При производстве ложа специально оставляется немного больше дерева
+              для того, что бы избежать люфта железа в дальнейшем.
+            </p>
+
+            <div class="alert alert-warning alert-icon">
+              <div class="alert__content">
                 <p>
-                  Заказал ложе скс,пришел заказ вовремя. Сегодня установил на
-                  карабин. Доволен. Спасибо.
+                  <span class="bold-text">Внимание!</span>
+                  Любая ложа требует индивидуальной осадки. При производстве
+                  специально оставляются допуски для возможности подгонки ложи.
                 </p>
-                <button class="button button-link more">ещё</button>
+                <a class="agree" href="/osadka-lozha_prikladmarket">
+                  Подробнее об осадке ложи
+                </a>
               </div>
             </div>
+          </section>
 
-            <div class="product-reviews__item">
-              <div class="product-reviews__head">
-                <div class="product-reviews__title">
-                  <h3>Сергей</h3>
-                  <time datetime="2021-10-12">17.06.2018</time>
+          <!-- Отзывы -->
+          <section class="product-reviews">
+            <h2>Отзывы покупателей</h2>
+            <div class="product-reviews__list">
+              <div class="product-reviews__item">
+                <div class="product-reviews__head">
+                  <div class="product-reviews__title">
+                    <h3>Сергей</h3>
+                    <time datetime="2021-10-12">17.06.2018</time>
+                  </div>
+                  <div
+                    class="rating"
+                    itemprop="aggregateRating"
+                    itemscope=""
+                    itemtype="http://schema.org/AggregateRating"
+                  >
+                    1 2 3 4 5
+                  </div>
                 </div>
-                <div
-                  class="rating"
-                  itemprop="aggregateRating"
-                  itemscope=""
-                  itemtype="http://schema.org/AggregateRating"
-                >
-                  1 2 3 4 5
+                <div class="product-reviews__body">
+                  <p>
+                    Заказал ложе скс,пришел заказ вовремя. Сегодня установил на
+                    карабин. Доволен. Спасибо.
+                  </p>
+                  <button class="button button-link more">ещё</button>
                 </div>
               </div>
-              <div class="product-reviews__body">
-                <p>
-                  Заказал ложе скс,пришел заказ вовремя. Сегодня установил на
-                  карабин. Доволен. Спасибо.
-                </p>
-                <button class="button button-link more">ещё</button>
-              </div>
-            </div>
 
-            <div class="product-reviews__controls">
-              <button class="button button-primary">Написать отзыв</button>
-              <button class="button button-default">Показать все</button>
+              <div class="product-reviews__item">
+                <div class="product-reviews__head">
+                  <div class="product-reviews__title">
+                    <h3>Сергей</h3>
+                    <time datetime="2021-10-12">17.06.2018</time>
+                  </div>
+                  <div
+                    class="rating"
+                    itemprop="aggregateRating"
+                    itemscope=""
+                    itemtype="http://schema.org/AggregateRating"
+                  >
+                    1 2 3 4 5
+                  </div>
+                </div>
+                <div class="product-reviews__body">
+                  <p>
+                    Заказал ложе скс,пришел заказ вовремя. Сегодня установил на
+                    карабин. Доволен. Спасибо.
+                  </p>
+                  <button class="button button-link more">ещё</button>
+                </div>
+              </div>
+
+              <div class="product-reviews__controls">
+                <button class="button button-primary">Написать отзыв</button>
+                <button class="button button-default">Показать все</button>
+              </div>
             </div>
-          </div>
+          </section>
+
+          <section class="related">
+            <h2>Рекомендуем к просмотру</h2>
+            <div class="related__list nowrap">
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+              <article class="related__card">
+                <div class="related__image-container">
+                  <img
+                    src="./src/images/related-img-rotate.png"
+                    alt=""
+                    class="related__image"
+                  />
+                </div>
+                <div class="related__content">
+                  <p class="related__cash">
+                    от <span class="related__cash-value">3600</span>
+                  </p>
+                  <h4 class="related__title">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+                  <p class="rating rating-mini">
+                    <span class="raring__icon"></span>
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">5 оценок</span>
+                  </p>
+                </div>
+              </article>
+            </div>
+          </section>
         </section>
 
-        <section class="related">
-          <h2>Рекомендуем к просмотру</h2>
-          <div class="related__list nowrap">
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-            <article class="related__card">
-              <div class="related__image-container">
-                <img
-                  src="./src/images/related-img-rotate.png"
-                  alt=""
-                  class="related__image"
-                />
-              </div>
-              <div class="related__content">
-                <p class="related__cash">
-                  от <span class="related__cash-value">3600</span>
-                </p>
-                <h4 class="related__title">
-                  Ланкастер — «Эргономичный» / «Ортопедический»
-                </h4>
-                <p class="rating rating-mini">
-                  <span class="raring__icon"></span>
-                  <span class="rating__score">4,7</span>
-                  <span class="rating__count">5 оценок</span>
-                </p>
-              </div>
-            </article>
-          </div>
-        </section>
-      </section>
-
-      <!-- Рекомендуемые товары версия со скроллом > 4 -->
-      <!-- <section
+        <!-- Рекомендуемые товары версия со скроллом > 4 -->
+        <!-- <section
           class="main-grid__related-products content bg-main radius-sm"
           id="related_products"
         >
@@ -1265,8 +1295,8 @@
           </div>
         </section> -->
 
-      <!-- Рекомендуемые товары без скролла (до 4ех) -->
-      <!-- <section
+        <!-- Рекомендуемые товары без скролла (до 4ех) -->
+        <!-- <section
           class="main-grid__related-products content bg-main raduis-sm"
           id="related_products_v2"
         >
@@ -1493,9 +1523,11 @@
             </article>
           </div>
         </section> -->
-    </main>
-
-    <footer class="footer"></footer>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
     <!-- 
     <div id="modal-agree" class="modal in" style="display: block">
       <div class="modal-dialog">

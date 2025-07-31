@@ -1,6 +1,6 @@
 :root {
-  --grid-columns: 24;
-  --bar-column: 7;
+  --grid-columns: 1;
+  --bar-column: 0;
 
   --main-column: calc(var(--grid-columns) - var(--bar-column));
 
@@ -12,14 +12,25 @@
   --grid-content: 1 / span var(--main-column);
 }
 
+@media (width >=1366px) {
+  :root {
+    --grid-columns: 24;
+    --bar-column: 7;
+  }
+}
+@media (width >=768px) {
+  :root {
+    --grid-columns: 12;
+    --bar-column: 4;
+  }
+}
+
 /* Сетка */
 .main-grid {
   inline-size: 100%;
-  max-inline-size: var(--max-size-grid);
-  min-inline-size: var(--min-size-grid);
   margin: 0 auto;
   // Фикс для фиксированной панели снизу на маленьких экранах
-  padding-block-end: 76.8px;
+  // padding-block-end: 76.8px;
 
   display: grid;
   grid-template-columns: 100%;
@@ -76,7 +87,7 @@
 
 @media (width >=1366px) {
   .main-grid {
-    padding: 0 var(--g-8);
+    // padding: 0 var(--g-8);
     grid-template-columns: repeat(var(--grid-columns), 1fr);
 
     .main-grid__header {

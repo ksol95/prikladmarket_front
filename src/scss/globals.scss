@@ -86,15 +86,25 @@ a {
   background-attachment: fixed; */
 
   background-color: var(--page-bg);
-
-  min-inline-size: var(--min-size-grid);
-  // max-inline-size: var(--max-size-grid);
   min-block-size: 100dvh;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 
   overflow-x: hidden;
+}
+
+.container {
+  inline-size: 100%;
+  max-inline-size: var(--max-size-grid);
+  min-inline-size: var(--min-size-grid);
+  padding: var(--container-padding);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .scroll-row {

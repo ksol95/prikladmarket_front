@@ -1,7 +1,6 @@
 :root {
-  --header-padding: var(--g-6) var(--g-4);
+  --header-padding: var(--block-padding);
   --header-margin-bottom: var(--g-6);
-
   --header-nav-overlay-bg: var(--overlay-bg);
   --header-nav-overlay-position: absolute;
   --header-menu-block-size: 0;
@@ -16,23 +15,26 @@
   --header-nav-link-underline-offset: 0.5ch;
   --header-nav-list-items-position: start;
 
-  --header-bg: #fff;
+  --header-bg: var(--main-bg);
   --header-text-color: var(--main-text-color);
 
   --header-burger-display: flex;
 }
 
 .header {
+  position: relative;
+  inline-size: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   padding: var(--header-padding);
   margin-block-end: var(--header-margin-bottom);
-  position: relative;
   background-color: var(--header-bg);
   color: var(--header-text-color);
+
+  & .container {
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &__logo {
     text-transform: lowercase;
@@ -50,8 +52,7 @@
     //   inset: 0;
     //   top: 100%;
     //   inline-size: 100%;
-
-    //   height: var(--header-nav-overlay-height);
+    //   block-size: var(--header-nav-overlay-height);
     //   z-index: 1;
     //   background-color: var(--header-nav-overlay-bg);
     // }
@@ -177,7 +178,7 @@
     top: 100%;
     inline-size: 100%;
 
-    height: var(--header-nav-overlay-height);
+    block-size: var(--header-nav-overlay-height);
     z-index: 1;
     background-color: var(--header-nav-overlay-bg);
 

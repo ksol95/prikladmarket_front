@@ -2,8 +2,8 @@
   --panel-gap: var(--g-1);
   --panel-padding: var(--g-4);
   --panel-direction: column;
-  --delivery-info-color: var(--info);
-  --delivery-info-color-2: #cef5f0;
+  --delivery-info-bg-1: var(--info);
+  --delivery-info-bg-2: var(--info-2);
   --delivery-list-margin: var(--g-1) 0 0;
   --delivery-list-padding: 0;
 }
@@ -25,11 +25,11 @@
     flex: 1 0 0;
 
     &:nth-child(even) {
-      background-color: var(--delivery-info-color-2);
+      background-color: var(--delivery-info-bg-2);
     }
 
     &:nth-child(odd) {
-      background-color: var(--delivery-info-color);
+      background-color: var(--delivery-info-bg-1);
     }
 
     .delivery-list__title {

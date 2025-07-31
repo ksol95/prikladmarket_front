@@ -7,21 +7,15 @@
   --order-form-top-offset: -24px;
   --order-form-padding: var(--g-6) var(--g-4);
 
-  --attr-bg: #fff;
-  --attr-color: #2c2c2c;
-  --attr-bg-active: #ead7ca;
-  --attr-color-active: #2c2c2c;
   --attr-border-radius: var(--br-3);
   --attr-padding: var(--g-1) var(--g-3);
   --attr-list-gap: var(--g-1);
 
-  --attr-img-active-bg: #b5937b;
   --attr-img-size: 70px;
   --attr-img-border-radius: var(--br-4);
   --attr-hover-shadow: 0px 0px 4px 1px var(--attr-bg-active);
-  --button-cart-color: #fff;
 
-  --button-cart-bg: #eb9b3d;
+  --button-cart-bg: var(--success);
   --button-cart-color: #fff;
   --button-cart-padding: var(--g-3);
   --button-cart-radius: var(--br-4);
@@ -30,8 +24,8 @@
 
   --cart-panel-position: fixed;
   --cart-panel-padding: var(--g-4);
-  --cart-panel-bg: #fffcf6;
-  --cart-panel-shadow: 0 0 4px 0 rgba(183, 156, 137, 0.5);
+  --cart-panel-bg: var(--accent-bg);
+  --cart-panel-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .order-form {
@@ -236,8 +230,8 @@
     --order-form-top-offset: -108px;
     --order-form-padding: var(--g-8) var(--g-6);
 
-    --button-cart-color: #21201f;
-    --button-cart-bg: #fce000;
+    --button-cart-color: var(--contrast-text-color);
+    --button-cart-bg: var(--success);
     --button-cart-padding: var(--g-5) var(--g-6);
     --button-cart-radius: var(--br-4);
     --button-cart-fs: 1.2857em;
@@ -257,7 +251,7 @@
     // top: 0;
 
     // Фиксируем максимальную высоту формы
-    max-height: calc(100vh - var(--g-8));
+    max-block-size: calc(100vh - var(--g-8));
     overflow-y: scroll;
     overflow-x: hidden;
     /* Скрываем скроллбар для IE/Edge */
