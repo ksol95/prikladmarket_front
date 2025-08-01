@@ -135,6 +135,7 @@
   &__panel {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: var(--g-2);
   }
   &__menu-button {
