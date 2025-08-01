@@ -5,10 +5,8 @@
   --related-gap: var(--g-6);
   --related-card-gap: var(--g-4);
   --related-img-br: var(--br-2);
-
   --related-card-xs-width: 134px;
   --related-card-sm-width: 143px;
-
   --related-card-width: var(--related-card-xs-width);
 }
 
@@ -19,13 +17,11 @@
   padding: var(--related-padding);
   background-color: var(--related-bg);
   border-radius: var(--related-border-radius);
-
   &__list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--related-card-gap);
-
     &.nowrap {
       flex-wrap: nowrap;
       overflow-x: scroll;
@@ -35,20 +31,16 @@
     }
   }
   &__card {
-    flex: 1 0 var(--related-card-width); //Ширина карточки
-
+    flex: 0 0 var(--related-card-width); //Ширина карточки
     overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: var(--g-4);
-
     cursor: pointer;
   }
-
   &__image-container {
     overflow: hidden;
   }
-
   &__cash {
     &-value {
       font-size: var(--h2-size);
@@ -58,14 +50,12 @@
       content: var(--currence-char);
     }
   }
-
   &__image {
     block-size: 100%;
     inline-size: 100%;
     object-fit: cover;
     border-radius: var(--related-img-br);
   }
-
   &__content {
     display: flex;
     flex-direction: column;

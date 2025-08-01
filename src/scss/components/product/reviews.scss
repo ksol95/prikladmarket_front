@@ -10,7 +10,6 @@
   flex-direction: var(--reviews-direction);
   justify-content: space-between;
   gap: var(--reviews-gap);
-
   &__list {
     display: flex;
     flex-direction: column;
@@ -21,30 +20,29 @@
     flex-direction: column;
     gap: var(--g-3);
   }
-
   &__head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
   }
-
   &__title {
     display: flex;
     flex-direction: column;
     gap: var(--g-1);
-
     h3 {
       font-weight: var(--SemiBold);
     }
-
     time {
       color: var(--secondary-text-color);
     }
   }
   &__body {
     line-height: 1.57;
+    & .button-link {
+      color: var(--secondary-text-color);
+    }
   }
-
   &__controls {
     display: flex;
     flex-direction: row;
