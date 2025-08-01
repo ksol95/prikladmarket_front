@@ -39,6 +39,7 @@ h1 {
 }
 
 h2 {
+  font-weight: var(--SemiBold);
   font-size: var(--h2-size);
 }
 
@@ -103,7 +104,7 @@ body.scrollBlock {
 .container {
   inline-size: 100%;
   max-inline-size: var(--max-size-grid);
-  min-inline-size: var(--min-size-grid);
+  min-inline-size: calc(var(--min-size-grid) - var(--g-4) * 2);
   padding: var(--container-padding);
   display: flex;
   flex-direction: row;

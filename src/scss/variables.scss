@@ -28,11 +28,9 @@
   --br-9: calc(var(--br) * 9);
   /*40px*/
   --br-10: calc(var(--br) * 10);
-
   --thumb-border-radius: var(--br-5);
   --block-border-radius: var(--br-4);
   --panel-radius: var(--br-6);
-
   /* ////////ТЕКСТ///////// */
   --main-font: "RobotoFlex";
   --font-size: 14px;
@@ -40,21 +38,17 @@
   /* --font-size: clamp(0.875rem, 0.8371rem + 0.1894vw, 1rem); */
   --text-small: 0.9em;
   --text-big: 1.1em;
-
   --Bold: 700;
   --SemiBold: 600;
   --Light: 300;
   --Regular: 400;
-
   --text-row-gap: 0.5714285em;
   --simple-text-weight: var(--Regular);
   --title-weight: var(--SemiBold);
-
   --h1-size: 1.42857em;
   --h2-size: 1.42857em;
   --h3-size: 1em;
   --h4-size: 0.857em;
-
   /* ////////ОТСТУП///////// */
   --g-1: 4px;
   /*8px*/
@@ -75,7 +69,6 @@
   --g-9: calc(var(--g-1) * 9);
   /*40px*/
   --g-10: calc(var(--g-1) * 10);
-
   --container-padding: 0;
   --block-padding: var(--g-6) var(--g-4);
 }
@@ -88,7 +81,7 @@
   }
 }
 
-@media (width >= 1366px) {
+@media (width >=1366px) {
   :root {
     --container-padding: 0 var(--g-8);
     --block-padding: var(--g-6) 0;
