@@ -22,7 +22,7 @@
   --page-bg: #0d1117;
   --main-bg: #272f3c;
   --accent-bg: #272f3c;
-  --accent-text-color: #e2c08d;
+  --accent-text-color: var(--success);
   --link-color: #58a6f0;
   --overlay-bg: rgb(0 0 0 / 0.5);
 
@@ -53,7 +53,7 @@
     --page-bg: #0d1117;
     --main-bg: #272f3c;
     --accent-bg: #272f3c;
-    --accent-text-color: #e2c08d;
+    --accent-text-color: var(--success);
     --link-color: #58a6f0;
     --overlay-bg: rgb(0 0 0 / 0.5);
 

@@ -1,12 +1,12 @@
 :root {
   --btn-primary-bg: var(--primary);
-  --btn-primary-text: #fff;
+  --btn-primary-text: var(--contrast-text-color);
 
   --btn-default-bg: var(--default);
   --btn-default-text: var(--primary);
 
   --btn-link-bg: transperent;
-  --btn-link-text: var(--secondary-text-color);
+  --btn-link-text: var(--link-color);
 }
 .button {
   appearance: none;

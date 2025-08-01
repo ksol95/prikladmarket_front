@@ -64,42 +64,30 @@
         </div>
         <div class="header__panel">
           <button class="button button-primary">Корзина</button>
-          <ul class="theme-menu__list">
-            <li class="theme-menu__item">
-              <button
-                type="button"
-                data-theme="dark"
-                class="theme-menu__button"
-              >
-                Темно
-              </button>
-            </li>
-            <li class="theme-menu__item">
-              <button
-                type="button"
-                data-theme="auto"
-                disabled
-                class="theme-menu__button"
-              >
-                Авто
-              </button>
-            </li>
-            <li class="theme-menu__item">
-              <button
-                type="button"
-                data-theme="light"
-                class="theme-menu__button"
-              >
-                Светло
-              </button>
-            </li>
-          </ul>
           <label class="header__menu-button" aria-label="Открыть меню">
             <input type="checkbox" class="visually-hidden" />
             <span class="header__menu-burger">
               <span></span><span></span><span></span>
             </span>
           </label>
+          <div class="theme-menu">
+            <ul class="theme-menu__list">
+              <li class="theme-menu__item">
+                <button
+                  type="button"
+                  data-theme="dark"
+                  class="theme-menu__button"
+                ></button>
+              </li>
+              <li class="theme-menu__item">
+                <button
+                  type="button"
+                  data-theme="light"
+                  class="theme-menu__button"
+                ></button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
