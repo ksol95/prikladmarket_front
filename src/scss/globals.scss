@@ -6,6 +6,7 @@
 }
 
 /* Лечим рекламу оператора */
+
 div:not([class]),
 iframe:not([class]) {
   display: none;
@@ -74,6 +75,11 @@ a {
   text-decoration: none;
 }
 
+body.scrollBlock {
+  overflow: hidden;
+  // position: fixed;
+}
+
 .page {
   color: var(--main-text-color);
   font-family: var(--main-font), sans-serif;
@@ -84,16 +90,13 @@ a {
   background-image: var(--gradient);
   background-size: cover;
   background-attachment: fixed; */
-
   background-color: var(--page-bg);
   min-block-size: 100dvh;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-
   overflow-x: hidden;
 }
 
@@ -151,40 +154,17 @@ a {
   font-weight: var(--title-weight);
 }
 
-/* Всплывающая корзина */
-.cart-panel {
-  display: none;
-  position: fixed;
-  inset: auto 0 0 auto;
-  z-index: 11;
-  background-color: var(--bg-main-color);
-  border-inline-start: 1px solid var(--accent-bg-color);
-  border-block-end: 1px solid var(--accent-bg-color);
-  color: currentColor;
+.hidden-xs {
+  display: none !important;
 }
 
-.cart-panel__header {
-  background-color: var(--accent-bg-color);
-  color: var(--accent-bg-text-color);
-  padding: var(--g-4);
+@media (min-width: 768px) {
+  .hidden-xs {
+    display: flex !important;
+    flex-direction: inherit;
+    flex-wrap: inherit;
+    align-content: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+  }
 }
-
-.cart-panel__list {
-  overflow-y: scroll;
-  max-block-size: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--g-4);
-  padding: var(--g-4);
-}
-
-.cart-panel__footer {
-  background-color: var(--accent-bg-color);
-  color: var(--accent-bg-text-color);
-  padding: var(--g-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--g-4);
-}
-
-/* END Всплывающая корзина */

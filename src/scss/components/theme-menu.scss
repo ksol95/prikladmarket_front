@@ -14,11 +14,11 @@
     position: relative;
     inline-size: 100%;
   }
-  &__item {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-  }
+  // &__item {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // }
   &__button {
     &:disabled {
       display: none;

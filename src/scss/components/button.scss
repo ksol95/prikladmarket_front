@@ -10,7 +10,14 @@
 }
 .button {
   appearance: none;
-  display: inline-block;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5ch;
+
   padding: var(--g-2) var(--g-4);
 
   background-color: transparent;
