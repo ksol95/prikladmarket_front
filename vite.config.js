@@ -52,7 +52,7 @@ export default defineConfig({
           } else {
             extType = "misc"; // Для других ресурсов
           }
-          return `assets/${extType}/[name].[ext]`;
+          return `assets/${extType}/[name]_[hash].[ext]`;
         },
       },
     },
