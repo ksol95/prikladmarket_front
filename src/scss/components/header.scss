@@ -5,7 +5,7 @@
   --header-nav-overlay-position: absolute;
   --header-menu-block-size: 0;
   --header-menu-max-block-size-mobile: 50dvh;
-  --header-nav-overlay-height: 100dvh;
+  --header-nav-overlay-height: 0;
   --header-nav-btn-padding: var(--g-3) var(--g-3);
   --header-nav-radius: 0 0 var(--br-4) var(--br-4);
   --header-nav-list-direction: column;
@@ -17,6 +17,13 @@
   --header-text-color: var(--main-text-color);
   --header-burger-display: flex;
   --header-panel-gap: var(--g-2);
+  --header-body-block: hidden;
+  // анимации меню (для адаптива вынес в переменные)
+  --header-menu-overlay-animation-in: background-color 0.2s ease-in;
+  --header-menu-overlay-animation-out: background-color 0.2s ease-out 0.3s,
+    block-size 0.1s ease-out 0.7s;
+  --header-menu-animation-in: block-size 0.3s ease-in 0.3s;
+  --header-menu-animation-out: block-size 0.3s ease-out;
 }
 
 .header {
@@ -39,28 +46,30 @@
     letter-spacing: 0.02em;
     text-wrap: nowrap;
   }
-  // Открытие и закрытие меню через CSS
+  // Открытие меню через CSS
   &:has(&__menu-button input[type="checkbox"]:checked) &__nav {
-    --header-menu-block-size: 500px;
-    block-size: var(--header-nav-overlay-height);
-    background-color: var(--header-nav-overlay-bg);
-    transition: block-size 0.1s ease-in, background-color 0.4s ease-in 0.1s;
+    --header-nav-overlay-height: 100dvh;
+    --header-nav-overlay-bg: var(--overlay-bg);
+    transition: var(--header-menu-overlay-animation-in);
     &-menu {
-      transition: block-size 0.3s ease-in 0.5s;
+      --header-menu-block-size: 500px;
+      transition: var(--header-menu-animation-in);
     }
   }
+  // закрытие
   &:has(&__menu-button input[type="checkbox"]:not(:checked)) &__nav {
-    --header-menu-block-size: 0px;
-    transition: background-color 0.4s ease-out 0.35s,
-      block-size 0.1s ease-out 0.75s;
-    background-color: transparent;
-    block-size: 0;
+    --header-nav-overlay-height: 0;
+    --header-nav-overlay-bg: transparent;
+    transition: var(--header-menu-overlay-animation-out);
     &-menu {
-      transition: block-size 0.3s ease-out;
+      --header-menu-block-size: 0px;
+      transition: var(--header-menu-animation-out);
     }
   }
   &__nav {
     position: var(--header-nav-overlay-position);
+    block-size: var(--header-nav-overlay-height);
+    background-color: var(--header-nav-overlay-bg);
     left: 0;
     top: 100%;
     inline-size: 100%;
@@ -76,13 +85,13 @@
     // }
     &-menu {
       max-block-size: var(--header-menu-max-block-size-mobile);
-      overflow-y: scroll !important;
+      overflow-y: auto;
       background-color: var(--header-bg);
       border-radius: var(--header-nav-radius);
       block-size: var(--header-menu-block-size);
       /* Стилизация полосы прокрутки */
       &::-webkit-scrollbar {
-        width: 5px;
+        inline-size: 5px;
         /* Ширина полосы прокрутки */
       }
       &::-webkit-scrollbar-track {
@@ -226,28 +235,31 @@
 
 // Блокировка скролла при открытом меню
 body:has(.header__menu-button input[type="checkbox"]:checked) {
-  overflow: hidden;
+  overflow: var(--header-body-block);
 }
 
 @media (width >=768px) {
   :root {
-    --header-menu-block-size: auto;
     --header-nav-list-direction: row;
     --header-nav-overlay-position: static;
     --header-nav-list-items-position: center;
     --header-nav-list-gap: var(--g-2);
-    --header-nav-radius: 0;
     --header-nav-btn-padding: var(--g-1) var(--g-3);
-    --header-nav-overlay-bg: transparent;
-    --header-nav-overlay-height: auto;
     --header-burger-display: none;
+    --header-body-block: auto;
+    --header-menu-overlay-animation-in: none;
+    --header-menu-overlay-animation-out: none;
+    --header-menu-animation-in: none;
+    --header-menu-animation-out: none;
   }
   .header {
     &__logo {
       font-size: var(--h2-size);
     }
     &__nav {
+      all: unset;
       &-menu {
+        all: unset;
         display: flex;
         justify-content: center;
       }
@@ -263,9 +275,6 @@ body:has(.header__menu-button input[type="checkbox"]:checked) {
           text-decoration-color: currentColor;
         }
       }
-    }
-    &:has(&__menu-button input[type="checkbox"]:checked) &__nav {
-      --header-menu-block-size: auto;
     }
   }
 }
