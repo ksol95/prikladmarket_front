@@ -16,6 +16,7 @@
   --header-bg: var(--main-bg);
   --header-text-color: var(--main-text-color);
   --header-burger-display: flex;
+  --header-panel-gap: var(--g-2);
 }
 
 .header {
@@ -38,9 +39,28 @@
     letter-spacing: 0.02em;
     text-wrap: nowrap;
   }
+  // Открытие и закрытие меню через CSS
+  &:has(&__menu-button input[type="checkbox"]:checked) &__nav {
+    --header-menu-block-size: 500px;
+    block-size: var(--header-nav-overlay-height);
+    background-color: var(--header-nav-overlay-bg);
+    transition: block-size 0.1s ease-in, background-color 0.4s ease-in 0.1s;
+    &-menu {
+      transition: block-size 0.3s ease-in 0.5s;
+    }
+  }
+  &:has(&__menu-button input[type="checkbox"]:not(:checked)) &__nav {
+    --header-menu-block-size: 0px;
+    transition: background-color 0.4s ease-out 0.35s,
+      block-size 0.1s ease-out 0.75s;
+    background-color: transparent;
+    block-size: 0;
+    &-menu {
+      transition: block-size 0.3s ease-out;
+    }
+  }
   &__nav {
     position: var(--header-nav-overlay-position);
-    transition: background-color 0.3s ease;
     left: 0;
     top: 100%;
     inline-size: 100%;
@@ -59,8 +79,6 @@
       overflow-y: scroll !important;
       background-color: var(--header-bg);
       border-radius: var(--header-nav-radius);
-      overflow: hidden;
-      transition: block-size 0.3s ease-in-out;
       block-size: var(--header-menu-block-size);
       /* Стилизация полосы прокрутки */
       &::-webkit-scrollbar {
@@ -125,7 +143,7 @@
       color: currentColor;
       font-size: 1em;
       font-weight: var(--SemiBold);
-      line-height: 1.71;
+      line-height: 2;
       padding: var(--header-nav-btn-padding);
       text-decoration: underline;
       text-underline-offset: var(--header-nav-link-underline-offset);
@@ -136,7 +154,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--g-2);
+    gap: var(--header-panel-gap);
   }
   &__menu-button {
     display: flex;
@@ -178,20 +196,13 @@
   //   // rotate: -40deg;
   //   // translate: 0px -7px;
   // }
-  // Открытие и закрытие меню через CSS
-  &:has(&__menu-button input[type="checkbox"]:checked) &__nav {
-    --header-menu-block-size: auto;
-    position: var(--header-nav-overlay-position);
-    block-size: var(--header-nav-overlay-height);
-    background-color: var(--header-nav-overlay-bg);
-  }
   // анимация бургер-кнопки через CSS
   &__menu-button
     input[type="checkbox"]:checked
     + &__menu-burger
     span:nth-child(1) {
     transition: transform 0.3s ease-in-out 0.25s, opacity 0.2s linear;
-    transform: rotate(45deg) translateY(5px) translateX(5px);
+    transform: rotate(45deg) translateY(4px) translateX(5px);
     // rotate: 40deg;
     // translate: 0px 5px;
   }
@@ -207,23 +218,24 @@
     + &__menu-burger
     span:nth-child(3) {
     transition: transform 0.3s ease-in-out 0.25s, opacity 0.2s linear;
-    transform: rotate(-45deg) translateY(-5px) translateX(5px);
+    transform: rotate(-45deg) translateY(-4px) translateX(4px);
     // rotate: -40deg;
     // translate: 0px -7px;
   }
 }
 
-// body:has(.header__menu-button input[type="checkbox"]:checked) {
-//   overflow: hidden;
-//   // position: fixed;
-// }
+// Блокировка скролла при открытом меню
+body:has(.header__menu-button input[type="checkbox"]:checked) {
+  overflow: hidden;
+}
+
 @media (width >=768px) {
   :root {
     --header-menu-block-size: auto;
     --header-nav-list-direction: row;
     --header-nav-overlay-position: static;
     --header-nav-list-items-position: center;
-    --header-nav-list-gap: var(--g-4);
+    --header-nav-list-gap: var(--g-2);
     --header-nav-radius: 0;
     --header-nav-btn-padding: var(--g-1) var(--g-3);
     --header-nav-overlay-bg: transparent;
