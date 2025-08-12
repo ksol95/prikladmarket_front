@@ -89,9 +89,42 @@
     </header>
     <div class="container">
       <main class="main-grid">
-        <section class="main-grid__full-row">
-          <a href="http://localhost:3000/src/pages/product.html">Продукт</a>
-        </section>
+        <!-- Заголовок -->
+        <header class="main-grid__header">
+          <!-- Хлебные крошки -->
+          <div
+            class="header__breadcrumbs"
+            itemscope
+            itemtype="http://schema.org/BreadcrumbList"
+          >
+            <nav class="scroll-row">
+              <ul class="breadcrumb">
+                <li
+                  class="breadcrumb__item"
+                  itemprop="itemListElement"
+                  itemscope
+                  itemtype="http://schema.org/ListItem"
+                >
+                  <a href="/" class="breadcrumb__item-link" itemprop="item"
+                    ><span itemprop="name">Главная</span></a
+                  >
+                  <meta itemprop="position" content="1" />
+                </li>
+                <li
+                  class="breadcrumb__item"
+                  itemprop="itemListElement"
+                  itemscope
+                  itemtype="http://schema.org/ListItem"
+                >
+                  <a href="#" class="breadcrumb__item-link" itemprop="item"
+                    ><span itemprop="name">Контакты</span></a
+                  >
+                  <meta itemprop="position" content="2" />
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
       </main>
     </div>
     <footer class="footer">
