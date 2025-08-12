@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--[if IE]> <![endif]-->
+<!--[if IE 8]><html dir="ltr" lang="ru" class="ie8"><![endif]-->
+<!--[if IE 9]><html dir="ltr" lang="ru" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="ltr" lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta property="og:title" content="Каталог прикладов" />
+    <meta property="og:type" content="product" />
+    <meta
+      property="og:url"
+      content="https://yourwebsite.com/product-page-url"
+    />
+    <meta
+      property="og:image"
+      content="https://yourwebsite.com/src/images/Mos_3.2.png"
+    />
+    <meta property="og:site_name" content="Приклад маркет" />
+    <title>Каталог прикладов — Приклад маркет</title>
+    <meta name="description" content="Каталог" />
+
+
+    <link href="#" rel="canonical" />
+    <script type="module" crossorigin src="/assets/js/set-theme.k_22QkM_.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/misc/set-theme.css">
+    <link rel="stylesheet" crossorigin href="/assets/misc/catalog.css">
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <div class="container">
+        <div class="header__logo">
+          <a href="/" class="header__logo-link">Приклад маркет</a>
+        </div>
+        <div class="header__nav">
+          <nav class="header__nav-menu">
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a
+                  href="http://localhost:3000/src/pages/blog.html"
+                  class="header__nav-link"
+                  >Блог</a
+                >
+              </li>
+              <li class="header__nav-item">
+                <a
+                  href="http://localhost:3000/src/pages/catalog.html"
+                  class="header__nav-link"
+                  >Каталог</a
+                >
+              </li>
+              <li class="header__nav-item">
+                <a
+                  href="http://localhost:3000/src/pages/contacts.html"
+                  class="header__nav-link"
+                  >Контакты</a
+                >
+              </li>
+              <li class="header__nav-hidden-menu">
+                <ul class="header__nav-list">
+                  <li class="header__nav-item">
+                    <a href="" class="header__nav-link">Блог</a>
+                  </li>
+                  <li class="header__nav-item">
+                    <a href="" class="header__nav-link">Каталог</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__panel">
+          <div class="hidden-xs">
+            <button class="button button-primary">Корзина</button>
+          </div>
+          <!-- Меню в шапке -->
+          <label class="header__menu-button" aria-label="Открыть меню">
+            <input type="checkbox" class="visually-hidden" />
+            <span class="header__menu-burger">
+              <span></span><span></span><span></span>
+            </span>
+          </label>
+          <!-- Выбор темы -->
+          <div class="theme-menu">
+            <ul class="theme-menu__list">
+              <li class="theme-menu__item">
+                <button
+                  type="button"
+                  data-theme="dark"
+                  class="theme-menu__button"
+                ></button>
+              </li>
+              <li class="theme-menu__item">
+                <button
+                  type="button"
+                  data-theme="light"
+                  class="theme-menu__button"
+                ></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <main class="main-grid">
+        <!-- Заголовок -->
+        <header class="main-grid__header">
+          <!-- Хлебные крошки -->
+          <div
+            class="header__breadcrumbs"
+            itemscope
+            itemtype="http://schema.org/BreadcrumbList"
+          >
+            <nav class="scroll-row">
+              <ul class="breadcrumb">
+                <li
+                  class="breadcrumb__item"
+                  itemprop="itemListElement"
+                  itemscope
+                  itemtype="http://schema.org/ListItem"
+                >
+                  <a href="/" class="breadcrumb__item-link" itemprop="item"
+                    ><span itemprop="name">Главная</span></a
+                  >
+                  <meta itemprop="position" content="1" />
+                </li>
+                <li
+                  class="breadcrumb__item"
+                  itemprop="itemListElement"
+                  itemscope
+                  itemtype="http://schema.org/ListItem"
+                >
+                  <a href="#" class="breadcrumb__item-link" itemprop="item"
+                    ><span itemprop="name">Каталог</span></a
+                  >
+                  <meta itemprop="position" content="2" />
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__content">
+            <h1 class="header__title">Каталог - Заголовок</h1>
+          </div>
+        </header>
+
+        <!-- Форма -->
+        <section class="main-grid__big-column">
+          <div class="filter-form"></div>
+        </section>
+
+        <!-- Описание продукта -->
+        <section class="main-grid__full-row">
+          <!-- Рекомендуемые товары -->
+          <section class="related">
+            <h2>Рекомендуем к просмотру</h2>
+            <div class="related__list">
+              <!-- Рекомендуемый товар 1 -->
+              <a href="http://localhost:3000/src/pages/product.html">
+                <article
+                  class="related__card"
+                  itemprop="isRelatedTo"
+                  itemscope
+                  itemtype="http://schema.org/Product"
+                >
+                  <!-- Изображение товара -->
+                  <div class="related__image-container">
+                    <img
+                      src="/assets/images/related-img-rotate.png"
+                      alt="Ланкастер — «Эргономичный» / «Ортопедический»"
+                      class="related__image"
+                      itemprop="image"
+                    />
+                  </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="related__content">
+                    <!-- Цена -->
+                    <p class="related__cash">
+                      от
+                      <span
+                        class="related__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="3600" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="related__title" itemprop="name">
+                      Ланкастер — «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="5" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+              <!-- Рекомендуемый товар 1 -->
+              <a href="http://localhost:3000/src/pages/product.html">
+                <article
+                  class="related__card"
+                  itemprop="isRelatedTo"
+                  itemscope
+                  itemtype="http://schema.org/Product"
+                >
+                  <!-- Изображение товара -->
+                  <div class="related__image-container">
+                    <img
+                      src="/assets/images/related-img-rotate.png"
+                      alt="Ланкастер — «Эргономичный» / «Ортопедический»"
+                      class="related__image"
+                      itemprop="image"
+                    />
+                  </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="related__content">
+                    <!-- Цена -->
+                    <p class="related__cash">
+                      от
+                      <span
+                        class="related__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="3600" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="related__title" itemprop="name">
+                      Ланкастер — «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="5" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
+  </body>
+</html>
