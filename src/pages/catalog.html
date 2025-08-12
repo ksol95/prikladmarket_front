@@ -24,13 +24,13 @@
       content="https://yourwebsite.com/src/images/Mos_3.2.png"
     />
     <meta property="og:site_name" content="Приклад маркет" />
-    <title>Каталог прикладов — Приклад маркет</title>
     <meta name="description" content="Каталог" />
+    <title>Каталог прикладов — Приклад маркет</title>
 
-    <script src="../js/set-theme.js" type="module"></script>
+    <link rel="stylesheet" href="/src/scss/index.scss" />
+    <link rel="stylesheet" href="/src/scss/pages/catalog.scss" />
+    <script src="/src/js/set-theme.js" type="module"></script>
 
-    <link rel="stylesheet" href="../scss/index.scss" />
-    <link rel="stylesheet" href="../scss/pages/product.scss" />
     <link href="#" rel="canonical" />
   </head>
 
@@ -44,15 +44,23 @@
           <nav class="header__nav-menu">
             <ul class="header__nav-list">
               <li class="header__nav-item">
-                <a href="/src/pages/blog.html" class="header__nav-link">Блог</a>
+                <a
+                  href="/prikladmarket_front/src/pages/blog.html"
+                  class="header__nav-link"
+                  >Блог</a
+                >
               </li>
               <li class="header__nav-item">
-                <a href="/src/pages/catalog.html" class="header__nav-link"
+                <a
+                  href="/prikladmarket_front/src/pages/catalog.html"
+                  class="header__nav-link"
                   >Каталог</a
                 >
               </li>
               <li class="header__nav-item">
-                <a href="/src/pages/contacts.html" class="header__nav-link"
+                <a
+                  href="/prikladmarket_front/src/pages/contacts.html"
+                  class="header__nav-link"
                   >Контакты</a
                 >
               </li>
@@ -146,145 +154,146 @@
 
         <!-- Форма -->
         <section class="main-grid__big-column">
-          <div class="filter-form"></div>
+          <div class="filter-form">1 2 3</div>
         </section>
 
         <!-- Описание продукта -->
-        <section class="main-grid__full-row">
+        <section class="main-grid__content">
           <!-- Рекомендуемые товары -->
           <section class="related">
             <h2>Рекомендуем к просмотру</h2>
             <div class="related__list">
               <!-- Рекомендуемый товар 1 -->
-              <a href="/src/pages/product.html">
-                <article
-                  class="related__card"
-                  itemprop="isRelatedTo"
-                  itemscope
-                  itemtype="http://schema.org/Product"
-                >
-                  <!-- Изображение товара -->
-                  <div class="related__image-container">
-                    <img
-                      src="../images/related-img-rotate.png"
-                      alt="Ланкастер — «Эргономичный» / «Ортопедический»"
-                      class="related__image"
-                      itemprop="image"
-                    />
-                  </div>
 
-                  <!-- Информация о товаре -->
-                  <div class="related__content">
-                    <!-- Цена -->
-                    <p class="related__cash">
-                      от
-                      <span
-                        class="related__cash-value"
-                        itemprop="offers"
-                        itemscope
-                        itemtype="http://schema.org/Offer"
-                      >
-                        <meta itemprop="price" content="3600" />
-                        <meta itemprop="priceCurrency" content="RUB" />
-                        <link
-                          itemprop="availability"
-                          href="http://schema.org/InStock"
-                        />
-                        <span>3600</span>
-                      </span>
-                    </p>
+              <article
+                onclick="location.href='/prikladmarket_front/src/pages/product.html'"
+                class="related__card"
+                itemprop="isRelatedTo"
+                itemscope
+                itemtype="http://schema.org/Product"
+              >
+                <!-- Изображение товара -->
+                <div class="related__image-container">
+                  <img
+                    src="../images/related-img-rotate.png"
+                    alt="Ланкастер — «Эргономичный» / «Ортопедический»"
+                    class="related__image"
+                    itemprop="image"
+                  />
+                </div>
 
-                    <!-- Название товара -->
-                    <h4 class="related__title" itemprop="name">
-                      Ланкастер — «Эргономичный» / «Ортопедический»
-                    </h4>
-
-                    <!-- Рейтинг товара -->
-                    <div
-                      class="rating rating-mini"
-                      itemtype="http://schema.org/AggregateRating"
-                      itemprop="aggregateRating"
+                <!-- Информация о товаре -->
+                <div class="related__content">
+                  <!-- Цена -->
+                  <p class="related__cash">
+                    от
+                    <span
+                      class="related__cash-value"
+                      itemprop="offers"
                       itemscope
+                      itemtype="http://schema.org/Offer"
                     >
-                      <!-- Общий рейтинг -->
-                      <span class="rating__score" itemprop="ratingValue"
-                        >4,7</span
-                      >
+                      <meta itemprop="price" content="3600" />
+                      <meta itemprop="priceCurrency" content="RUB" />
+                      <link
+                        itemprop="availability"
+                        href="http://schema.org/InStock"
+                      />
+                      <span>3600</span>
+                    </span>
+                  </p>
 
-                      <!-- Количество оценок -->
-                      <span class="rating__count">
-                        <meta itemprop="reviewCount" content="5" />
-                        5 оценок
-                      </span>
-                    </div>
+                  <!-- Название товара -->
+                  <h4 class="related__title" itemprop="name">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+
+                  <!-- Рейтинг товара -->
+                  <div
+                    class="rating rating-mini"
+                    itemtype="http://schema.org/AggregateRating"
+                    itemprop="aggregateRating"
+                    itemscope
+                  >
+                    <!-- Общий рейтинг -->
+                    <span class="rating__score" itemprop="ratingValue"
+                      >4,7</span
+                    >
+
+                    <!-- Количество оценок -->
+                    <span class="rating__count">
+                      <meta itemprop="reviewCount" content="5" />
+                      5 оценок
+                    </span>
                   </div>
-                </article>
-              </a>
+                </div>
+              </article>
+
               <!-- Рекомендуемый товар 1 -->
-              <a href="/src/pages/product.html">
-                <article
-                  class="related__card"
-                  itemprop="isRelatedTo"
-                  itemscope
-                  itemtype="http://schema.org/Product"
-                >
-                  <!-- Изображение товара -->
-                  <div class="related__image-container">
-                    <img
-                      src="../images/related-img-rotate.png"
-                      alt="Ланкастер — «Эргономичный» / «Ортопедический»"
-                      class="related__image"
-                      itemprop="image"
-                    />
-                  </div>
 
-                  <!-- Информация о товаре -->
-                  <div class="related__content">
-                    <!-- Цена -->
-                    <p class="related__cash">
-                      от
-                      <span
-                        class="related__cash-value"
-                        itemprop="offers"
-                        itemscope
-                        itemtype="http://schema.org/Offer"
-                      >
-                        <meta itemprop="price" content="3600" />
-                        <meta itemprop="priceCurrency" content="RUB" />
-                        <link
-                          itemprop="availability"
-                          href="http://schema.org/InStock"
-                        />
-                        <span>3600</span>
-                      </span>
-                    </p>
+              <article
+                onclick="location.href='/prikladmarket_front/src/pages/product.html'"
+                class="related__card"
+                itemprop="isRelatedTo"
+                itemscope
+                itemtype="http://schema.org/Product"
+              >
+                <!-- Изображение товара -->
+                <div class="related__image-container">
+                  <img
+                    src="../images/related-img-rotate.png"
+                    alt="Ланкастер — «Эргономичный» / «Ортопедический»"
+                    class="related__image"
+                    itemprop="image"
+                  />
+                </div>
 
-                    <!-- Название товара -->
-                    <h4 class="related__title" itemprop="name">
-                      Ланкастер — «Эргономичный» / «Ортопедический»
-                    </h4>
-
-                    <!-- Рейтинг товара -->
-                    <div
-                      class="rating rating-mini"
-                      itemtype="http://schema.org/AggregateRating"
-                      itemprop="aggregateRating"
+                <!-- Информация о товаре -->
+                <div class="related__content">
+                  <!-- Цена -->
+                  <p class="related__cash">
+                    от
+                    <span
+                      class="related__cash-value"
+                      itemprop="offers"
                       itemscope
+                      itemtype="http://schema.org/Offer"
                     >
-                      <!-- Общий рейтинг -->
-                      <span class="rating__score" itemprop="ratingValue"
-                        >4,7</span
-                      >
+                      <meta itemprop="price" content="3600" />
+                      <meta itemprop="priceCurrency" content="RUB" />
+                      <link
+                        itemprop="availability"
+                        href="http://schema.org/InStock"
+                      />
+                      <span>3600</span>
+                    </span>
+                  </p>
 
-                      <!-- Количество оценок -->
-                      <span class="rating__count">
-                        <meta itemprop="reviewCount" content="5" />
-                        5 оценок
-                      </span>
-                    </div>
+                  <!-- Название товара -->
+                  <h4 class="related__title" itemprop="name">
+                    Ланкастер — «Эргономичный» / «Ортопедический»
+                  </h4>
+
+                  <!-- Рейтинг товара -->
+                  <div
+                    class="rating rating-mini"
+                    itemtype="http://schema.org/AggregateRating"
+                    itemprop="aggregateRating"
+                    itemscope
+                  >
+                    <!-- Общий рейтинг -->
+                    <span class="rating__score" itemprop="ratingValue"
+                      >4,7</span
+                    >
+
+                    <!-- Количество оценок -->
+                    <span class="rating__count">
+                      <meta itemprop="reviewCount" content="5" />
+                      5 оценок
+                    </span>
                   </div>
-                </article>
-              </a>
+                </div>
+              </article>
             </div>
           </section>
         </section>
