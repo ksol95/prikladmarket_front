@@ -34,7 +34,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // Теперь main указывает на корневой index.html
-        main: resolve(__dirname, "src/index.html"),
+        main: resolve(__dirname, "index.html"),
         catalog: resolve(__dirname, "src/pages/catalog.html"),
         product: resolve(__dirname, "src/pages/product.html"),
         product: resolve(__dirname, "src/pages/contacts.html"),
