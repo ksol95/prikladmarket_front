@@ -4,7 +4,10 @@
   --header-nav-overlay-bg: var(--overlay-bg);
   --header-nav-overlay-position: absolute;
   --header-menu-block-size: 0;
-  --header-menu-max-block-size-mobile: 50dvh;
+  // половина экрана
+  // --header-menu-max-block-size-mobile: 50dvh;
+  // меню по высоте на весь эекран
+  --header-menu-max-block-size-mobile: 100dvh;
   --header-nav-overlay-height: 0;
   --header-nav-btn-padding: var(--g-3) var(--g-3);
   --header-nav-radius: 0 0 var(--br-4) var(--br-4);
@@ -52,7 +55,7 @@
     --header-nav-overlay-bg: var(--overlay-bg);
     transition: var(--header-menu-overlay-animation-in);
     &-menu {
-      --header-menu-block-size: 500px;
+      --header-menu-block-size: 100dvh;
       transition: var(--header-menu-animation-in);
     }
   }
