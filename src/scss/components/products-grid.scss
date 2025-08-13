@@ -1,0 +1,97 @@
+:root {
+  --products-grid-bg: var(--accent-bg);
+  --products-grid-padding: var(--g-6) var(--g-4);
+  --products-grid-border-radius: var(--br-4);
+  --products-grid-gap: var(--g-6);
+  --products-grid-card-gap: var(--g-4);
+  --products-grid-img-br: var(--br-2);
+  // Ширина карточки товара если отображение без переноса
+  --products-grid-card-xs-width: 134px;
+  --products-grid-card-sm-width: 143px;
+  // Ширина карточки товара, если есть перенос
+  --products-grid-card-max-width: 100%;
+  --products-grid-card-width: calc(50% - var(--products-grid-card-gap) / 2);
+}
+
+.products-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--products-grid-gap);
+  padding: var(--products-grid-padding);
+  background-color: var(--products-grid-bg);
+  border-radius: var(--products-grid-border-radius);
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--products-grid-card-gap);
+    &.nowrap {
+      --products-grid-card-width: var(--products-grid-card-xs-width);
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      /* Скрываем скроллбар для IE/Edge */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+  &__card {
+    flex-basis: var(--products-grid-card-width); //Ширина карточки
+    flex-shrink: 1;
+    flex-grow: 0;
+    overflow: hidden;
+    min-inline-size: var(--products-grid-card-xs-width);
+    // max-inline-size: var(--products-grid-card-max-width);
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--g-4);
+    cursor: pointer;
+    color: inherit;
+  }
+  &__image-container {
+    overflow: hidden;
+  }
+  &__cash {
+    &-value {
+      font-size: var(--h2-size);
+      font-weight: var(--SemiBold);
+    }
+    &::after {
+      content: var(--currence-char);
+    }
+  }
+  &__image {
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+    border-radius: var(--products-grid-img-br);
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--g-1);
+  }
+  &__title {
+    font-size: 1em;
+    font-weight: var(--Regular);
+    line-height: 1.29;
+  }
+}
+
+@media (width>=768px) {
+  :root {
+    --products-grid-padding: var(--g-8) var(--g-6);
+    // --products-grid-card-max-width: 20%;
+    --products-grid-card-width: calc(
+      25% - var(--products-grid-card-gap) / 2 - var(--g-1)
+    );
+  }
+  .products-grid {
+    &__list {
+      &.nowrap {
+        --products-grid-card-width: var(--products-grid-card-sm-width);
+      }
+    }
+  }
+}

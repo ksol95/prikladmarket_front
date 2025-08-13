@@ -93,6 +93,7 @@ body.scrollBlock {
   background-attachment: fixed; */
   background-color: var(--page-bg);
   min-block-size: 100dvh;
+  min-inline-size: var(--min-size-grid);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

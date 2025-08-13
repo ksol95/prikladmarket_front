@@ -5,25 +5,29 @@
 .breadcrumb {
   display: flex;
   flex-wrap: nowrap;
+  overflow-x: scroll;
   flex-direction: row;
-  gap: var(--text-row-gap);
-  font-size: 1em;
-
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: var(--text-row-gap);
+    font-size: 1em;
+  }
   &__item {
     display: flex;
     gap: var(--text-row-gap);
     opacity: 0.5;
     white-space: nowrap;
-
     &-link {
       text-decoration: none;
       color: inherit;
     }
-
     &:not(:last-of-type)::after {
       content: var(--breadcrumbs-delimetr);
     }
-
     &:last-of-type {
       font-weight: var(--Bold);
       opacity: 1;

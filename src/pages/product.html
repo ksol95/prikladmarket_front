@@ -119,101 +119,113 @@
         itemtype="http://schema.org/Product"
       >
         <!-- Заголовок -->
-        <header class="main-grid__header">
+        <header class="page-header">
           <!-- Хлебные крошки -->
-          <div
-            class="header__breadcrumbs"
+          <nav
+            class="breadcrumb"
             itemscope
             itemtype="http://schema.org/BreadcrumbList"
           >
-            <nav class="scroll-row">
-              <ul class="breadcrumb">
-                <li
-                  class="breadcrumb__item"
-                  itemprop="itemListElement"
-                  itemscope
-                  itemtype="http://schema.org/ListItem"
+            <ul class="breadcrumb__list">
+              <li
+                class="breadcrumb__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/ListItem"
+              >
+                <a
+                  href="/prikladmarket_front/"
+                  class="breadcrumb__item-link"
+                  itemprop="item"
+                  ><span itemprop="name">Главная</span></a
                 >
-                  <a
-                    href="/prikladmarket_front/"
-                    class="breadcrumb__item-link"
-                    itemprop="item"
-                    ><span itemprop="name">Главная</span></a
+                <meta itemprop="position" content="1" />
+              </li>
+              <li
+                class="breadcrumb__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/ListItem"
+              >
+                <a
+                  href="/prikladmarket_front/src/pages/catalog.html"
+                  class="breadcrumb__item-link"
+                  itemprop="item"
+                  ><span itemprop="name">Каталог</span></a
+                >
+                <meta itemprop="position" content="2" />
+              </li>
+              <li
+                class="breadcrumb__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/ListItem"
+              >
+                <a href="#" class="breadcrumb__item-link" itemprop="item"
+                  ><span itemprop="name">Ложи и приклады</span></a
+                >
+                <meta itemprop="position" content="3" />
+              </li>
+              <li
+                class="breadcrumb__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/ListItem"
+              >
+                <a href="#" class="breadcrumb__item-link" itemprop="item"
+                  ><span itemprop="name"
+                    >Винтовка Мосина (91-30, 91-30м, КО-44)</span
+                  ></a
+                ><meta itemprop="position" content="4" />
+              </li>
+              <li
+                class="breadcrumb__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/ListItem"
+              >
+                <a href="#" class="breadcrumb__item-link" itemprop="item">
+                  <span itemprop="name">«Монте-Карло»</span>
+                </a>
+                <meta itemprop="position" content="5" />
+              </li>
+              <li
+                class="breadcrumb__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/ListItem"
+              >
+                <p class="breadcrumb__item-link" itemprop="item">
+                  <span itemprop="name"
+                    >Ложа на винтовку Мосина «Монте Карло»</span
                   >
-                  <meta itemprop="position" content="1" />
-                </li>
-                <li
-                  class="breadcrumb__item"
-                  itemprop="itemListElement"
-                  itemscope
-                  itemtype="http://schema.org/ListItem"
-                >
-                  <a
-                    href="/prikladmarket_front/src/pages/catalog.html"
-                    class="breadcrumb__item-link"
-                    itemprop="item"
-                    ><span itemprop="name">Каталог</span></a
-                  >
-                  <meta itemprop="position" content="2" />
-                </li>
-                <li
-                  class="breadcrumb__item"
-                  itemprop="itemListElement"
-                  itemscope
-                  itemtype="http://schema.org/ListItem"
-                >
-                  <a href="#" class="breadcrumb__item-link" itemprop="item"
-                    ><span itemprop="name">Ложи и приклады</span></a
-                  >
-                  <meta itemprop="position" content="3" />
-                </li>
-                <li
-                  class="breadcrumb__item"
-                  itemprop="itemListElement"
-                  itemscope
-                  itemtype="http://schema.org/ListItem"
-                >
-                  <a href="#" class="breadcrumb__item-link" itemprop="item"
-                    ><span itemprop="name"
-                      >Винтовка Мосина (91-30, 91-30м, КО-44)</span
-                    ></a
-                  ><meta itemprop="position" content="4" />
-                </li>
-                <li
-                  class="breadcrumb__item"
-                  itemprop="itemListElement"
-                  itemscope
-                  itemtype="http://schema.org/ListItem"
-                >
-                  <p class="breadcrumb__item-link" itemprop="item">
-                    <span itemprop="name">«Монте-Карло»</span>
-                  </p>
-                  <meta itemprop="position" content="5" />
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="header__content">
-            <h1 class="header__title" itemprop="name">
+                </p>
+                <meta itemprop="position" content="5" />
+              </li>
+            </ul>
+          </nav>
+
+          <div class="page-header__content">
+            <h1 class="page-header__title" itemprop="name">
               Ложа на винтовку Мосина «Монте Карло»
             </h1>
-            <div class="header__panel">
+            <div class="page-header__panel">
               <p
-                class="header__manufacturer"
+                class="page-header__manufacturer"
                 itemprop="brand"
                 itemscope
                 itemtype="http://schema.org/Organization"
               >
                 <span itemprop="name">ООО «Бикильман»</span>
               </p>
-              <p class="header__manufacturer">
+              <p class="page-header__manufacturer">
                 Код товара: <span>9305990000</span>
               </p>
             </div>
           </div>
           <!-- Обложка товара -->
           <img
-            class="thumb-img"
+            class="page-header__img"
             src="/src/images/product-thumb.png"
             alt=""
             itemprop="image"
@@ -939,135 +951,629 @@
           </section>
 
           <!-- Рекомендуемые товары -->
-          <section class="related">
+          <section class="products-grid">
             <h2>Рекомендуем к просмотру</h2>
-            <div class="related__list">
+            <div class="products-grid__list nowrap">
               <!-- Рекомендуемый товар 1 -->
               <article
-                class="related__card"
-                itemprop="isRelatedTo"
+                class="products-grid__card"
+                itemprop="isproducts-gridTo"
                 itemscope
                 itemtype="http://schema.org/Product"
               >
-                <!-- Изображение товара -->
-                <div class="related__image-container">
-                  <img
-                    src="/src/images/related-img-rotate.png"
-                    alt="Ланкастер — «Эргономичный» / «Ортопедический»"
-                    class="related__image"
-                    itemprop="image"
-                  />
-                </div>
-
-                <!-- Информация о товаре -->
-                <div class="related__content">
-                  <!-- Цена -->
-                  <p class="related__cash">
-                    от
-                    <span
-                      class="related__cash-value"
-                      itemprop="offers"
-                      itemscope
-                      itemtype="http://schema.org/Offer"
-                    >
-                      <meta itemprop="price" content="3600" />
-                      <meta itemprop="priceCurrency" content="RUB" />
-                      <link
-                        itemprop="availability"
-                        href="http://schema.org/InStock"
-                      />
-                      <span>3600</span>
-                    </span>
-                  </p>
-
-                  <!-- Название товара -->
-                  <h4 class="related__title" itemprop="name">
-                    Ланкастер — «Эргономичный» / «Ортопедический»
-                  </h4>
-
-                  <!-- Рейтинг товара -->
-                  <div
-                    class="rating rating-mini"
-                    itemtype="http://schema.org/AggregateRating"
-                    itemprop="aggregateRating"
-                    itemscope
-                  >
-                    <!-- Общий рейтинг -->
-                    <span class="rating__score" itemprop="ratingValue"
-                      >4,7</span
-                    >
-
-                    <!-- Количество оценок -->
-                    <span class="rating__count">
-                      <meta itemprop="reviewCount" content="5" />
-                      5 оценок
-                    </span>
+                <a
+                  class="products-grid__link"
+                  href="/prikladmarket_front/src/pages/product.html"
+                  aria-label="Название товара"
+                >
+                  <!-- Изображение товара -->
+                  <div class="products-grid__image-container">
+                    <img
+                      src="/src/images/product-card.png"
+                      alt="Ложа для винтовки Мосина"
+                      class="products-grid__image"
+                      itemprop="image"
+                    />
                   </div>
-                </div>
-              </article>
 
+                  <!-- Информация о товаре -->
+                  <div class="products-grid__content">
+                    <!-- Цена -->
+                    <p class="products-grid__cash">
+                      от
+                      <span
+                        class="products-grid__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="4200" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>4200</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="products-grid__title" itemprop="name">
+                      Ложа для винтовки Мосина
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,5</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="8" />
+                        8 оценок
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
               <!-- Рекомендуемый товар 2 -->
               <article
-                class="related__card"
-                itemprop="isRelatedTo"
+                class="products-grid__card"
+                itemprop="isproducts-gridTo"
                 itemscope
                 itemtype="http://schema.org/Product"
               >
-                <!-- Изображение товара -->
-                <div class="related__image-container">
-                  <img
-                    src="/src/images/related-img-rotate.png"
-                    alt="Ложа для винтовки Мосина"
-                    class="related__image"
-                    itemprop="image"
-                  />
-                </div>
-
-                <!-- Информация о товаре -->
-                <div class="related__content">
-                  <!-- Цена -->
-                  <p class="related__cash">
-                    от
-                    <span
-                      class="related__cash-value"
-                      itemprop="offers"
-                      itemscope
-                      itemtype="http://schema.org/Offer"
-                    >
-                      <meta itemprop="price" content="4200" />
-                      <meta itemprop="priceCurrency" content="RUB" />
-                      <link
-                        itemprop="availability"
-                        href="http://schema.org/InStock"
-                      />
-                      <span>4200</span>
-                    </span>
-                  </p>
-
-                  <!-- Название товара -->
-                  <h4 class="related__title" itemprop="name">
-                    Ложа для винтовки Мосина
-                  </h4>
-
-                  <!-- Рейтинг товара -->
-                  <div
-                    class="rating rating-mini"
-                    itemtype="http://schema.org/AggregateRating"
-                    itemprop="aggregateRating"
-                    itemscope
-                  >
-                    <!-- Общий рейтинг -->
-                    <span class="rating__score" itemprop="ratingValue"
-                      >4,5</span
-                    >
-
-                    <!-- Количество оценок -->
-                    <span class="rating__count">
-                      <meta itemprop="reviewCount" content="8" />
-                      8 оценок
-                    </span>
+                <a
+                  class="products-grid__link"
+                  href="/prikladmarket_front/src/pages/product.html"
+                  aria-label="Название товара"
+                >
+                  <!-- Изображение товара -->
+                  <div class="products-grid__image-container">
+                    <img
+                      src="/src/images/product-card.png"
+                      alt="Ложа для винтовки Мосина"
+                      class="products-grid__image"
+                      itemprop="image"
+                    />
                   </div>
-                </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="products-grid__content">
+                    <!-- Цена -->
+                    <p class="products-grid__cash">
+                      от
+                      <span
+                        class="products-grid__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="4200" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="products-grid__title" itemprop="name">
+                      Ланкастер— «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="8" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <!-- Рекомендуемый товар 3 -->
+              <article
+                class="products-grid__card"
+                itemprop="isproducts-gridTo"
+                itemscope
+                itemtype="http://schema.org/Product"
+              >
+                <a
+                  class="products-grid__link"
+                  href="/prikladmarket_front/src/pages/product.html"
+                  aria-label="Название товара"
+                >
+                  <!-- Изображение товара -->
+                  <div class="products-grid__image-container">
+                    <img
+                      src="/src/images/product-card.png"
+                      alt="Ложа для винтовки Мосина"
+                      class="products-grid__image"
+                      itemprop="image"
+                    />
+                  </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="products-grid__content">
+                    <!-- Цена -->
+                    <p class="products-grid__cash">
+                      от
+                      <span
+                        class="products-grid__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="4200" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="products-grid__title" itemprop="name">
+                      Ланкастер— «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="8" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <!-- Рекомендуемый товар 4 -->
+              <article
+                class="products-grid__card"
+                itemprop="isproducts-gridTo"
+                itemscope
+                itemtype="http://schema.org/Product"
+              >
+                <a
+                  class="products-grid__link"
+                  href="/prikladmarket_front/src/pages/product.html"
+                  aria-label="Название товара"
+                >
+                  <!-- Изображение товара -->
+                  <div class="products-grid__image-container">
+                    <img
+                      src="/src/images/product-card.png"
+                      alt="Ложа для винтовки Мосина"
+                      class="products-grid__image"
+                      itemprop="image"
+                    />
+                  </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="products-grid__content">
+                    <!-- Цена -->
+                    <p class="products-grid__cash">
+                      от
+                      <span
+                        class="products-grid__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="4200" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="products-grid__title" itemprop="name">
+                      Ланкастер— «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="8" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <!-- Рекомендуемый товар 5 -->
+              <article
+                class="products-grid__card"
+                itemprop="isproducts-gridTo"
+                itemscope
+                itemtype="http://schema.org/Product"
+              >
+                <a
+                  class="products-grid__link"
+                  href="/prikladmarket_front/src/pages/product.html"
+                  aria-label="Название товара"
+                >
+                  <!-- Изображение товара -->
+                  <div class="products-grid__image-container">
+                    <img
+                      src="/src/images/product-card.png"
+                      alt="Ложа для винтовки Мосина"
+                      class="products-grid__image"
+                      itemprop="image"
+                    />
+                  </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="products-grid__content">
+                    <!-- Цена -->
+                    <p class="products-grid__cash">
+                      от
+                      <span
+                        class="products-grid__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="4200" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="products-grid__title" itemprop="name">
+                      Ланкастер— «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="8" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <!-- Рекомендуемый товар 6 -->
+              <article
+                class="products-grid__card"
+                itemprop="isproducts-gridTo"
+                itemscope
+                itemtype="http://schema.org/Product"
+              >
+                <a
+                  class="products-grid__link"
+                  href="/prikladmarket_front/src/pages/product.html"
+                  aria-label="Название товара"
+                >
+                  <!-- Изображение товара -->
+                  <div class="products-grid__image-container">
+                    <img
+                      src="/src/images/product-card.png"
+                      alt="Ложа для винтовки Мосина"
+                      class="products-grid__image"
+                      itemprop="image"
+                    />
+                  </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="products-grid__content">
+                    <!-- Цена -->
+                    <p class="products-grid__cash">
+                      от
+                      <span
+                        class="products-grid__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="4200" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="products-grid__title" itemprop="name">
+                      Ланкастер— «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="8" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <!-- Рекомендуемый товар 7 -->
+              <article
+                class="products-grid__card"
+                itemprop="isproducts-gridTo"
+                itemscope
+                itemtype="http://schema.org/Product"
+              >
+                <a
+                  class="products-grid__link"
+                  href="/prikladmarket_front/src/pages/product.html"
+                  aria-label="Название товара"
+                >
+                  <!-- Изображение товара -->
+                  <div class="products-grid__image-container">
+                    <img
+                      src="/src/images/product-card.png"
+                      alt="Ложа для винтовки Мосина"
+                      class="products-grid__image"
+                      itemprop="image"
+                    />
+                  </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="products-grid__content">
+                    <!-- Цена -->
+                    <p class="products-grid__cash">
+                      от
+                      <span
+                        class="products-grid__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="4200" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="products-grid__title" itemprop="name">
+                      Ланкастер— «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="8" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <!-- Рекомендуемый товар 8 -->
+              <article
+                class="products-grid__card"
+                itemprop="isproducts-gridTo"
+                itemscope
+                itemtype="http://schema.org/Product"
+              >
+                <a
+                  class="products-grid__link"
+                  href="/prikladmarket_front/src/pages/product.html"
+                  aria-label="Название товара"
+                >
+                  <!-- Изображение товара -->
+                  <div class="products-grid__image-container">
+                    <img
+                      src="/src/images/product-card.png"
+                      alt="Ложа для винтовки Мосина"
+                      class="products-grid__image"
+                      itemprop="image"
+                    />
+                  </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="products-grid__content">
+                    <!-- Цена -->
+                    <p class="products-grid__cash">
+                      от
+                      <span
+                        class="products-grid__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="4200" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="products-grid__title" itemprop="name">
+                      Ланкастер— «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="8" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <!-- Рекомендуемый товар 9 -->
+              <article
+                class="products-grid__card"
+                itemprop="isproducts-gridTo"
+                itemscope
+                itemtype="http://schema.org/Product"
+              >
+                <a
+                  class="products-grid__link"
+                  href="/prikladmarket_front/src/pages/product.html"
+                  aria-label="Название товара"
+                >
+                  <!-- Изображение товара -->
+                  <div class="products-grid__image-container">
+                    <img
+                      src="/src/images/product-card.png"
+                      alt="Ложа для винтовки Мосина"
+                      class="products-grid__image"
+                      itemprop="image"
+                    />
+                  </div>
+
+                  <!-- Информация о товаре -->
+                  <div class="products-grid__content">
+                    <!-- Цена -->
+                    <p class="products-grid__cash">
+                      от
+                      <span
+                        class="products-grid__cash-value"
+                        itemprop="offers"
+                        itemscope
+                        itemtype="http://schema.org/Offer"
+                      >
+                        <meta itemprop="price" content="4200" />
+                        <meta itemprop="priceCurrency" content="RUB" />
+                        <link
+                          itemprop="availability"
+                          href="http://schema.org/InStock"
+                        />
+                        <span>3600</span>
+                      </span>
+                    </p>
+
+                    <!-- Название товара -->
+                    <h4 class="products-grid__title" itemprop="name">
+                      Ланкастер— «Эргономичный» / «Ортопедический»
+                    </h4>
+
+                    <!-- Рейтинг товара -->
+                    <div
+                      class="rating rating-mini"
+                      itemtype="http://schema.org/AggregateRating"
+                      itemprop="aggregateRating"
+                      itemscope
+                    >
+                      <!-- Общий рейтинг -->
+                      <span class="rating__score" itemprop="ratingValue"
+                        >4,7</span
+                      >
+
+                      <!-- Количество оценок -->
+                      <span class="rating__count">
+                        <meta itemprop="reviewCount" content="8" />
+                        5 оценок
+                      </span>
+                    </div>
+                  </div>
+                </a>
               </article>
             </div>
           </section>
