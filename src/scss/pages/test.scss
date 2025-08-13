@@ -1,0 +1,203 @@
+/* Базовые стили */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+main {
+  max-width: 1200px;
+  /* Ограничиваем ширину основного контента */
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* --- Стили для сетки товаров --- */
+
+.products-grid {
+  /* Можно добавить стили для общей обертки, если нужно */
+}
+
+/* Контейнер списка товаров в режиме скролла */
+
+.products-grid__list.scrolling {
+  /* 1. Устанавливаем фиксированную высоту области просмотра */
+  /* Эта высота станет "шириной" после поворота */
+  height: 350px;
+  width: 100%;
+  /* Ширина может быть 100% или фиксированной */
+  /* 2. Скрываем переполнение, чтобы создать область прокрутки */
+  overflow: hidden;
+  /* 3. Опционально: добавляем фон или границу для наглядности */
+  background-color: #888;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  /* Добавляем внутренний отступ */
+}
+
+/* Внутренний контейнер, который содержит карточки и будет поворачиваться */
+
+.scrolling-inner {
+  /* 4. Используем Flexbox для вертикального расположения карточек */
+  display: flex;
+  flex-direction: column;
+  /* 5. Добавляем промежутки между карточками */
+  gap: 20px;
+  /* var(--products-grid-card-gap) */
+  /* 6. Ширина внутреннего контейнера = высота внешнего (.products-grid__list.scrolling) */
+  /* Это необходимо, чтобы поворот не исказил размеры */
+  width: 350px;
+  /* Должна быть равна height .products-grid__list.scrolling */
+  /* Высота будет определяться содержимым (общей высотой карточек) */
+  height: fit-content;
+  /* Или рассчитывается динамически */
+  /* 7. Поворачиваем контейнер на 90 градусов по часовой стрелке */
+  transform: rotate(90deg);
+  /* 8. Меняем начало координат поворота */
+  /* top left - поворот вокруг левого верхнего угла */
+  transform-origin: top left;
+  /* 9. Добавляем скролл внутри этого контейнера */
+  /* Это будет вертикальный скролл до поворота */
+  overflow-y: scroll;
+  /* 10. Скрываем горизонтальный скролл */
+  overflow-x: hidden;
+  /* 11. Убираем стандартную полосу прокрутки (опционально) */
+  -ms-overflow-style: none;
+  /* IE и Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* 11. Убираем стандартную полосу прокрутки для Webkit (Chrome, Safari) */
+
+.scrolling-inner::-webkit-scrollbar {
+  display: none;
+}
+
+/* Стили для карточки товара внутри поворотного контейнера */
+
+.products-grid__card {
+  /* 12. Задаем размеры карточки */
+  /* Ширина и высота карточки */
+  width: 200px;
+  /* var(--product-card-width) */
+  height: 250px;
+  /* var(--product-card-height) */
+  /* 13. Запрещаем сжатие карточек */
+  flex-shrink: 0;
+  /* 14. Стили карточки (пример) */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.products-grid__card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.products-grid__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.products-grid__image-container {
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-grid__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Изображение заполняет контейнер, обрезая края */
+  display: block;
+}
+
+.products-grid__content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.products-grid__cash {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.products-grid__cash-value::after {
+  content: " ₽";
+}
+
+.products-grid__title {
+  font-size: 0.9em;
+  margin: 0 0 5px 0;
+  line-height: 1.2;
+}
+
+.rating {
+  font-size: 0.85em;
+  color: #888;
+}
+
+.rating__score::before {
+  content: "★ ";
+  color: gold;
+}
+
+/* --- Адаптация под разные размеры экрана --- */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  .products-grid__list.scrolling {
+    height: 300px;
+    /* Адаптируем высоту области просмотра */
+  }
+  .scrolling-inner {
+    width: 300px;
+    /* Адаптируем ширину внутреннего контейнера */
+  }
+  .products-grid__card {
+    width: 180px;
+    /* Адаптируем ширину карточки */
+    height: 230px;
+    /* Адаптируем высоту карточки */
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid__list.scrolling {
+    height: 250px;
+  }
+  .scrolling-inner {
+    width: 250px;
+  }
+  .products-grid__card {
+    width: 160px;
+    height: 210px;
+  }
+}

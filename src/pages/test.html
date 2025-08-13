@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог с поворотным скроллом</title>
+    <script type="module" src="/src/js/pages/test.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <h1>Каталог товаров</h1>
+      <!-- Основной контейнер для сетки товаров -->
+      <section class="products-grid">
+        <!-- Список товаров -->
+        <div class="products-grid__list scrolling">
+          <!-- Внутренний контейнер, который будет поворачиваться -->
+          <div class="scrolling-inner">
+            <!-- Карточки товаров -->
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200"
+                    alt="Товар 1"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">3600</span>
+                  </p>
+                  <h3 class="products-grid__title">
+                    Ложа "Монте-Карло" - Товар 1
+                  </h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">(5 оценок)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200?text=Товар+2"
+                    alt="Товар 2"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">4200</span>
+                  </p>
+                  <h3 class="products-grid__title">
+                    Ложа "Ланкастер" - Товар 2
+                  </h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">4,5</span>
+                    <span class="rating__count">(8 оценок)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200?text=Товар+3"
+                    alt="Товар 3"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">3800</span>
+                  </p>
+                  <h3 class="products-grid__title">
+                    Приклад "Классика" - Товар 3
+                  </h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">4,9</span>
+                    <span class="rating__count">(12 оценок)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200?text=Товар+4"
+                    alt="Товар 4"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">5100</span>
+                  </p>
+                  <h3 class="products-grid__title">
+                    Ложа "Тактическая" - Товар 4
+                  </h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">4,3</span>
+                    <span class="rating__count">(3 оценки)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200?text=Товар+5"
+                    alt="Товар 5"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">4500</span>
+                  </p>
+                  <h3 class="products-grid__title">
+                    Приклад "Охотничий" - Товар 5
+                  </h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">4,8</span>
+                    <span class="rating__count">(7 оценок)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200?text=Товар+6"
+                    alt="Товар 6"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">3900</span>
+                  </p>
+                  <h3 class="products-grid__title">Ложа "Спорт" - Товар 6</h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">4,6</span>
+                    <span class="rating__count">(9 оценок)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200?text=Товар+7"
+                    alt="Товар 7"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">4800</span>
+                  </p>
+                  <h3 class="products-grid__title">
+                    Приклад "Универсал" - Товар 7
+                  </h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">4,4</span>
+                    <span class="rating__count">(6 оценок)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200?text=Товар+8"
+                    alt="Товар 8"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">5200</span>
+                  </p>
+                  <h3 class="products-grid__title">Ложа "Элит" - Товар 8</h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">5,0</span>
+                    <span class="rating__count">(15 оценок)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200?text=Товар+9"
+                    alt="Товар 9"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">3700</span>
+                  </p>
+                  <h3 class="products-grid__title">
+                    Приклад "Стандарт" - Товар 9
+                  </h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">4,2</span>
+                    <span class="rating__count">(4 оценки)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="products-grid__card">
+              <a href="#" class="products-grid__link">
+                <div class="products-grid__image-container">
+                  <img
+                    src="https://placehold.co/150x200?text=Товар+10"
+                    alt="Товар 10"
+                    class="products-grid__image"
+                  />
+                </div>
+                <div class="products-grid__content">
+                  <p class="products-grid__cash">
+                    <span class="products-grid__cash-value">4100</span>
+                  </p>
+                  <h3 class="products-grid__title">
+                    Ложа "Комфорт" - Товар 10
+                  </h3>
+                  <div class="rating rating-mini">
+                    <span class="rating__score">4,7</span>
+                    <span class="rating__count">(11 оценок)</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+            <!-- Добавьте больше карточек по необходимости -->
+          </div>
+          <!-- .scrolling-inner -->
+        </div>
+        <!-- .products-grid__list.scrolling -->
+      </section>
+    </main>
+  </body>
+</html>

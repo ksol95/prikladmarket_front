@@ -82,51 +82,55 @@
         </div>
       </div>
     </header>
-    <div class="container">
-      <main class="main-grid">
-        <!-- Заголовок -->
-        <header class="page-header">
-          <!-- Хлебные крошки -->
-          <nav
-            class="breadcrumb"
-            itemscope
-            itemtype="http://schema.org/BreadcrumbList"
-          >
-            <ul class="breadcrumb__list">
-              <li
-                class="breadcrumb__item"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="http://schema.org/ListItem"
-              >
-                <a
-                  href="/prikladmarket_front/"
-                  class="breadcrumb__item-link"
-                  itemprop="item"
-                  ><span itemprop="name">Главная</span></a
-                >
-                <meta itemprop="position" content="1" />
-              </li>
-              <li
-                class="breadcrumb__item"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="http://schema.org/ListItem"
-              >
-                <p class="breadcrumb__item-link" itemprop="item">
-                  <span itemprop="name">Котнтакты</span>
-                </p>
-                <meta itemprop="position" content="2" />
-              </li>
-            </ul>
-          </nav>
 
-          <div class="page-header__content">
-            <h1 class="page-header__title">Контакты</h1>
-          </div>
-        </header>
-      </main>
-    </div>
+    <main class="main-grid">
+      <!-- Заголовок -->
+      <header class="main-grid__header page-header">
+        <!-- Хлебные крошки -->
+        <nav
+          class="breadcrumb"
+          itemscope
+          itemtype="http://schema.org/BreadcrumbList"
+        >
+          <ul class="breadcrumb__list">
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <a
+                href="/prikladmarket_front/"
+                class="breadcrumb__item-link"
+                itemprop="item"
+                ><span itemprop="name">Главная</span></a
+              >
+              <meta itemprop="position" content="1" />
+            </li>
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <p class="breadcrumb__item-link" itemprop="item">
+                <span itemprop="name">Котнтакты</span>
+              </p>
+              <meta itemprop="position" content="2" />
+            </li>
+          </ul>
+        </nav>
+
+        <div class="page-header__content">
+          <h1 class="page-header__title">Контакты</h1>
+        </div>
+      </header>
+      <!-- Колонка если нужна -->
+      <section class="main-grid__bar">Колонка</section>
+      <!-- Контент -->
+      <section class="main-grid__content">Контент</section>
+    </main>
+
     <footer class="footer">
       <div class="container"></div>
     </footer>
