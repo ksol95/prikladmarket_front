@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Главная страница — Приклад маркет</title>
     <!-- Подключаем общие стили -->
-    <script type="module" crossorigin src="/prikladmarket_front/assets/blog-B42cf2t1.js"></script>
-    <link rel="modulepreload" crossorigin href="/prikladmarket_front/assets/header-menu-BUxlS2tr.js">
-    <link rel="stylesheet" crossorigin href="/prikladmarket_front/assets/css/header-menu_BWySnRnn.css">
+    <script type="module" crossorigin src="/prikladmarket_front/assets/blog-Ca9a6Oxw.js"></script>
+    <link rel="modulepreload" crossorigin href="/prikladmarket_front/assets/header-menu-B3xpEuBO.js">
+    <link rel="stylesheet" crossorigin href="/prikladmarket_front/assets/css/header-menu_lw1YPKia.css">
   </head>
 
   <body class="page">
@@ -91,42 +91,44 @@
     <div class="container">
       <main class="main-grid">
         <!-- Заголовок -->
-        <header class="main-grid__header">
+        <header class="page-header">
           <!-- Хлебные крошки -->
-          <div
-            class="header__breadcrumbs"
+          <nav
+            class="breadcrumb"
             itemscope
             itemtype="http://schema.org/BreadcrumbList"
           >
-            <nav class="scroll-row">
-              <ul class="breadcrumb">
-                <li
-                  class="breadcrumb__item"
-                  itemprop="itemListElement"
-                  itemscope
-                  itemtype="http://schema.org/ListItem"
+            <ul class="breadcrumb__list">
+              <li
+                class="breadcrumb__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/ListItem"
+              >
+                <a
+                  href="/prikladmarket_front/"
+                  class="breadcrumb__item-link"
+                  itemprop="item"
+                  ><span itemprop="name">Главная</span></a
                 >
-                  <a
-                    href="/prikladmarket_front/"
-                    class="breadcrumb__item-link"
-                    itemprop="item"
-                    ><span itemprop="name">Главная</span></a
-                  >
-                  <meta itemprop="position" content="1" />
-                </li>
-                <li
-                  class="breadcrumb__item"
-                  itemprop="itemListElement"
-                  itemscope
-                  itemtype="http://schema.org/ListItem"
-                >
-                  <p class="breadcrumb__item-link" itemprop="item">
-                    <span itemprop="name">Блог</span>
-                  </p>
-                  <meta itemprop="position" content="2" />
-                </li>
-              </ul>
-            </nav>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li
+                class="breadcrumb__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="http://schema.org/ListItem"
+              >
+                <p class="breadcrumb__item-link" itemprop="item">
+                  <span itemprop="name">Блог</span>
+                </p>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </nav>
+
+          <div class="page-header__content">
+            <h1 class="page-header__title">Блог</h1>
           </div>
         </header>
       </main>
