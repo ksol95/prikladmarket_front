@@ -107,58 +107,60 @@
         </div>
       </div>
     </header>
-    <div class="container">
-      <main class="main-grid">
-        <!-- Заголовок -->
-        <header class="page-header">
-          <!-- Хлебные крошки -->
-          <nav
-            class="breadcrumb"
-            itemscope
-            itemtype="http://schema.org/BreadcrumbList"
-          >
-            <ul class="breadcrumb__list">
-              <li
-                class="breadcrumb__item"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="http://schema.org/ListItem"
-              >
-                <a
-                  href="/prikladmarket_front/"
-                  class="breadcrumb__item-link"
-                  itemprop="item"
-                  ><span itemprop="name">Главная</span></a
-                >
-                <meta itemprop="position" content="1" />
-              </li>
-              <li
-                class="breadcrumb__item"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="http://schema.org/ListItem"
-              >
-                <p class="breadcrumb__item-link" itemprop="item">
-                  <span itemprop="name">Каталог</span>
-                </p>
-                <meta itemprop="position" content="2" />
-              </li>
-            </ul>
-          </nav>
-          <div class="page-header__content">
-            <h1 class="page-header__title">Каталог</h1>
-          </div>
-        </header>
 
-        <!-- Колонка для фильтра и еще чего -->
-        <section class="main-grid__big-column">
-          <!-- <div class="filter-form">1 2 3</div> -->
-        </section>
+    <main class="main-grid">
+      <!-- Заголовок -->
+      <header class="main-grid__header page-header">
+        <!-- Хлебные крошки -->
+        <nav
+          class="breadcrumb"
+          itemscope
+          itemtype="http://schema.org/BreadcrumbList"
+        >
+          <ul class="breadcrumb__list">
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <a
+                href="/prikladmarket_front/"
+                class="breadcrumb__item-link"
+                itemprop="item"
+                ><span itemprop="name">Главная</span></a
+              >
+              <meta itemprop="position" content="1" />
+            </li>
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <p class="breadcrumb__item-link" itemprop="item">
+                <span itemprop="name">Каталог</span>
+              </p>
+              <meta itemprop="position" content="2" />
+            </li>
+          </ul>
+        </nav>
+        <div class="page-header__content">
+          <h1 class="page-header__title">Каталог</h1>
+        </div>
+      </header>
 
-        <!-- Основной контент -->
-        <section class="main-grid__content">
-          <!-- список товаров из категории -->
-          <section class="products-grid">
+      <!-- Колонка для фильтра и еще чего -->
+      <section class="main-grid__bar">
+        <!-- <div class="filter-form">1 2 3</div> -->
+      </section>
+
+      <!-- Основной контент -->
+      <section class="main-grid__content">
+        <!-- список товаров из категории -->
+        <section class="product-related-section">
+          <h2>Рекомендуем к просмотру</h2>
+          <div class="products-grid">
             <div class="products-grid__list">
               <!-- Рекомендуемый товар 1 -->
               <article
@@ -782,10 +784,11 @@
                 </a>
               </article>
             </div>
-          </section>
+          </div>
         </section>
-      </main>
-    </div>
+      </section>
+    </main>
+
     <footer class="footer">
       <div class="container"></div>
     </footer>

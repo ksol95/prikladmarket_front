@@ -1,8 +1,4 @@
 :root {
-  --products-grid-bg: var(--accent-bg);
-  --products-grid-padding: var(--g-6) var(--g-4);
-  --products-grid-border-radius: var(--br-4);
-  --products-grid-gap: var(--g-6);
   --products-grid-card-gap: var(--g-4);
   --products-grid-img-br: var(--br-2);
   // Ширина карточки товара если отображение без переноса
@@ -14,24 +10,19 @@
 }
 
 .products-grid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--products-grid-gap);
-  padding: var(--products-grid-padding);
-  background-color: var(--products-grid-bg);
-  border-radius: var(--products-grid-border-radius);
+  &:has(.scrolling) {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
   &__list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--products-grid-card-gap);
-    &.nowrap {
+    &.scrolling {
       --products-grid-card-width: var(--products-grid-card-xs-width);
       flex-wrap: nowrap;
-      overflow-x: scroll;
-      /* Скрываем скроллбар для IE/Edge */
-      -ms-overflow-style: none;
-      scrollbar-width: none;
     }
   }
   &__card {
@@ -52,15 +43,6 @@
   &__image-container {
     overflow: hidden;
   }
-  &__cash {
-    &-value {
-      font-size: var(--h2-size);
-      font-weight: var(--SemiBold);
-    }
-    &::after {
-      content: var(--currence-char);
-    }
-  }
   &__image {
     block-size: 100%;
     inline-size: 100%;
@@ -71,6 +53,15 @@
     display: flex;
     flex-direction: column;
     gap: var(--g-1);
+  }
+  &__cash {
+    &-value {
+      font-size: var(--h2-size);
+      font-weight: var(--SemiBold);
+    }
+    &::after {
+      content: var(--currence-char);
+    }
   }
   &__title {
     font-size: 1em;
@@ -88,10 +79,8 @@
     );
   }
   .products-grid {
-    &__list {
-      &.nowrap {
-        --products-grid-card-width: var(--products-grid-card-sm-width);
-      }
+    &:has(.scrolling) {
+      --products-grid-card-width: var(--products-grid-card-sm-width);
     }
   }
 }
