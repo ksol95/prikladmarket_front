@@ -1,0 +1,7 @@
+.catalog {
+  &__products {
+    background-color: var(--accent-bg);
+    padding: var(--g-6) var(--g-4);
+    border-radius: var(--br-4);
+  }
+}

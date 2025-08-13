@@ -1,12 +1,28 @@
 :root {
   --products-grid-card-gap: var(--g-4);
   --products-grid-img-br: var(--br-2);
-  // Ширина карточки товара если отображение без переноса
-  --products-grid-card-xs-width: 134px;
-  --products-grid-card-sm-width: 143px;
+  --products-grid-card-lenght: 2;
+  // Ширина карточки товара если отображение без переноса (гибкая ширина)
+  --products-grid-card-xs-width: calc(
+    (
+        100% - (var(--products-grid-card-lenght) - 1) *
+          var(--products-grid-card-gap)
+      ) / var(--products-grid-card-lenght)
+  );
+  --products-grid-card-sm-width: calc(
+    (
+        100% - (var(--products-grid-card-lenght) - 1) *
+          var(--products-grid-card-gap)
+      ) / var(--products-grid-card-lenght)
+  );
   // Ширина карточки товара, если есть перенос
   --products-grid-card-max-width: 100%;
-  --products-grid-card-width: calc(50% - var(--products-grid-card-gap) / 2);
+  --products-grid-card-width: calc(
+    (
+        100% - (var(--products-grid-card-lenght) - 1) *
+          var(--products-grid-card-gap)
+      ) / var(--products-grid-card-lenght)
+  );
 }
 
 .products-grid {
@@ -21,13 +37,19 @@
     flex-wrap: wrap;
     gap: var(--products-grid-card-gap);
     &.scrolling {
-      --products-grid-card-width: var(--products-grid-card-xs-width);
+      // Используем гибкую ширину вместо фиксированной
+      --products-grid-card-width: calc(
+        (
+            100% - (var(--products-grid-card-lenght) - 1) *
+              var(--products-grid-card-gap)
+          ) / var(--products-grid-card-lenght)
+      );
       flex-wrap: nowrap;
     }
   }
   &__card {
-    flex-basis: var(--products-grid-card-width); //Ширина карточки
-    flex-shrink: 1;
+    flex-basis: calc(var(--products-grid-card-width)); //Ширина карточки
+    flex-shrink: 0; // Запрещаем сжатие карточек
     flex-grow: 0;
     overflow: hidden;
     min-inline-size: var(--products-grid-card-xs-width);
@@ -73,14 +95,22 @@
 @media (width>=768px) {
   :root {
     --products-grid-padding: var(--g-8) var(--g-6);
-    // --products-grid-card-max-width: 20%;
-    --products-grid-card-width: calc(
-      25% - var(--products-grid-card-gap) / 2 - var(--g-1)
-    );
+    --products-grid-card-lenght: 4;
   }
   .products-grid {
     &:has(.scrolling) {
-      --products-grid-card-width: var(--products-grid-card-sm-width);
+      --products-grid-card-width: calc(
+        (
+            100% - (var(--products-grid-card-lenght) - 1) *
+              var(--products-grid-card-gap)
+          ) / var(--products-grid-card-lenght)
+      );
     }
+  }
+}
+
+@media (width >=1366px) {
+  :root {
+    --products-grid-card-lenght: 6;
   }
 }
