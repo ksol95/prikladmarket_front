@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Главная страница — Приклад маркет</title>
     <!-- Подключаем общие стили -->
-    <script type="module" crossorigin src="/prikladmarket_front/assets/contacts-3Cp51CTp.js"></script>
-    <link rel="modulepreload" crossorigin href="/prikladmarket_front/assets/header-menu-B3xpEuBO.js">
-    <link rel="stylesheet" crossorigin href="/prikladmarket_front/assets/css/header-menu_lw1YPKia.css">
+    <script type="module" crossorigin src="/prikladmarket_front/assets/contacts-BQIuwwqk.js"></script>
+    <link rel="modulepreload" crossorigin href="/prikladmarket_front/assets/header-menu-DpgkqStJ.js">
+    <link rel="stylesheet" crossorigin href="/prikladmarket_front/assets/css/header-menu_DddJB6CS.css">
   </head>
 
   <body class="page">
@@ -84,51 +84,55 @@
         </div>
       </div>
     </header>
-    <div class="container">
-      <main class="main-grid">
-        <!-- Заголовок -->
-        <header class="page-header">
-          <!-- Хлебные крошки -->
-          <nav
-            class="breadcrumb"
-            itemscope
-            itemtype="http://schema.org/BreadcrumbList"
-          >
-            <ul class="breadcrumb__list">
-              <li
-                class="breadcrumb__item"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="http://schema.org/ListItem"
-              >
-                <a
-                  href="/prikladmarket_front/"
-                  class="breadcrumb__item-link"
-                  itemprop="item"
-                  ><span itemprop="name">Главная</span></a
-                >
-                <meta itemprop="position" content="1" />
-              </li>
-              <li
-                class="breadcrumb__item"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="http://schema.org/ListItem"
-              >
-                <p class="breadcrumb__item-link" itemprop="item">
-                  <span itemprop="name">Котнтакты</span>
-                </p>
-                <meta itemprop="position" content="2" />
-              </li>
-            </ul>
-          </nav>
 
-          <div class="page-header__content">
-            <h1 class="page-header__title">Контакты</h1>
-          </div>
-        </header>
-      </main>
-    </div>
+    <main class="main-grid">
+      <!-- Заголовок -->
+      <header class="main-grid__header page-header">
+        <!-- Хлебные крошки -->
+        <nav
+          class="breadcrumb"
+          itemscope
+          itemtype="http://schema.org/BreadcrumbList"
+        >
+          <ul class="breadcrumb__list">
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <a
+                href="/prikladmarket_front/"
+                class="breadcrumb__item-link"
+                itemprop="item"
+                ><span itemprop="name">Главная</span></a
+              >
+              <meta itemprop="position" content="1" />
+            </li>
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <p class="breadcrumb__item-link" itemprop="item">
+                <span itemprop="name">Котнтакты</span>
+              </p>
+              <meta itemprop="position" content="2" />
+            </li>
+          </ul>
+        </nav>
+
+        <div class="page-header__content">
+          <h1 class="page-header__title">Контакты</h1>
+        </div>
+      </header>
+      <!-- Колонка если нужна -->
+      <section class="main-grid__bar">Колонка</section>
+      <!-- Контент -->
+      <section class="main-grid__content">Контент</section>
+    </main>
+
     <footer class="footer">
       <div class="container"></div>
     </footer>
