@@ -20,9 +20,9 @@
 /* Сетка */
 
 .main-grid {
+  // padding: var(--container-padding);
   max-inline-size: var(--max-size-grid);
   min-inline-size: calc(var(--min-size-grid) - var(--g-4) * 2);
-  padding: var(--container-padding);
   margin: 0 auto;
   // Фикс для фиксированной панели снизу на маленьких экранах
   // padding-block-end: 76.8px;
@@ -55,16 +55,16 @@
 }
 
 @media (width >=768px) {
-  :root {
-    // количество колонок в сетке
-    // --grid-columns: 12;
-    // // сколько занимает бар
-    // --grid-bar-columns: 0;
-  }
-  .main-grid {
-    // Фикс для фиксированной панели снизу на маленьких экранах
-    padding-block-end: 0;
-  }
+  // :root {
+  // количество колонок в сетке
+  // --grid-columns: 12;
+  // // сколько занимает бар
+  // --grid-bar-columns: 0;
+  // }
+  // .main-grid {
+  //   // Фикс для фиксированной панели снизу на маленьких экранах
+  //   padding-block-end: 0;
+  // }
 }
 
 @media (width >=1366px) {
