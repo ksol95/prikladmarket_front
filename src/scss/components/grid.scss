@@ -1,4 +1,5 @@
 :root {
+  --grid-padding: 0;
   // Количество колонов в сетке
   --grid-columns: 1;
   // Сколько занимает колонок бар
@@ -21,7 +22,7 @@
 /* Сетка */
 
 .main-grid {
-  // padding: var(--container-padding);
+  padding-inline: var(--grid-padding);
   inline-size: 100%;
   max-inline-size: var(--max-size-grid);
   min-inline-size: calc(var(--min-size-grid) - var(--g-4) * 2);
@@ -68,11 +69,11 @@
 
 @media (width >=1366px) {
   :root {
+    --grid-padding: var(--g-8);
     // Количесвто колонок в сетке
     --grid-columns: 24;
     // Сколько занимает бар
     --grid-bar-columns: 7;
-    --grid-template-columns: repeat(var(--grid-columns), 1fr);
   }
   .main-grid {
     &:has(&__header) &__bar {
@@ -90,14 +91,3 @@
     }
   }
 }
-
-// --grid-columns: 1;
-// --bar-column: 0;
-// // Все колонки
-// --grid-full-column: 1 / span var(--grid-columns);
-// // Размер дополнительной колонки
-// --grid-bar-column-count: calc((var(--grid-columns) - var(--bar-column)) + 1);
-// --grid-bar-column: var(--grid-bar-column-count) / span var(--bar-column);
-// // Размер основной колонки
-// --grid-content-column-count: calc(var(--grid-columns) - var(--bar-column));
-// --grid-content-column: 1 / span var(--grid-content-column-count);
