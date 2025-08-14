@@ -1,93 +1,44 @@
 :root {
-  --grid-padding: 0;
-  // Количество колонов в сетке
-  --grid-columns: 1;
-  // Сколько занимает колонок бар
-  --grid-bar-columns: 0;
-  // Вся строка
-  --grid-full-column: 1 / -1;
-  // Размер дополнительной колонки
-  --grid-bar-column-count: calc(
-    (var(--grid-columns) - var(--grid-bar-columns)) + 1
-  );
-  --grid-bar-column: var(--grid-bar-column-count) / span var(--grid-bar-columns);
-  // Размер основной колонки
-  --grid-content-column-count: calc(
-    var(--grid-columns) - var(--grid-bar-columns)
-  );
-  --grid-content-column: 1 / span var(--grid-content-column-count);
-  --grid-template-columns: 100%;
+  --grid-padding: var(--g-8);
+  --grid-areas: "header" "bar" "content";
+  --grid-bar-size: 0px;
+  --grid-content-size: 0px;
+  --grid-column-gap: 0px;
+  --grid-columns-template: 100%;
 }
 
-/* Сетка */
-
 .main-grid {
+  display: grid;
+  margin: 0 auto;
   padding-inline: var(--grid-padding);
   inline-size: 100%;
   max-inline-size: var(--max-size-grid);
-  min-inline-size: calc(var(--min-size-grid) - var(--g-4) * 2);
-  margin: 0 auto;
-  // Фикс для фиксированной панели снизу на маленьких экранах
-  // padding-block-end: 76.8px;
-  display: grid;
-  grid-template-columns: var(--grid-template-columns);
+  min-inline-size: var(--min-size-grid);
+  grid-template-columns: var(--grid-columns-template);
+  column-gap: var(--grid-column-gap);
+  grid-template-areas: var(--grid-areas);
   &__header {
-    order: 0;
+    grid-area: header;
   }
   &__content {
-    order: 2;
+    grid-area: content;
   }
-  &__bar,
-  &__content,
-  &__header,
-  &__footer,
-  &__full-row {
-    grid-column: var(--grid-full-column);
-    display: flex;
-    flex-direction: column;
+  &__bar {
+    grid-area: bar;
   }
-  &__content,
-  &__header,
-  &__footer,
-  &__full-row {
-    overflow: hidden;
-  }
-}
-
-@media (width >=768px) {
-  :root {
-    // количество колонок в сетке
-    --grid-columns: 12;
-    // сколько занимает бар
-    --grid-bar-columns: 0;
-  }
-  // .main-grid {
-  //   // Фикс для фиксированной панели снизу на маленьких экранах
-  //   padding-block-end: 0;
-  // }
 }
 
 @media (width >=1366px) {
   :root {
-    --grid-padding: var(--g-8);
-    // Количесвто колонок в сетке
-    --grid-columns: 24;
-    // Сколько занимает бар
-    --grid-bar-columns: 7;
+    --grid-bar-size: calc(400px + var(--grid-column-gap));
+    --grid-content-size: minmax(0, 1fr);
+    --grid-column-gap: var(--g-4);
   }
   .main-grid {
-    &:has(&__header) &__bar {
-      grid-row: 2 / 3;
-    }
-    &__bar {
-      order: 0;
-      grid-column: var(--grid-bar-column);
-      grid-row: 1 / 2;
-    }
-    // Если бар есть то подгоняем размер под бар
-    &:has(&__bar) &__content {
-      grid-column: var(--grid-content-column);
-      padding-inline-end: var(--g-4);
+    // Если есть бар
+    &:has(&__bar) {
+      --grid-columns-template: var(--grid-content-size) var(--grid-bar-size);
+      --grid-areas: "header header" "content bar";
     }
   }
 }
