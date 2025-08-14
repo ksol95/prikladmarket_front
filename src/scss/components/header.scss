@@ -45,9 +45,14 @@
   &__logo {
     text-transform: lowercase;
     font-weight: var(--SemiBold);
-    font-size: 1em;
+    font-size: var(--logo-size);
     letter-spacing: 0.02em;
     text-wrap: nowrap;
+    &-link {
+      text-decoration: none;
+      color: inherit;
+      all: inherit;
+    }
   }
   // Открытие меню через CSS
   &:has(&__menu-button input[type="checkbox"]:checked) &__nav {
@@ -256,9 +261,6 @@ body:has(.header__menu-button input[type="checkbox"]:checked) {
     --header-menu-animation-out: none;
   }
   .header {
-    &__logo {
-      font-size: var(--h2-size);
-    }
     &__nav {
       all: unset;
       &-menu {
