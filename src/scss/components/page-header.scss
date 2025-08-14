@@ -3,16 +3,17 @@
   --page-header-img-size: calc(100% + var(--g-8));
   --page-header-img-margin: calc(var(--g-4) * -1);
   // Базовый шаблон по умолчанию (только хлебные крошки и заголовок)
-  --header-template: "breadcrumb breadcrumb" "title title";
+  --page-header-template: "breadcrumb breadcrumb" "title title";
+  --page-header-padding: 0px var(--g-4);
 }
 
 .page-header {
   gap: var(--g-4);
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 700px) minmax(0, 1fr);
-  // Используем только одну переменную для всего шаблона
-  grid-template-areas: var(--header-template);
+  grid-template-columns: minmax(0, var(--max-text-size)) minmax(0, 1fr);
+  grid-template-areas: var(--page-header-template);
+  padding: var(--page-header-padding);
   // Стили для элементов сетки
   .breadcrumb {
     grid-area: breadcrumb;
@@ -35,41 +36,63 @@
     font-weight: var(--Light);
     color: var(--secondary-text-color);
   }
-  &__img {
+  &__img-container {
     grid-area: img;
-    object-fit: cover;
+    overflow: hidden;
     border-radius: var(--page-header-img-radius);
-    inline-size: var(--page-header-img-size);
     margin-inline-start: var(--page-header-img-margin);
+    inline-size: var(--page-header-img-size);
+  }
+  &__img {
+    object-fit: cover;
+    inline-size: 100%;
   }
   &__description {
     grid-area: description;
+    display: flex;
+    flex-direction: column;
+    gap: var(--g-3);
+    ol {
+      list-style-type: decimal;
+    }
+    ul {
+      list-style-type: disc;
+    }
+    ul,
+    ol {
+      display: flex;
+      flex-direction: column;
+      gap: var(--g-2);
+      padding-left: var(--g-4);
+    }
   }
 }
 
 // Логика изменения шаблона в зависимости от наличия элементов
 // 1. Если есть только описание
 .page-header:has(.page-header__description):not(:has(.page-header__img)) {
-  --header-template: "breadcrumb breadcrumb" "title title" "description _";
+  --page-header-template: "breadcrumb breadcrumb" "title title" "description _";
 }
 
 // 2. Если есть только изображение
 .page-header:has(.page-header__img):not(:has(.page-header__description)) {
-  --header-template: "breadcrumb breadcrumb" "title title" "img img";
+  --page-header-template: "breadcrumb breadcrumb" "title title" "img img";
 }
 
 // 3. Если есть и описание, и изображение
 .page-header:has(.page-header__description):has(.page-header__img) {
-  --header-template: "breadcrumb breadcrumb" "title title" "description img";
+  --page-header-template: "breadcrumb breadcrumb" "title title" "description _"
+    "img img";
+  --page-header-padding: var(--g-4);
 }
 
 @media (width >=1366px) {
   :root {
     --page-header-img-size: 100%;
     --page-header-img-margin: 0;
+    --page-header-padding: 0;
   }
   .page-header {
-    padding: 0;
     &__title-content {
       flex-direction: row;
       justify-content: space-between;
@@ -79,5 +102,10 @@
       align-items: flex-end;
       gap: var(--g-1);
     }
+  }
+  .page-header:has(.page-header__description):has(.page-header__img) {
+    --page-header-template: "breadcrumb breadcrumb" "title title"
+      "description img";
+    --page-header-padding: var(--g-4) 0;
   }
 }

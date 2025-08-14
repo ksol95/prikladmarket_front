@@ -1,6 +1,7 @@
 :root {
   --max-size-grid: 1440px;
   --min-size-grid: 320px;
+  --max-text-size: 700px;
   --recomendate-size-grid: calc(100% - var(--g-4));
   --container-size: clamp(
     var(--min-size-grid),

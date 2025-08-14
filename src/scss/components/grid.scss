@@ -1,5 +1,5 @@
 :root {
-  --grid-padding: var(--g-8);
+  --grid-padding: 0;
   --grid-areas: "header" "bar" "content";
   --grid-bar-size: 0px;
   --grid-content-size: 0px;
@@ -30,6 +30,7 @@
 
 @media (width >=1366px) {
   :root {
+    --grid-padding: var(--g-8);
     --grid-bar-size: calc(400px + var(--grid-column-gap));
     --grid-content-size: minmax(0, 1fr);
     --grid-column-gap: var(--g-4);
