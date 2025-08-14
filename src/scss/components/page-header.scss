@@ -84,6 +84,8 @@
   --page-header-template: "breadcrumb breadcrumb" "title title" "description _"
     "img img";
   --page-header-padding: var(--g-4);
+  --page-header-img-margin: 0;
+  --page-header-img-size: 100%;
 }
 
 @media (width >=1366px) {
