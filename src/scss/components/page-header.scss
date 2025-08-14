@@ -2,20 +2,23 @@
   --page-header-img-radius: var(--br-5);
   --page-header-img-size: calc(100% + var(--g-8));
   --page-header-img-margin: calc(var(--g-4) * -1);
-  --page-header-description-column-size: 1 / -1;
+  // Базовый шаблон по умолчанию (только хлебные крошки и заголовок)
+  --header-template: "breadcrumb breadcrumb" "title title";
 }
 
 .page-header {
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
   gap: var(--g-4);
-  padding: 0 var(--g-4);
   overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 700px) minmax(0, 1fr);
+  // Используем только одну переменную для всего шаблона
+  grid-template-areas: var(--header-template);
+  // Стили для элементов сетки
   .breadcrumb {
-    grid-column: 1 / -1;
+    grid-area: breadcrumb;
   }
   &__title-content {
-    grid-column: 1 / -1;
+    grid-area: title;
     display: flex;
     flex-direction: column;
     gap: var(--g-4);
@@ -33,20 +36,35 @@
     color: var(--secondary-text-color);
   }
   &__img {
-    grid-column: 1 / -1;
+    grid-area: img;
     object-fit: cover;
     border-radius: var(--page-header-img-radius);
     inline-size: var(--page-header-img-size);
     margin-inline-start: var(--page-header-img-margin);
   }
   &__description {
-    grid-column: var(--page-header-description-column-size);
+    grid-area: description;
   }
+}
+
+// Логика изменения шаблона в зависимости от наличия элементов
+// 1. Если есть только описание
+.page-header:has(.page-header__description):not(:has(.page-header__img)) {
+  --header-template: "breadcrumb breadcrumb" "title title" "description _";
+}
+
+// 2. Если есть только изображение
+.page-header:has(.page-header__img):not(:has(.page-header__description)) {
+  --header-template: "breadcrumb breadcrumb" "title title" "img img";
+}
+
+// 3. Если есть и описание, и изображение
+.page-header:has(.page-header__description):has(.page-header__img) {
+  --header-template: "breadcrumb breadcrumb" "title title" "description img";
 }
 
 @media (width >=1366px) {
   :root {
-    --page-header-description-column-size: 1 / span 17;
     --page-header-img-size: 100%;
     --page-header-img-margin: 0;
   }

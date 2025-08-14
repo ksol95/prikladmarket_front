@@ -109,7 +109,6 @@
     </header>
 
     <main class="main-grid">
-      <!-- Заголовок -->
       <header class="main-grid__header page-header">
         <!-- Хлебные крошки -->
         <nav
@@ -138,17 +137,70 @@
               itemscope
               itemtype="http://schema.org/ListItem"
             >
-              <p class="breadcrumb__item-link" itemprop="item">
-                <span itemprop="name">Каталог</span>
-              </p>
+              <a
+                href="/prikladmarket_front/src/pages/catalog.html"
+                class="breadcrumb__item-link"
+                itemprop="item"
+                ><span itemprop="name">Каталог</span></a
+              >
               <meta itemprop="position" content="2" />
+            </li>
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <a href="#" class="breadcrumb__item-link" itemprop="item"
+                ><span itemprop="name">Ложи и приклады</span></a
+              >
+              <meta itemprop="position" content="3" />
+            </li>
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <a href="#" class="breadcrumb__item-link" itemprop="item"
+                ><span itemprop="name"
+                  >Винтовка Мосина (91-30, 91-30м, КО-44)</span
+                ></a
+              ><meta itemprop="position" content="4" />
+            </li>
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <a href="#" class="breadcrumb__item-link" itemprop="item">
+                <span itemprop="name">«Монте-Карло»</span>
+              </a>
+              <meta itemprop="position" content="5" />
+            </li>
+            <li
+              class="breadcrumb__item"
+              itemprop="itemListElement"
+              itemscope
+              itemtype="http://schema.org/ListItem"
+            >
+              <p class="breadcrumb__item-link" itemprop="item">
+                <span itemprop="name"
+                  >Ложа на винтовку Мосина «Монте Карло»</span
+                >
+              </p>
+              <meta itemprop="position" content="5" />
             </li>
           </ul>
         </nav>
-        <!-- Контенет -->
+        <!-- Заголовок -->
         <div class="page-header__title-content">
-          <h1 class="page-header__title">Каталог</h1>
+          <h1 class="page-header__title" itemprop="name">
+            Ложа на винтовку Мосина «Монте Карло»
+          </h1>
         </div>
+        <!-- Описание -->
         <div class="page-header__description">
           <p>
             Популярные ложи для винтовки Мосина и ее модификаций (КО-44, 91/30).
