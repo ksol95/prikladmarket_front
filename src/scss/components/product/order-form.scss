@@ -209,7 +209,6 @@
   .order-form {
     // Делаем форму липкой
     position: sticky;
-    margin-inline-end: var(--g-4);
     // Позиция откуда форма липнет
     top: var(--sticky-top);
     // -10% Скроет стоимость

@@ -1,10 +1,12 @@
 :root {
   --grid-padding: 0;
   --grid-areas: "header" "bar" "content";
+  /* Базовый шаблон по умолчанию */
   --grid-bar-size: 0px;
   --grid-content-size: 0px;
   --grid-column-gap: 0px;
   --grid-columns-template: 100%;
+  --grid-bar-margin: 0;
 }
 
 .main-grid {
@@ -25,6 +27,7 @@
   }
   &__bar {
     grid-area: bar;
+    margin: var(--grid-bar-margin);
   }
 }
 
@@ -34,12 +37,25 @@
     --grid-bar-size: calc(400px + var(--grid-column-gap));
     --grid-content-size: minmax(0, 1fr);
     --grid-column-gap: var(--g-4);
+    /* Устанавливаем шаблон по умолчанию для десктопа: бар справа */
+    --grid-columns-template: var(--grid-content-size) var(--grid-bar-size);
+    --grid-areas: "header header" "content bar";
+    --grid-bar-margin: 0 var(--g-4) 0 0;
   }
   .main-grid {
-    // Если есть бар
-    &:has(&__bar) {
-      --grid-columns-template: var(--grid-content-size) var(--grid-bar-size);
-      --grid-areas: "header header" "content bar";
+    /* Если есть бар, применяем шаблон по умолчанию (бар справа) */
+    /* Это правило не обязательно, так как переменные уже установлены в :root,
+		но оставим для ясности и в случае, если нужно изменить поведение по умолчанию */
+    /* &:has(&__bar) {} */
+    /* Если есть бар И у .main-grid есть класс .left, меняем шаблон (бар слева) */
+    &:has(&__bar).bar-left {
+      --grid-areas: "header header" "bar content";
+      --grid-columns-template: var(--grid-bar-size) var(--grid-content-size);
+      --grid-bar-margin: 0 0 0 var(--g-4);
+      /* Порядок столбцов в grid-template-columns остается тот же, но области меняются местами */
+      /* grid-template-columns: var(--grid-bar-size) var(--grid-content-size); */
+      /* На самом деле, нам не нужно менять порядок столбцов, достаточно поменять области */
+      /* grid-template-columns остается var(--grid-columns-template) из :root */
     }
   }
 }
