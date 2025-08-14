@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная страница — Приклад маркет</title>
+    <!-- Подключаем общие стили -->
+    <script type="module" crossorigin src="/prikladmarket_front/assets/main-CYuQuWtm.js"></script>
+    <link rel="modulepreload" crossorigin href="/prikladmarket_front/assets/header-menu-DUkwlJfJ.js">
+    <link rel="stylesheet" crossorigin href="/prikladmarket_front/assets/css/header-menu_DMPxLs_0.css">
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <div class="container">
+        <div class="header__logo">
+          <a href="/prikladmarket_front/" class="header__logo-link"
+            >Приклад маркет</a
+          >
+        </div>
+        <div class="header__nav">
+          <nav class="header__nav-menu">
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a
+                  href="/prikladmarket_front/src/pages/blog.html"
+                  class="header__nav-link"
+                  >Блог</a
+                >
+              </li>
+              <li class="header__nav-item">
+                <a
+                  href="/prikladmarket_front/src/pages/catalog.html"
+                  class="header__nav-link"
+                  >Каталог</a
+                >
+              </li>
+              <li class="header__nav-item">
+                <a
+                  href="/prikladmarket_front/src/pages/contacts.html"
+                  class="header__nav-link"
+                  >Контакты</a
+                >
+              </li>
+              <li class="header__nav-hidden-menu">
+                <ul class="header__nav-list">
+                  <li class="header__nav-item">
+                    <a href="" class="header__nav-link">Блог</a>
+                  </li>
+                  <li class="header__nav-item">
+                    <a href="" class="header__nav-link">Каталог</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__panel">
+          <div class="hidden-xs">
+            <button class="button button-primary">Корзина</button>
+          </div>
+          <!-- Меню в шапке -->
+          <label class="header__menu-button" aria-label="Открыть меню">
+            <input type="checkbox" class="visually-hidden" />
+            <span class="header__menu-burger">
+              <span></span><span></span><span></span>
+            </span>
+          </label>
+          <!-- Выбор темы -->
+          <div class="theme-menu">
+            <ul class="theme-menu__list">
+              <li class="theme-menu__item">
+                <button
+                  type="button"
+                  data-theme="dark"
+                  class="theme-menu__button"
+                ></button>
+              </li>
+              <li class="theme-menu__item">
+                <button
+                  type="button"
+                  data-theme="light"
+                  class="theme-menu__button"
+                ></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <!-- Колонка для фильтра и еще чего -->
+      <!-- <section class="main-grid__bar">
+        <div class="filter-form">1 2 3</div>
+      </section> -->
+
+      <!-- Основной контент -->
+      <section class="main-grid__content">Контент</section>
+    </main>
+
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
+  </body>
+</html>
