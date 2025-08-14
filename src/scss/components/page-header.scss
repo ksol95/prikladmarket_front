@@ -14,6 +14,7 @@
   grid-template-columns: minmax(0, var(--max-text-size)) minmax(0, 1fr);
   grid-template-areas: var(--page-header-template);
   padding: var(--page-header-padding);
+  padding-block-start: 0;
   // Стили для элементов сетки
   .breadcrumb {
     grid-area: breadcrumb;
