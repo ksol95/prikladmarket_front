@@ -26,9 +26,9 @@ scrollingElements.forEach((element) => {
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Инициализация скроллера с кнопками");
 
-  const scrollingSlider = document.querySelectorAll(".scrolling-slider");
+  const scrollingSliders = document.querySelectorAll(".scrolling-slider");
 
-  scrollingSlider.forEach((grid) => {
+  scrollingSliders.forEach((grid) => {
     const list = grid.querySelector(".products-grid__list");
     if (!list) return;
     list.classList.add("scrolling");
@@ -39,10 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!leftArrow) {
       leftArrow = document.createElement("button");
-      leftArrow.type = "button"; // Явно указываем тип
+      leftArrow.type = "button";
       leftArrow.className = "products-grid__arrow products-grid__arrow--left";
       leftArrow.setAttribute("aria-label", "Прокрутить влево");
-      // Добавляем стрелку в DOM, например, в начало grid
       grid.prepend(leftArrow);
     }
 
@@ -51,42 +50,103 @@ document.addEventListener("DOMContentLoaded", () => {
       rightArrow.type = "button";
       rightArrow.className = "products-grid__arrow products-grid__arrow--right";
       rightArrow.setAttribute("aria-label", "Прокрутить вправо");
-      // Добавляем стрелку в DOM, например, в конец grid
       grid.append(rightArrow);
     }
     // --- Конец создания стрелок ---
 
-    // Функция для проверки необходимости показа стрелок
+    // --- Функция для прокрутки к следующей карточке ---
+    const scrollToNextCard = (direction) => {
+      // Находим все карточки внутри списка
+      const cards = list.querySelectorAll(".products-grid__card");
+      if (cards.length === 0) return;
+
+      const containerWidth = list.clientWidth;
+      const currentScrollLeft = list.scrollLeft;
+
+      let firstVisibleCardIndex = -1;
+      let lastVisibleCardIndex = -1;
+
+      for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        const cardRect = card.getBoundingClientRect();
+        const listRect = list.getBoundingClientRect();
+
+        const cardLeft = cardRect.left - listRect.left + currentScrollLeft;
+        const cardRight = cardLeft + cardRect.width;
+
+        if (
+          cardLeft < currentScrollLeft + containerWidth &&
+          cardRight > currentScrollLeft
+        ) {
+          if (firstVisibleCardIndex === -1) {
+            firstVisibleCardIndex = i;
+          }
+          lastVisibleCardIndex = i;
+        }
+      }
+
+      if (firstVisibleCardIndex === -1) {
+        firstVisibleCardIndex = 0;
+        lastVisibleCardIndex = 0;
+      }
+
+      let targetScrollLeft;
+
+      if (direction === "right") {
+        const nextCardIndex = Math.min(
+          lastVisibleCardIndex + 1,
+          cards.length - 1
+        );
+        const nextCard = cards[nextCardIndex];
+        if (nextCard) {
+          const cardRect = nextCard.getBoundingClientRect();
+          const listRect = list.getBoundingClientRect();
+          const cardLeft = cardRect.left - listRect.left + currentScrollLeft;
+          targetScrollLeft = cardLeft;
+        } else {
+          targetScrollLeft = list.scrollWidth - containerWidth;
+        }
+      } else {
+        const prevCardIndex = Math.max(firstVisibleCardIndex - 1, 0);
+        const prevCard = cards[prevCardIndex];
+        if (prevCard) {
+          const cardRect = prevCard.getBoundingClientRect();
+          const listRect = list.getBoundingClientRect();
+          const cardLeft = cardRect.left - listRect.left + currentScrollLeft;
+          targetScrollLeft = cardLeft;
+        } else {
+          targetScrollLeft = 0;
+        }
+      }
+
+      // Выполняем плавную прокрутку
+      list.scrollTo({
+        left: targetScrollLeft,
+        behavior: "smooth",
+      });
+
+      // Обновляем состояние стрелок после прокрутки
+      setTimeout(checkArrowsVisibility, 300);
+    };
+    // --- Конец функции scrollToNextCard ---
+
+    // --- Функция для проверки необходимости показа стрелок ---
     const checkArrowsVisibility = () => {
-      // console.log("Проверка видимости стрелок для:", grid);
-
-      // Проверяем, есть ли переполнение по горизонтали У СПИСКА
-
       if (list.scrollWidth > list.clientWidth) {
-        // console.log("Есть переполнение");
-        grid.classList.add("show-arrows"); // Показываем контейнер стрелок
+        grid.classList.add("show-arrows");
 
-        // Проверяем, можно ли скроллить влево
         if (list.scrollLeft > 0) {
           grid.classList.add("show-left-arrow");
-          // console.log("Можно скроллить влево");
         } else {
           grid.classList.remove("show-left-arrow");
         }
 
-        // Проверяем, можно ли скроллить вправо
-        // Используем небольшую погрешность для вещественных чисел
-        // ВАЖНО: правильное условие проверки возможности прокрутки вправо
         if (list.scrollLeft + list.clientWidth + 1 < list.scrollWidth) {
-          // if (Math.ceil(list.scrollLeft + list.clientWidth) < Math.floor(list.scrollWidth)) { // Альтернативная проверка
           grid.classList.add("show-right-arrow");
-          // console.log("Можно скроллить вправо");
         } else {
           grid.classList.remove("show-right-arrow");
         }
       } else {
-        // console.log("Нет переполнения, скрываем все");
-        // Если переполнения нет, скрываем все классы
         grid.classList.remove(
           "show-arrows",
           "show-left-arrow",
@@ -94,39 +154,76 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       }
     };
+    // --- Конец функции checkArrowsVisibility ---
 
-    // Инициальная проверка при загрузке и после изменений размера
-    checkArrowsVisibility(); // Проверяем сразу после создания стрелок
+    // Инициальная проверка
+    checkArrowsVisibility();
     const resizeObserver = new ResizeObserver(checkArrowsVisibility);
     resizeObserver.observe(grid);
     resizeObserver.observe(list);
-    // window.addEventListener("resize", checkArrowsVisibility); // ResizeObserver предпочтительнее
-
-    // Проверка при скролле внутри списка
     list.addEventListener("scroll", checkArrowsVisibility);
 
-    // --- Обработчики кликов по стрелкам ---
+    // --- Обработчики событий ---
+
+    // 1. Создаем обработчик wheel с возможностью его отключения
+    let isWheelHandlerActive = true;
+
+    const wheelHandler = (e) => {
+      if (!isWheelHandlerActive) return; // Игнорируем, если обработчик "отключен"
+
+      // Проверяем, что прокрутка преимущественно горизонтальная
+      if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) {
+        e.preventDefault();
+
+        // Отключаем обработчик на время выполнения scrollToNextCard
+        isWheelHandlerActive = false;
+
+        if (e.deltaX > 0) {
+          scrollToNextCard("right");
+        } else {
+          scrollToNextCard("left");
+        }
+
+        // Включаем обработчик обратно через небольшую задержку,
+        // чтобы дать время завершиться анимации прокрутки
+        setTimeout(() => {
+          isWheelHandlerActive = true;
+        }, 400); // 400ms чуть больше, чем стандартная длительность 'smooth' (300ms)
+      }
+    };
+
+    // 2. Добавляем обработчик wheel
+    grid.addEventListener("wheel", wheelHandler, { passive: false });
+
+    // 3. Обработчики кликов по стрелкам
     leftArrow.addEventListener("click", (e) => {
       e.preventDefault();
 
-      const scrollAmount = grid.clientWidth * 1;
-      list.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
+      // Отключаем обработчик wheel
+      isWheelHandlerActive = false;
 
-      setTimeout(checkArrowsVisibility, 300); // Учитываем длительность 'smooth'
+      scrollToNextCard("left");
+
+      // Включаем обработчик wheel обратно
+      setTimeout(() => {
+        isWheelHandlerActive = true;
+      }, 400);
     });
 
     rightArrow.addEventListener("click", (e) => {
       e.preventDefault();
 
-      const scrollAmount = grid.clientWidth * 1;
-      list.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-      setTimeout(checkArrowsVisibility, 300);
+      // Отключаем обработчик wheel
+      isWheelHandlerActive = false;
+
+      scrollToNextCard("right");
+
+      // Включаем обработчик wheel обратно
+      setTimeout(() => {
+        isWheelHandlerActive = true;
+      }, 400);
     });
-  }); // forEach productGrids
+
+    // --- Конец обработчиков событий ---
+  });
 });
