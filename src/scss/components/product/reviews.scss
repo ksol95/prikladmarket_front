@@ -1,15 +1,21 @@
 :root {
+  --product-reviews-title-size: 1fr;
+  --product-reviews-content-size: 1fr;
+  --product-reviews-template: 100%;
+  --product-reviews-padding: var(--g-8) var(--g-4);
+  --product-reviews-gap: var(--g-6);
+  // content
   --reviews-padding: var(--g-8) var(--g-4);
   --reviews-direction: column;
   --reviews-gap: var(--g-6);
 }
 
 .product-reviews {
-  padding: var(--reviews-padding);
-  display: flex;
-  flex-direction: var(--reviews-direction);
+  padding: var(--product-reviews-padding);
+  display: grid;
+  grid-template-columns: var(--product-reviews-template);
+  gap: var(--product-reviews-gap);
   justify-content: space-between;
-  gap: var(--reviews-gap);
   &__content {
     display: flex;
     flex-direction: column;
@@ -57,13 +63,15 @@
 
 @media (width >=768px) {
   :root {
-    --rewiews-padding: var(--g-10) var(--g-8);
-    --reviews-direction: row;
-    --reviews-gap: var(--g-10);
+    --product-reviews-title-size: minmax(240px, 1fr);
+    --product-reviews-content-size: minmax(0, var(--max-text-size));
+    --product-reviews-template: var(--product-reviews-title-size)
+      var(--product-reviews-content-size);
   }
-  .product-reviews {
-    &__item {
-      max-inline-size: 578px;
-    }
+}
+
+@media (width >=1366px) {
+  :root {
+    --product-reviews-content-size: minmax(300px, 578px);
   }
 }
