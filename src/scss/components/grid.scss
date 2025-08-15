@@ -1,8 +1,9 @@
 :root {
   --grid-padding: 0;
-  --grid-areas: "header" "bar" "content";
+  --grid-areas: "header" "sidebar" "bar" "content";
   /* Базовый шаблон по умолчанию */
   --grid-bar-size: 0px;
+  --grid-sidebar-size: 0px;
   --grid-content-size: 0px;
   --grid-column-gap: 0px;
   --grid-columns-template: 100%;
@@ -29,6 +30,30 @@
     grid-area: bar;
     margin: var(--grid-bar-margin);
   }
+  &__sidebar {
+    grid-area: sidebar;
+    background-color: red;
+  }
+}
+
+@media (width >=1100px) {
+  :root {
+    --grid-padding: var(--g-8);
+    --grid-column-gap: var(--g-4);
+  }
+  .main-grid {
+    // Бар для всей страницы
+    &:has(&__sidebar) {
+      --grid-sidebar-size: minmax(200px, 300px);
+      --grid-content-size: minmax(814px, 1fr);
+      --grid-columns-template: var(--grid-content-size) var(--grid-sidebar-size);
+      --grid-areas: "header sidebar" "content sidebar";
+    }
+    &:has(&__sidebar).bar-left {
+      --grid-columns-template: var(--grid-sidebar-size) var(--grid-content-size);
+      --grid-areas: "sidebar header" "sidebar content";
+    }
+  }
 }
 
 @media (width >=1366px) {
@@ -37,25 +62,30 @@
     --grid-bar-size: calc(400px + var(--grid-column-gap));
     --grid-content-size: minmax(0, 1fr);
     --grid-column-gap: var(--g-4);
-    /* Устанавливаем шаблон по умолчанию для десктопа: бар справа */
-    --grid-columns-template: var(--grid-content-size) var(--grid-bar-size);
-    --grid-areas: "header header" "content bar";
-    --grid-bar-margin: 0 var(--g-4) 0 0;
   }
   .main-grid {
-    /* Если есть бар, применяем шаблон по умолчанию (бар справа) */
-    /* Это правило не обязательно, так как переменные уже установлены в :root,
-		но оставим для ясности и в случае, если нужно изменить поведение по умолчанию */
-    /* &:has(&__bar) {} */
+    // Бар для формы, столбец напротив контента
+    &:has(&__bar) {
+      --grid-columns-template: var(--grid-content-size) var(--grid-bar-size);
+      --grid-areas: "header header" "content bar";
+      --grid-bar-margin: 0 var(--g-4) 0 0;
+    }
     /* Если есть бар И у .main-grid есть класс .left, меняем шаблон (бар слева) */
     &:has(&__bar).bar-left {
-      --grid-areas: "header header" "bar content";
       --grid-columns-template: var(--grid-bar-size) var(--grid-content-size);
+      --grid-areas: "header header" "bar content";
       --grid-bar-margin: 0 0 0 var(--g-4);
-      /* Порядок столбцов в grid-template-columns остается тот же, но области меняются местами */
-      /* grid-template-columns: var(--grid-bar-size) var(--grid-content-size); */
-      /* На самом деле, нам не нужно менять порядок столбцов, достаточно поменять области */
-      /* grid-template-columns остается var(--grid-columns-template) из :root */
+    }
+    // Бар для всей страницы
+    &:has(&__sidebar) {
+      --grid-sidebar-size: 300px;
+      --grid-content-size: minmax(700px, calc(750px + var(--grid-column-gap)));
+      --grid-columns-template: var(--grid-content-size) var(--grid-sidebar-size);
+      --grid-areas: "header sidebar" "content sidebar";
+    }
+    &:has(&__sidebar).bar-left {
+      --grid-columns-template: var(--grid-sidebar-size) var(--grid-content-size);
+      --grid-areas: "sidebar header" "sidebar content";
     }
   }
 }
