@@ -23,8 +23,8 @@
 
 @media (width >=768px) {
   :root {
-    --product-description-template: var(--product-title-column-size)
-      var(--product-content-column-size);
+    --product-description-template: var(--PRODUCT-title-column-size)
+      var(--PRODUCT-title-column-size);
   }
 }
 

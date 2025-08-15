@@ -57,8 +57,8 @@
 
 @media (width >=768px) {
   :root {
-    --product-reviews-template: var(--product-title-column-size)
-      var(--product-content-column-size);
+    --product-reviews-template: var(--PRODUCT-title-column-size)
+      var(--PRODUCT-title-column-size);
   }
 }
 

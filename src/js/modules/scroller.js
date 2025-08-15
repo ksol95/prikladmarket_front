@@ -3,7 +3,7 @@ function handleWheelScroll(event) {
   // Проверяем, является ли цель события (или его родитель) элементом с классом .scrolling
   const scrollingElement = event.currentTarget; // element, к которому прикреплен обработчик
 
-  if (event.deltaX === 0) {
+  if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
     const deltaMultiplier = 1; // Можно настроить скорость прокрутки (например, 2 для удвоения)
     event.preventDefault();
 

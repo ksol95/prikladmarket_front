@@ -5,20 +5,25 @@
 @import url(../components/product/product-description.scss);
 @import url(../components/product/reviews.scss);
 :root {
+  // Глобальные переменные для корректировки модулей
+  // rewiws and description settings
+  --PRODUCT-title-column-size: 1fr;
+  --PRODUCT-title-column-size: 1fr;
+  @media (width >=768px) {
+    --PRODUCT-title-column-size: minmax(240px, 1fr);
+    --PRODUCT-title-column-size: minmax(0, var(--max-text-size));
+  }
+  @media (width >=1366px) {
+    --PRODUCT-title-column-size: minmax(300px, 578px);
+  }
+}
+
+:root {
+  // Стили секции product-related-section
   --product-related-section-bg: var(--accent-bg);
   --product-related-section-padding: var(--g-6) var(--g-4);
   --product-related-section-border-radius: var(--br-4);
   --product-related-section-gap: var(--g-6);
-  // rewiws and description settings
-  --product-title-column-size: 1fr;
-  --product-content-column-size: 1fr;
-  @media (width >=768px) {
-    --product-title-column-size: minmax(240px, 1fr);
-    --product-content-column-size: minmax(0, var(--max-text-size));
-  }
-  @media (width >=1366px) {
-    --product-content-column-size: minmax(300px, 578px);
-  }
 }
 
 .product-related-section {
