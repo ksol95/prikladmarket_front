@@ -3,9 +3,6 @@
 }
 
 .breadcrumb {
-  overflow-x: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   &__list {
     display: flex;
     flex-wrap: nowrap;

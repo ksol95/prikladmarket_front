@@ -16,21 +16,18 @@
 }
 
 .products-grid {
-  &:has(.scrolling) {
+  &.scrolling {
     // Используем гибкую ширину вместо фиксированной
     --products-grid-card-width: var(--products-grid-card-xs-width);
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  }
+  &.scrolling &__list {
+    flex-wrap: nowrap;
   }
   &__list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--products-grid-card-gap);
-    &.scrolling {
-      flex-wrap: nowrap;
-    }
   }
   &__card {
     flex-basis: var(--products-grid-card-width); //Ширина карточки

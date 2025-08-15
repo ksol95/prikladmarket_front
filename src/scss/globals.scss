@@ -91,6 +91,15 @@ body.scrollBlock {
   // position: fixed;
 }
 
+.scrolling {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: w-resize;
+  // Если скролли текстовые эелементы, добавь white-space: nowrap;
+}
+
 .page {
   color: var(--main-text-color);
   font-family: var(--main-font), sans-serif;
