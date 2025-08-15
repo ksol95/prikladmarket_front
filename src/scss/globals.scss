@@ -105,6 +105,7 @@ body.scrollBlock {
   min-block-size: 100dvh;
   min-inline-size: var(--min-size-grid);
   display: flex;
+  gap: var(--g-6);
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;

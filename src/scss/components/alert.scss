@@ -34,10 +34,6 @@
     content: "";
     flex: var(--alert-icon-size);
     aspect-ratio: 1 / 1;
-    // background-image: var(--alert-icon);
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: contain;
     background-color: currentColor;
     /* Цвет иконки */
     mask: var(--alert-icon) no-repeat center / contain;

@@ -1,17 +1,14 @@
 :root {
   --footer-bg: var(--main-bg);
   --footer-padding: var(--block-padding);
-  --footer-margin-top: var(--g-6);
 }
+
 .footer {
   inline-size: 100%;
   block-size: 100vh;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
-
   padding: var(--footer-padding);
   background-color: var(--footer-bg);
-  margin-block-start: var(--footer-margin-top);
 }

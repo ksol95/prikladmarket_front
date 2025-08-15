@@ -1,6 +1,5 @@
 :root {
   --header-padding: var(--block-padding);
-  --header-margin-bottom: var(--g-6);
   --header-nav-overlay-bg: var(--overlay-bg);
   --header-nav-overlay-position: absolute;
   --header-menu-block-size: 0;
@@ -35,7 +34,6 @@
   display: flex;
   justify-content: center;
   padding: var(--header-padding);
-  margin-block-end: var(--header-margin-bottom);
   background-color: var(--header-bg);
   color: var(--header-text-color);
   & .container {
