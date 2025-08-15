@@ -204,26 +204,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    const wheelHandler = (e) => {
-      if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) {
-        e.preventDefault();
+    // const wheelHandler = (e) => {
+    //   if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) {
+    //     e.preventDefault();
 
-        // Удаляем обработчик
-        grid.removeEventListener("wheel", wheelHandler, { passive: false });
+    //     // Удаляем обработчик
+    //     grid.removeEventListener("wheel", wheelHandler, { passive: false });
 
-        if (e.deltaX > 0) {
-          scrollToNextCard("right");
-        } else {
-          scrollToNextCard("left");
-        }
+    //     if (e.deltaX > 0) {
+    //       scrollToNextCard("right");
+    //     } else {
+    //       scrollToNextCard("left");
+    //     }
 
-        // Добавляем обработчик обратно через задержку
-        setTimeout(() => {
-          grid.addEventListener("wheel", wheelHandler, { passive: false });
-        }, 400);
-      }
-    };
+    //     // Добавляем обработчик обратно через задержку
+    //     setTimeout(() => {
+    //       grid.addEventListener("wheel", wheelHandler, { passive: false });
+    //     }, 400);
+    //   }
+    // };
 
-    grid.addEventListener("wheel", wheelHandler, { passive: false });
+    // grid.addEventListener("wheel", wheelHandler, { passive: false });
   });
 });
