@@ -1,27 +1,42 @@
 :root {
+  --product-description-title-size: 1fr;
+  --product-description-content-size: 1fr;
+  --product-description-template: 100%;
   --product-description-padding: var(--g-8) var(--g-4);
-  --product-description-gap: var(--g-2);
+  --product-description-gap: var(--g-6);
+  // content
+  --product-description-content-padding: var(--g-8) var(--g-4);
+  --product-description-content-gap: var(--g-4);
 }
 
 /* Блок подробного описания продукта */
+
 .product-description {
-  display: flex;
-  flex-direction: column;
-  gap: var(--product-description-gap);
   padding: var(--product-description-padding);
+  display: grid;
+  grid-template-columns: var(--product-description-template);
+  gap: var(--product-description-gap);
+  justify-content: space-between;
+  &__contetnt {
+    display: flex;
+    flex-direction: column;
+    gap: var(--product-description-content-gap);
+  }
 }
 
 @media (width >=768px) {
   :root {
-    --product-description-padding: var(--g-4) var(--g-4);
-    --product-description-gap: var(--g-4);
-  }
-}
-@media (width >= 1366px) {
-  :root {
-    --product-description-padding: var(--g-4) 0;
-    --product-description-gap: var(--g-4);
+    --product-description-content-gap: var(--g-4);
+    --product-description-title-size: minmax(240px, 1fr);
+    --product-description-content-size: minmax(300px, 578px);
+    --product-description-template: var(--product-description-title-size)
+      var(--product-description-content-size);
   }
 }
 
-/* END Блок подробного описания продукта */
+@media (width >=1366px) {
+  :root {
+    --product-description-content-padding: var(--g-4) 0;
+    --product-description-content-gap: var(--g-4);
+  }
+}
