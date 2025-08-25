@@ -49,9 +49,9 @@ const checkOverflow = () => {
       return;
     }
 
-    // console.log(`Элемент I ${index}:`);
-    // console.log(`  Parent scrollWidth: ${parent.scrollWidth}`);
-    // console.log(`  Parent clientWidth: ${parent.clientWidth}`);
+    console.log(`Элемент I ${index}:`);
+    console.log(`  Parent scrollWidth: ${parent.scrollWidth}`);
+    console.log(`  Parent clientWidth: ${parent.clientWidth}`);
 
     // Если есть горизонтальное переполнение (содержимое выходит за границы по ширине)
     parent.scrollWidth > parent.clientWidth

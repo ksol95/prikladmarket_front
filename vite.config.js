@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import autoprefixer from "autoprefixer";
 import imagemin from "vite-plugin-imagemin";
 import { resolve } from "path";
+import removeConsole from "vite-plugin-remove-console";
 
 export default defineConfig({
   base: "/prikladmarket_front/",
@@ -23,6 +24,10 @@ export default defineConfig({
           { name: "removeEmptyAttrs", active: true },
         ],
       },
+    }),
+    removeConsole({
+      includes: ["log"], // Указывает, какие методы console удалять
+      excludes: ["error", "warn"], // Исключения (не будет удалять console.error)),
     }),
   ],
   css: {
