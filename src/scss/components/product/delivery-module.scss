@@ -14,7 +14,6 @@
   gap: var(--panel-gap);
   margin: var(--delivery-list-margin);
   padding: var(--delivery-list-padding);
-
   .delivery-list__item {
     display: flex;
     flex-direction: column;
@@ -23,15 +22,12 @@
     border-radius: var(--panel-radius);
     padding: var(--panel-padding);
     flex: 1 0 0;
-
     &:nth-child(even) {
       background-color: var(--delivery-info-bg-2);
     }
-
     &:nth-child(odd) {
       background-color: var(--delivery-info-bg-1);
     }
-
     .delivery-list__title {
       font-weight: var(--title-weight);
       font-size: var(--h3-size);
@@ -39,7 +35,6 @@
       flex-direction: row;
       justify-content: space-between;
     }
-
     .delivery-list__text {
       font-weight: var(--Light);
     }

@@ -1,6 +1,6 @@
 :root {
   --grid-padding: 0;
-  --grid-areas: "header" "sidebar" "bar" "content";
+  --grid-areas: "header" "content";
   /* Базовый шаблон по умолчанию */
   --grid-bar-size: 0px;
   --grid-sidebar-size: 0px;
@@ -34,11 +34,17 @@
   }
   &__sidebar {
     grid-area: sidebar;
-    background-color: red;
+  }
+  &:has(&__bar) {
+    --grid-areas: "header" "bar" "content";
   }
   // Если есть sidbar, bar не показываем
   &:has(&__sidebar) {
     --grid-bar-display: none;
+    --grid-areas: "header" "sidebar" "content";
+  }
+  &:has(&__sidebar).bar-left {
+    --grid-areas: "header" "sidebar" "content";
   }
 }
 
