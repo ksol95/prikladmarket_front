@@ -266,15 +266,15 @@
               itemtype="http://schema.org/PropertyValue"
             >
               <meta itemprop="name" content="Тип" />
-              <h4 class="attr__title">Тип</h4>
-              <div class="attr__list">
-                <a href="#" class="attr-button">
+              <h4 class="order-form__attr-title">Тип</h4>
+              <div class="order-form__attr-list">
+                <a href="#" class="order-form__attr-button">
                   <span itemprop="value">Ортопедический</span>
                 </a>
-                <a href="#" class="attr-button not-found">
+                <a href="#" class="order-form__attr-button not-found">
                   <span itemprop="value">СВД</span>
                 </a>
-                <button class="attr-button active">
+                <button class="order-form__attr-button active">
                   <span itemprop="value">Монте-Карло</span>
                 </button>
               </div>
@@ -287,12 +287,12 @@
               itemtype="http://schema.org/PropertyValue"
             >
               <meta itemprop="name" content="Материал" />
-              <h4 class="attr__title">Материал</h4>
-              <div class="attr__list">
-                <a href="#" class="attr-button"
+              <h4 class="order-form__attr-title">Материал</h4>
+              <div class="order-form__attr-list">
+                <a href="#" class="order-form__attr-button"
                   ><span itemprop="value">Бук</span>
                 </a>
-                <button class="attr-button active">
+                <button class="order-form__attr-button active">
                   <span itemprop="value">Фанера</span>
                 </button>
               </div>
@@ -305,45 +305,45 @@
               itemtype="http://schema.org/PropertyValue"
             >
               <meta itemprop="name" content="Цвет" />
-              <h4 class="attr__title">Цвет</h4>
-              <div class="attr__list">
+              <h4 class="order-form__attr-title">Цвет</h4>
+              <div class="order-form__attr-list">
                 <label title="Тёмный">
-                  <a href="#" class="attr-button"
+                  <a href="#" class="order-form__attr-button"
                     ><span itemprop="value" class="visually-hidden"
                       >Тёмный</span
                     >
                     <img
                       src="/src/images/color/-color-fanera_t-100x100.jpg"
                       alt="Тёмный"
-                      class="attr-button__img"
+                      class="order-form__attr-button__img"
                       aria-hidden="true"
                     />
                   </a>
                 </label>
 
                 <label title="Светлый">
-                  <button class="attr-button active">
+                  <button class="order-form__attr-button active">
                     <span itemprop="value" class="visually-hidden"
                       >Светлый</span
                     >
                     <img
                       src="/src/images/color/-color-fanera_s-100x100.jpg"
                       alt="Светлый"
-                      class="attr-button__img"
+                      class="order-form__attr-button__img"
                       aria-hidden="true"
                     />
                   </button>
                 </label>
 
                 <label title="Без покрытия">
-                  <a href="#" class="attr-button">
+                  <a href="#" class="order-form__attr-button">
                     <span itemprop="value" class="visually-hidden"
                       >Без покрытия</span
                     >
                     <img
                       src="/src/images/color/-color-fanera_b-100x100.jpg"
                       alt="Без покрытия"
-                      class="attr-button__img"
+                      class="order-form__attr-button__img"
                       aria-hidden="true"
                     />
                   </a>
@@ -358,10 +358,10 @@
               itemtype="http://schema.org/PropertyValue"
             >
               <meta itemprop="name" content="Модель ружья" />
-              <h4 class="attr__title">Модель ружья</h4>
+              <h4 class="order-form__attr-title">Модель ружья</h4>
 
-              <div class="attr__list">
-                <label class="attr-button">
+              <div class="order-form__attr-list">
+                <label class="order-form__attr-button">
                   <input
                     type="radio"
                     class="attr-radio__control visually-hidden"
@@ -378,7 +378,7 @@
                   <span itemprop="value">91-30</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="radio"
                     class="attr-radio__control visually-hidden"
@@ -394,7 +394,7 @@
                   <span itemprop="value">91-30М</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="radio"
                     class="attr-radio__control visually-hidden"
@@ -412,7 +412,7 @@
               </div>
             </div>
             <!-- Пояснение к выбору модели -->
-            <div class="alert alert-info alert-icon">
+            <div class="alert alert-info alert-icon hideOnParentOverflow-b">
               <div class="alert__content">
                 <p>Если не уверены в выборе модели прочтите</p>
                 <a class="agree" href="#">как выбрать модель?</a>
@@ -421,10 +421,10 @@
 
             <!-- Дополнительные опции -->
             <div class="order-form__attr">
-              <h4 class="attr__title">Выбор руки:</h4>
-              <div class="attr__list">
+              <h4 class="order-form__attr-title">Выбор руки:</h4>
+              <div class="order-form__attr-list">
                 <label
-                  class="attr-button"
+                  class="order-form__attr-button"
                   title="Разработан специально для использования левой рукой"
                 >
                   <input
@@ -435,9 +435,9 @@
                     value="222"
                   />
                   <span class="attr-radio__name">Для левши</span>
-                  <span class="attr-button__cash pls">300</span>
+                  <span class="order-form__attr-button__cash pls">300</span>
                 </label>
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="radio"
                     class="attr-radio__control visually-hidden"
@@ -453,9 +453,9 @@
 
             <!-- Дополнительные опции -->
             <div class="order-form__attr">
-              <h4 class="attr__title">Дополнительные опции</h4>
-              <div class="attr__list">
-                <label class="attr-button" title="">
+              <h4 class="order-form__attr-title">Дополнительные опции</h4>
+              <div class="order-form__attr-list">
+                <label class="order-form__attr-button" title="">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -464,10 +464,10 @@
                     value="222"
                   />
                   <span class="attr-radio__name">Антабка</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -476,10 +476,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Нагель</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -488,10 +488,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -500,10 +500,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -512,10 +512,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -524,10 +524,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -536,10 +536,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -548,10 +548,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -560,10 +560,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -572,10 +572,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -584,10 +584,10 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
 
-                <label class="attr-button">
+                <label class="order-form__attr-button">
                   <input
                     type="checkbox"
                     class="attr-radio__control visually-hidden"
@@ -596,7 +596,7 @@
                     value="221"
                   />
                   <span class="attr-radio__name">Выдвижной грубень</span>
-                  <span class="attr-button__cash pls">600</span>
+                  <span class="order-form__attr-button__cash pls">600</span>
                 </label>
               </div>
             </div>

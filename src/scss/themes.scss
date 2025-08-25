@@ -3,6 +3,13 @@
 ✦ theme-light — класс светлой темы
 */
 
+// Общие стили
+:root {
+  --modal-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --overlay-bg: rgb(0 0 0 / 0.5);
+}
+
 :root.theme-dark {
   --success: #238636;
   --warning: #bb800926;
@@ -19,7 +26,6 @@
   --accent-bg: #272f3c;
   --accent-text-color: #4493f8;
   --link-color: #58a6f0;
-  --overlay-bg: rgb(0 0 0 / 0.5);
   --attr-bg: #161b22;
   --attr-color: #c9d1d9;
   --attr-bg-active: #081323;
@@ -45,7 +51,6 @@
     --accent-bg: #272f3c;
     --accent-text-color: #4493f8;
     --link-color: #58a6f0;
-    --overlay-bg: rgb(0 0 0 / 0.5);
     --attr-bg: #161b22;
     --attr-color: #c9d1d9;
     --attr-bg-active: #081323;
@@ -73,7 +78,6 @@
   --accent-bg: #f5f3f1;
   --accent-text-color: #fff;
   --link-color: #1a7aff;
-  --overlay-bg: rgb(0 0 0 / 0.5);
   --attr-bg: #fff;
   --attr-color: #2c2c2c;
   --attr-bg-active: #ead7ca;
@@ -99,7 +103,6 @@
     --accent-bg: #f5f3f1;
     --accent-text-color: #fff;
     --link-color: #1a7aff;
-    --overlay-bg: rgb(0 0 0 / 0.5);
     --attr-bg: #fff;
     --attr-color: #2c2c2c;
     --attr-bg-active: #ead7ca;

@@ -1,6 +1,7 @@
 /* Форма */
 
 :root {
+  --order-form-position: static;
   --top-page-offset: calc(var(--g-4) + calc(var(--font-size) + 1px));
   --sticky-top: calc(var(--g-4) + var(--top-page-offset));
   --sticky-top: var(--g-4);
@@ -8,7 +9,7 @@
   --order-form-padding: var(--g-6) var(--g-4);
   --attr-border-radius: var(--br-3);
   --attr-padding: var(--g-1) var(--g-3);
-  --attr-list-gap: var(--g-1);
+  --order-form__attr-list-gap: var(--g-1);
   --attr-img-size: 70px;
   --attr-img-border-radius: var(--br-4);
   --attr-hover-shadow: 0px 0px 4px 1px var(--attr-bg-active);
@@ -26,6 +27,7 @@
 
 .order-form {
   display: flex;
+  position: var(--order-form-position);
   flex-direction: column;
   align-items: stretch;
   gap: var(--g-4);
@@ -45,6 +47,31 @@
     line-height: 1.2;
   }
   &__attr {
+    &.overflow {
+      flex-direction: row;
+      column-gap: var(--g-2);
+      // .order-form__attr-title {
+      //   flex: 1 0 100%;
+      // }
+      // .order-form__attr-list {
+      //   flex: 1 0 0;
+      // }
+      & .more-button {
+        display: block;
+        background-color: var(--attr-bg);
+        border-radius: var(--attr-border-radius);
+        padding: var(--attr-padding);
+        color: var(--attr-color);
+        border: 0;
+        text-decoration: none;
+        font-weight: var(--SemiBold);
+        line-height: 1;
+        cursor: pointer;
+        &:hover {
+          box-shadow: var(--attr-hover-shadow);
+        }
+      }
+    }
     inline-size: 100%;
     display: flex;
     align-items: stretch;
@@ -59,89 +86,100 @@
       flex-direction: row;
       align-items: flex-end;
     }
-    .attr__title {
+    &-title {
+      flex: 1 0 100%;
       font-weight: var(--Light);
       color: var(--secondary-text-color);
       line-height: 1.43;
     }
-    .attr__list {
+    &-list {
+      flex: 2 0 51%;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: var(--attr-list-gap);
-      .attr-button {
-        &__cash {
-          font-weight: var(--Regular);
-          // Стоимость аттрибута
-          &.pls::before {
-            content: "+";
-          }
-          &.mns::before {
-            content: "-";
-          }
-          &::after {
-            content: var(--currence-char);
-            margin-inline-start: calc(1ch / 2);
-          }
+      gap: var(--order-form__attr-list-gap);
+      position: relative;
+      inline-size: 100%;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      // Фикс от подрезания теней
+      padding-block: 4px;
+      margin-block: -4px;
+    }
+    &-button {
+      &__cash {
+        font-weight: var(--Regular);
+        // Стоимость аттрибута
+        &.pls::before {
+          content: "+";
         }
-        /* аттрибут без картинки */
-        &:not(:has(.attr-button__img)) {
-          background-color: var(--attr-bg);
-          border-radius: var(--attr-border-radius);
-          padding: var(--attr-padding);
-          color: var(--attr-color);
-          border: 0;
-          text-decoration: none;
-          font-weight: var(--SemiBold);
-          line-height: 1.7;
+        &.mns::before {
+          content: "-";
         }
-        &:not(:has(.attr-button__img)).active,
-        &:has(.attr-radio__control:checked) {
-          background-color: var(--attr-bg-active);
-          color: var(--attr-color-active);
+        &::after {
+          content: var(--currence-char);
+          margin-inline-start: calc(1ch / 2);
         }
-        /* END аттрибут без картинки */
-        /* аттрибут только картинка */
-        &__img {
-          inline-size: 100%;
-          aspect-ratio: 1 / 1;
+      }
+      /* аттрибут без картинки */
+      &:not(:has(.order-form__attr-button__img)) {
+        background-color: var(--attr-bg);
+        border-radius: var(--attr-border-radius);
+        padding: var(--attr-padding);
+        color: var(--attr-color);
+        border: 0;
+        text-decoration: none;
+        font-weight: var(--SemiBold);
+        line-height: 1.7;
+      }
+      &:not(:has(.order-form__attr-button__img)).active,
+      &:has(.attr-radio__control:checked) {
+        background-color: var(--attr-bg-active);
+        color: var(--attr-color-active);
+      }
+      /* END аттрибут без картинки */
+      /* аттрибут только картинка */
+      &__img {
+        inline-size: 100%;
+        aspect-ratio: 1 / 1;
+      }
+      &:has(.order-form__attr-button__img) {
+        display: block;
+        border-radius: var(--attr-img-border-radius);
+        inline-size: var(--attr-img-size);
+        aspect-ratio: 1 / 1;
+        background-color: transparent;
+        border: 0;
+        outline-offset: calc(var(--g-1) * -1);
+        outline: solid var(--g-1) transparent;
+        padding: 0;
+        overflow: hidden;
+        &.active {
+          outline-color: var(--attr-img-active-bg);
         }
-        &:has(.attr-button__img) {
-          display: block;
-          border-radius: var(--attr-img-border-radius);
-          inline-size: var(--attr-img-size);
-          aspect-ratio: 1 / 1;
-          background-color: transparent;
-          border: 0;
-          outline-offset: calc(var(--g-1) * -1);
-          outline: solid var(--g-1) transparent;
-          padding: 0;
-          overflow: hidden;
-          &.active {
-            outline-color: var(--attr-img-active-bg);
-          }
+      }
+      /* END аттрибут только картинка */
+      // Атриуты которые готовы к активности
+      &:has(.attr-radio__control[type="checkbox"]:checked) {
+        cursor: pointer;
+        &:hover {
+          box-shadow: var(--attr-hover-shadow);
         }
-        /* END аттрибут только картинка */
-        // Атриуты которые готовы к активности
-        &:has(.attr-radio__control[type="checkbox"]:checked) {
-          cursor: pointer;
-          &:hover {
-            box-shadow: var(--attr-hover-shadow);
-          }
-        }
-        &:has(.attr-radio__control[type="checkbox"]:not(:checked)),
-        &:has(.attr-radio__control[type="radio"]:not(:checked)),
-        &:not(.active):has(.attr-button__img),
-        &:not(:has(.attr-button__img)):not(.active):not(
-            :has(.attr-radio__control)
-          ) {
-          cursor: pointer;
-          opacity: 0.85;
-          transition: box-shadow 0.3s ease-in-out, opacity 0.2s ease-in-out;
-          &:hover {
-            opacity: 1;
-            box-shadow: var(--attr-hover-shadow);
-          }
+      }
+      &:has(.attr-radio__control[type="checkbox"]:not(:checked)),
+      &:has(.attr-radio__control[type="radio"]:not(:checked)),
+      &:not(.active):has(.order-form__attr-button__img),
+      &:not(:has(.order-form__attr-button__img)):not(.active):not(
+          :has(.attr-radio__control)
+        ) {
+        cursor: pointer;
+        opacity: 0.85;
+        transition: box-shadow 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        &:hover {
+          opacity: 1;
+          box-shadow: var(--attr-hover-shadow);
         }
       }
     }
@@ -158,7 +196,7 @@
       box-shadow: var(--cart-panel-shadow);
       background-color: var(--cart-panel-bg);
       .button {
-        flex: 0 0 100%;
+        flex: 1 0 100%;
         background-color: var(--button-cart-bg);
         color: var(--button-cart-color);
         border-radius: var(--button-cart-radius);
@@ -173,6 +211,77 @@
         }
       }
     }
+  }
+  &__modal {
+    position: fixed;
+    display: flex;
+    opacity: 0;
+    inline-size: 100dvw;
+    block-size: 100dvh;
+    padding: var(--g-4);
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 10;
+    overflow: auto;
+    background-color: var(--overlay-bg);
+    /* Анимация появления/исчезновения */
+    transition: opacity 0.3s ease-in-out;
+    &.show {
+      opacity: 1;
+    }
+    &-content {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: var(--g-4);
+      column-gap: var(--g-2);
+      background-color: var(--accent-bg);
+      padding: var(--g-4);
+      border-radius: var(--br-4);
+      inline-size: 90vw;
+      max-inline-size: 500px;
+      box-shadow: var(--modal-shadow);
+      animation-name: animatetop;
+      animation-duration: 0.3s;
+    }
+    &-title {
+      order: 1;
+      flex: 1 0 51%;
+      font-size: var(--h2-size);
+      font-weight: var(--SemiBold);
+    }
+    &-close {
+      flex: 0 0 auto;
+      order: 2;
+      display: block;
+      padding: 0;
+      color: var(--default);
+      font-size: var(--h2-size);
+      font-weight: var(--SemiBold);
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    &-list {
+      order: 3;
+      flex: 1 0 100%;
+      .order-form__attr-list {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
   }
 }
 
@@ -197,18 +306,16 @@
   :root {
     // Поднимаем форму выше на заголовок
     --order-form-top-offset: -108px;
+    --order-form-position: sticky;
     --order-form-padding: var(--g-8) var(--g-6);
     --button-cart-color: var(--contrast-text-color);
     --button-cart-bg: var(--success);
     --button-cart-padding: var(--g-5) var(--g-6);
     --button-cart-radius: var(--br-4);
-    --button-cart-fs: 1.2857em;
     --button-cart-cash-w: 400;
-    --attr-list-gap: var(--g-2);
+    --order-form__attr-list-gap: var(--g-2);
   }
   .order-form {
-    // Делаем форму липкой
-    position: sticky;
     // Позиция откуда форма липнет
     top: var(--sticky-top);
     // -10% Скроет стоимость
@@ -218,19 +325,17 @@
     max-block-size: calc(100vh - var(--g-8));
     overflow-y: scroll;
     overflow-x: hidden;
-    /* Скрываем скроллбар для IE/Edge */
     -ms-overflow-style: none;
     scrollbar-width: none;
-    .attr__list {
-      inline-size: 100%;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+    &__form {
+      max-block-size: calc(100vh - var(--g-8));
+      overflow-y: scroll;
+      overflow-x: hidden;
       -ms-overflow-style: none;
       scrollbar-width: none;
-      // Фикс от подрезания теней
-      padding-block: 4px;
-      margin-block: -4px;
-      .attr-button {
+    }
+    &__attr {
+      &-button {
         // Для скролла
         white-space: nowrap;
       }
