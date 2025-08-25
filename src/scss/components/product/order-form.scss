@@ -23,6 +23,7 @@
   --cart-panel-padding: var(--g-4);
   --cart-panel-bg: var(--accent-bg);
   --cart-panel-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+  --modal-animation-duration: 0.3s;
 }
 
 .order-form {
@@ -225,9 +226,21 @@
     overflow: auto;
     background-color: var(--overlay-bg);
     /* Анимация появления/исчезновения */
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity var(--modal-animation-duration) ease-in-out;
+    pointer-events: none;
     &.show {
       opacity: 1;
+      pointer-events: auto; // Разрешаем взаимодействие, когда модальное окно открыто
+    }
+    &.hide {
+      opacity: 0;
+      pointer-events: none;
+      // Добавляем класс для анимации закрытия
+      .order-form__modal-content {
+        animation-name: animateclose;
+        animation-duration: var(--modal-animation-duration);
+        animation-fill-mode: forwards;
+      }
     }
     &-content {
       position: relative;
@@ -244,7 +257,8 @@
       max-inline-size: 500px;
       box-shadow: var(--modal-shadow);
       animation-name: animatetop;
-      animation-duration: 0.3s;
+      animation-duration: var(--modal-animation-duration);
+      animation-fill-mode: forwards;
     }
     &-title {
       order: 1;
@@ -282,6 +296,29 @@
   to {
     top: 0;
     opacity: 1;
+  }
+}
+
+// --- Анимации ---
+@keyframes animatetop {
+  from {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animateclose {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-300px);
+    opacity: 0;
   }
 }
 

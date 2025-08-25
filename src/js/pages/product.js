@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         syncModalToOriginal(currentOriginalList, modalListContainer);
 
         modal.classList.remove("show");
+        modal.classList.add("hide");
         setTimeout(() => {
           modal.remove();
           // Удаляем обработчики событий
