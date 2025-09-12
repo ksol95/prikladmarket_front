@@ -8,9 +8,9 @@ import removeConsole from 'vite-plugin-remove-console';
 function removeVoidElementTrailingSlashes() {
 	return {
 		name: 'remove-void-element-trailing-slashes',
-		apply: 'build', // Применять только при сборке
+		apply: 'build',
 		transformIndexHtml(html) {
-			// Список void элементов HTML5
+			// Удаление trailing slash
 			const voidElements = [
 				'area',
 				'base',
@@ -27,13 +27,15 @@ function removeVoidElementTrailingSlashes() {
 				'track',
 				'wbr',
 			];
-
-			// Создаем регулярное выражение для всех void элементов
 			const voidElementsPattern = voidElements.join('|');
 			const regex = new RegExp(`<(${voidElementsPattern})([^>]*?)\\s*/>`, 'g');
+			let result = html.replace(regex, '<$1$2>');
 
-			// Заменяем trailing slash на >
-			return html.replace(regex, '<$1$2>');
+			// Дополнительно: можно минифицировать HTML полностью
+			// Удалить лишние пробелы и переносы (опционально)
+			// result = result.replace(/\s+/g, ' ').trim();
+
+			return result;
 		},
 	};
 }
